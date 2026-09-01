@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+   <META NAME="keywords" CONTENT="HDF,Ramsoft,ZX Spectrum,Speccy,Sinclair,tech,hard disk,ide,emulation">
+	<title>WWR - HDF technical specifications</title>
+	<basefont face="Verdana">
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<center>
+<table bgcolor="#0040ff" width="50%" border=0>
+<tr><td align="center"><font size="+4" color="#ffff40"><strong>HDF FORMAT</strong></font></td></tr>
+</table>
+<br>
+<em><font size="-1">Created by Ramsoft ZX Spectrum demogroup</font></em>
+<br><br><br>
+<font size="+1"><strong>Format revision: v1.1 (June 28th 2006)</strong></font>
+</center>
+<br><br><br>
+
+<div align=center>
+<TABLE WIDTH="40%">
+<TR><TD ALIGN=LEFT><OL>
+<LI><B><A HREF="#INTRODUCTION">Introduction</A></b></LI>
+<LI><B><A HREF="#HDFFORMAT">HDF file format</A></B></LI>
+<LI><B><A HREF="#CONTACTS">Contacts and useful links</A></B></LI>
+<LI><B><A HREF="#HISTORY">Revision history</A></B></LI>
+</OL></TD></TR></TABLE>
+</div><br><br>
+
+
+<a name="INTRODUCTION"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+1.
+</b></font></td><td><font size="+2">
+Introduction
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+HDF files are used to store hard-disk data into image files for emulation
+purposes. They consist in a file header, followed by a raw dump of the
+tracks data.
+</td></tr></table></p>
+
+
+
+
+
+<a name="HDFFORMAT"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+2.
+</b></font></td><td><font size="+2">
+HDF file format
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+<div align="center">
+
+<table border=1 bgcolor="#8080D0" cellspacing="2" cellpadding="4" width="50%">
+<tr bgcolor="#8080D0"><td colspan=2 align="center"><font color="#FFFFFF" size="+1"><b>Legenda</b></font></td></tr>
+<tr bgcolor="#f7f7ff"><td align="center" width="30%">WORD</td><td>2 bytes</td></tr>
+<tr bgcolor="#f7f7ff"><td align="center">DWORD</td><td>4 bytes</td></tr>
+<tr bgcolor="#f7f7ff"><td align="center">BYTE[N]</td><td>N bytes</td></tr>
+<tr bgcolor="#f7f7ff"><td align="center">ASCII[N]</td><td>N ASCII characters</td></tr>
+<tr bgcolor="#f7f7ff"><td align="center">ASCIIZ[N]</td><td>ASCII string with zero-padding to N bytes total</td></tr>
+<tr bgcolor="#8080D0"><td colspan=2><font color="#FFFFFF">All multi-byte values are stored in Intel byte order (little-endian).<br>
+All <em>reserved</em> or undefined bits must be set to zero.
+<br>
+All the headers fields must be filled in; blank values are not allowed.</font></td></tr>
+</table>
+
+<br><br>
+
+<table width="70%" border=0 cellspacing=1 cellpadding=2 bgcolor="#000000">
+<tr bgcolor="#80a0ff">
+<td colspan=4 align="center"><strong><font size="+2" color="#ffffff">HDF Header</font></strong></td>
+</tr>
+<tr bgcolor="#fff000">
+<td colspan=4 align="center"><font size="-2" color="#606060">HDF file header - <strong> status: <font color="#ff6060">required</font></font></strong></td>
+</tr>
+<tr bgcolor="#ffdf90">
+<td align="center"><strong>Offset</strong></td>
+<td align="center"><strong>Value</strong></td>
+<td align="center"><strong>Type</strong></td>
+<td align="center"><strong>Description</strong></td>
+</tr>
+<tr bgcolor="#c0f0ff">
+<td align="center">0x00</td>
+<td align="center">"RS-IDE"</td>
+<td align="center">ASCII[6]</td>
+<td>HDF signature</td>
+</tr>
+<tr bgcolor="#c0f0ff">
+<td align="center">0x06</td>
+<td align="center">0x1A</td>
+<td align="center">BYTE</td>
+<td>Termination marker</td>
+</tr>
+<tr bgcolor="#c0f0ff">
+<td align="center">0x07</td>
+<td align="center">0x11</td>
+<td align="center">BYTE</td>
+<td>HDF revision number<br>
+<font size="-2">
+Represented in BCD form: 0x11 = v1.1
+</font></td>
+</tr>
+<tr bgcolor="#c0f0ff">
+<td align="center">0x08</td>
+<td align="center">-</td>
+<td align="center">BYTE</td>
+<td>Flags<br>
+<font size="-2">
+b0: halved sector data (only LSB of sector words is stored)<br>
+b1: ATAPI device (e.g. CDROM)
+</font></td>
+</tr>
+<tr bgcolor="#c0f0ff">
+<td align="center">0x09</td>
+<td align="center">DOFS</td>
+<td align="center">WORD</td>
+<td>Image data offset<br>
+<font size="-2">
+This is the absolute offset in the HDF file where the actual hard-disk data dump starts.<br>
+In HDF version 1.1 this is 0x216.
+</font></td>
+</tr>
+<tr bgcolor="#c0f0ff">
+<td align="center">0x0B</td>
+<td align="center">0x00</td>
+<td align="center">BYTE[11]</td>
+<td>Reserved (must be set to zero)</td>
+</tr>
+<tr bgcolor="#c0f0ff">
+<td align="center">0x16</td>
+<td align="center">-</td>
+<td align="center">WORD[256]</td>
+<td>IDE/ATA device identification data<br>
+<font size="-2">
+This is the dummy sector information returned by ATA command 0xEC or ATAPI command 0xA1 (see bit 1 of the flags to determine
+which is the case)<br>
+Data are stored in words using the ATA convention (big endian), e.g. ASCII string "Hello!" is stored as "eHll!o"
+</font></td>
+</tr>
+<tr bgcolor="#c0f0ff">
+<td align="center">DOFS</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td>Raw disk data dump<br>
+<font size="-2">Tracks are stored in the following order: C0 H0, C0 H1 ... C0 H15, C1 H0, C1 H1 ...
+</font></td>
+</tr>
+</table>
+
+<br><br>
+</div>
+
+Note: IDE devices transfer data in 16-bit words.
+Since the Z80 data bus is only 8-bit, so some IDE adapters use additional logic to split the IDE
+word into two bytes so that the Z80 can fetch them. However, other adapters
+discard the most significant byte of the word completely, in favour of a
+simplified circuitry; in this case, only half of the nominal capacity of a
+disk sector is used. Bit 0 of the flags field is used to signal this
+evenience: when it is set, it means that the sector size specified by
+the IDE identification data is actually halved in the HDF file. This
+is done to reduce the HDF file size, by storing only the "usable" significant
+data; for all the supported adapters, the least significant byte is stored.
+<br><br>
+The IDE identification data format is reported into any IDE/ATA technical
+paper. It contains information about the drive geometry (cylinders, heads,
+sectors, sector size), the device model name, the supported features and so on.
+
+</td></tr></table></p>
+
+
+
+
+<a name="CONTACTS"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+3.
+</b></font></td><td><font size="+2">
+Contacts and useful links
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+The HDF format is currently maintained by Ramsoft.<br>
+The latest version of this document can be found at:
+<ul><li><a href="http://www.ramsoft.bbk.org/hdfform.html">http://www.ramsoft.bbk.org/hdfform.html</a></li></ul>
+Emails concerning the HDF specifications should be directed to:
+<ul><li><a href="mailto:ramsoft@bbk.org?subject=HDF">ramsoft@bbk.org</a></li></ul>
+<br>
+<b>Useful links and references for emulator authors</b><br><br>
+<ul>
+<li>A page with useful <a href="http://www.stanford.edu/~csapuntz/ide.html">links</a> to various ATA/IDE documents
+<li><a href="http://simonowen.com/sam/samdisk/">SamDisk</a> utility by Simon Owen can read/write HDF image files
+<li><a href="http://www.zxplus3e.plus.com/residos/">Residos</a> by Garry Lancaster is a Speccy OS which supports IDE devices, including +3e, ZXCF and ZXATASP
+<li><a href="http://baze.au.com/divide/">DivIDE</a> website contains info about the DivIDE interfaces as well as links to ATA stuff
+</ul>
+</td></tr></table></p>
+
+
+
+
+<a name="HISTORY"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+4.
+</b></font></td><td><font size="+2">
+Revision history
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+<b>Revision 1.1 (Jun 28th 2006)</b>
+<ul>
+<li>The HDF header now contains the full 512 bytes of the device identification data.</li>
+<li>Support for ATAPI devices (bit 1 of the flags defined).</li>
+</ul>
+<b>Revision 1.0 (Feb 20th 2001)</b>
+<ul>
+<li>First public release of this document.</li>
+</ul>
+</td></tr></table></p>
+
+
+</body>
+</html>

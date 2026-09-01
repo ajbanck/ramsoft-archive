@@ -1,0 +1,1640 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>
+RealSpectrum manual
+</title></head>
+
+
+<body bgcolor="#ffffff">
+<font face="Verdana">
+
+<div align=center>
+<table width="75%" border=0 bgcolor="#4040FF">
+<tr><td align=center><font size="+4" color="Cyan" face="Impact">Ramsoft's </font><font size="+4" color="Yellow" face="Impact">RealSpectrum</font></td></tr>
+</table>
+<p>
+<b><font size="+1">Release 14B</font></b>
+<br><br>
+<i>Version 0.97.26 (November 6th 2004)</i><br><br><br>
+</div>
+
+<div align=center>
+<p>
+<font size="+2">Summary:</font><br><br><br>
+<TABLE WIDTH="50%">
+<TR><TD ALIGN=LEFT><OL>
+<LI><B><A HREF="#INTRODUCTION">Introduction</A></b></LI>
+<LI><B><A HREF="#FEATURES">Features (emulated hardware, etc)</A></B></LI>
+<LI><B><A HREF="#REQUIRES">Requirements (hardware, rom files, etc)</A></B></LI>
+<LI><B><A HREF="#KEYS">General usage (keyboard, fileselector, etc)</A></B></LI>
+<LI><B><A HREF="#SNAPSHOTS">Snapshots</A></B></LI>
+<LI><B><A HREF="#TAPES">Tapes</A></B></LI>
+<LI><B><A HREF="#DISKS">Disks and Cartridges</A></B></LI>
+<LI><B><A HREF="#PERIPHERALS">Additional peripherals</A></B></LI>
+<LI><B><A HREF="#VIDEO">Video</A></B></LI>
+<LI><B><A HREF="#AUDIO">Audio</A></B></LI>
+<LI><B><A HREF="#POKES">Pokes (cheats) and memory options</A></B></LI>
+<LI><B><A HREF="#NETWORK">Internet Networking (TCP/IP)</A></B></LI>
+<LI><B><A HREF="#DEMOMODE">DemoMode</A></B></LI>
+<LI><B><A HREF="#DEBUGGER">Debugger</A></B></LI>
+<LI><B><A HREF="#FAQ">Frequently Asked Questions (FAQ)</A></B></LI>
+<LI><B><A HREF="#LICENSE">License, credits, contacts and bug reporting</A></B></LI>
+<LI><B><A HREF="#HISTORY">Revision history</A></B></LI>
+</OL></TD></TR></TABLE>
+</p>
+</div><br>
+
+
+<a name="INTRODUCTION"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+1.
+</b></font></td><td><font size="+2">
+Introduction
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+Welcome to RealSpectrum, a high-fidelity ZX Spectrum emulator with no compromises. It reproduces the Spectrum hardware with a previousely unseen accuracy and it has been designed to support the most advanced features for the most realistic audiovisual experience.<br>
+It is the world's first emulator offering 100% exact reproduction of all the
+multicolor effects commonly seen in demos and some games, not only on the
+screen but also in the border. It has faithful AY38912/YM2149 emulation for
+a great sound quality, with stereo and surround effects. It emulates a wide range of Spectrum models and peripherals, including the eastern clones and several disk interfaces. It can instantaneousely flashload many turbo-recorded tapes (including commercial games) thanks to a new loading technique, treating TZX files just like snapshots or disk images. It can load and save real Spectrum tapes and disks, respectively using the soundcard and the PC drive. It emulates the Sinclair Network over the Internet and provides a live chat system to facilitate the communication. It can even record video and sound to disk files. Besides, it has many other interesting features that make RealSpectrum the ideal demoscene emulator.
+</td></tr></table></p>
+
+
+
+
+<a name="FEATURES"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+2.
+</b></font></td><td><font size="+2">
+Features
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+This is the list of the currently implemented features, still growing today.
+
+<ul>
+<li>
+<b>World's first 100% exact multicolor renderer!</b> We have digged out
+all the ULA secrets (pant!), so we are now able to show all the amazing
+raster effects like on the real Spectrum!</li>
+<li>
+<b>Super-fine MCR. </b>The multicolor renderer is clock-precise, so it
+reproduces all the horizontal raster effects exactly (see the border in
+DOE and MDA for example).</li>
+<li>
+<b>Selectable resolution.</b> RealSpectrum can run at any (S)VGA resolution
+and supports all VESA1/2/3 modes and tweaked X-Mode. Depending on the screen
+size, the number of upper/lower and lateral border lines is automatically
+adjusted.</li>
+<li>
+<b>Scanlines.</b> At high resolutions we enable scanlines rendering to
+make the image more similar to the TV output.</li>
+<li>
+<b>Video recorder.</b> You can record the Spectrum video to a movie file in compressed AVI format. The video recorder panel allows several user customizations.
+<li>
+<b>Graphic interface.</b> All user interaction happens through a graphic
+windowing system which we are currently developing.</li>
+</ul>
+
+
+We put a special interest into audio quality:
+<ul>
+<li>
+<b>Digital mixing AY38912 and YM2149 emulator.</b> Very close to the real thing! Good envelopes reproduction.
+All the digital modplayers (such as DigiSynth, Morpheus, Soundtracker 2
+and so on) are working well.</li>
+<li>
+<b>Mono/Stereo and 8/16-bit sound output.</b> If your soundcard supports
+stereo playback, RealSPECTRUM can work in stereo mode enabling some amazing
+effects.</li>
+<li>
+<b>256-steps stereo panning.</b> Each channel can be panned independently
+to 256 positions ranging from extreme left to extreme right. There are
+three presets: NONE (centered), ABC and ACB stereo modes, plus you can
+define your own custom settings.</li>
+<li>
+<b>Surround sound!</b> The surround effect enhances the sound depth very
+nicely, even when the channels are all panned to center! Surround is obviousely
+available on stereo soundcards only.</li>
+<li>
+<b>Beeper vs AY loudness balancement.</b> You can choose the relative power
+of the AY respect to the beeper's volume (256 steps), so you can boost
+your favourite AY songs! :-)</li>
+<li>
+<b>Sound recorder.</b> You can dump the audio to a WAV, AZX or YM file for your Speccy tunes CD :-)</li>
+<li>
+<b>AY-LPT circuit support.</b> With just a few ICs and resistors you can
+connect a real AY-38912/10 chip to any LPT port of your PC and get the
+perfect sound quality of the "real thing"! (To do: 4-bit speech quality
+improvements).</li>
+<li><b>Many sound interfaces emulated.</b> See below for a full list of the musical interfaces emulated by RealSpectrum.</li>
+</ul>
+
+The CPU emulation is very accurate, every aspect of the Z80 microprocessor has been faithfully reproduced:
+<ul>
+<li>
+<b>Undocumented features.</b> Not only all the unofficial instructions
+are emulated, but we have also reproduced the undocumented behaviour of
+the flag register in all circumstances.</li>
+<li>
+<b>Clock-precise emulation.</b> Everything happens at the exact moment
+when the real Z80 does it (hopefully :-)); the bus lines accesses, interrupt
+sensing and processing, data transfers and so on are perfectly calibrated
+and distributed into the various internal machine states.</li>
+</ul>
+
+This is the list of the currently emulated hardware:
+<ul>
+<li><b>ZX Spectrum models: </b>16K, 48K, 128K, +2, +2A, +3, Didaktik Kompakt, Pentagon 128K/512K and Scorpion 256K.</li>
+<li><b>Multiface and Multiprint:</b> the complete Multiface brand is supported, including Multiface I, 128 and III, plus Softcrack, a special modified version by Lars Jespersen. If you have the rom, it can also load Genie automatically. Multiprint is a printing-oriented version of the Multiface.</li>
+<li><b>DISCiPLE/+D:</b> full implementation of the MGT disk interfaces, supporting GDOS, G+DOS and UNIDOS for both boards. RealSpectrum can read/write real MGT floppies inserted into the PC disk drive.</li>
+<li><b>Beta 128:</b> the standard disk interface for the russian Spectrum clones such as Pentagon, running the TRDOS operating system. Can also be enabled with the normal 128K, though.</li>
+<li><b>ZX Interface I:</b> the most popular mass storage interface for the Spectrum, supporting up to 8 microdrives.
+<li><b>MB-02+:</b> an incredibly powerful disk interface, featuring 512K SRAM, Z80 DMA chip, real time clock processor and many more.
+<li><b>Opus Discovery:</b> another popular disk interface, actually a real docking station for the Spectrum.
+<li><b>D80/D40:</b> popular disk interface widely spread in some european countries, included into the Didaktik Kompact clone.
+<li><b>Kempston mouse:</b> for use with russians utils and classic tools like Art Studio.
+<li><b>Sound interfaces:</b> Covox, Stereo Covox, Soundrive, SpecDrum, Music Machine and Intec (digital output only).
+<li><b>IDE/ATA hard-disk interfaces:</b> RealSpectrum emulates two hard-disks for SMUC, Spectrum +3e, ZXCF (CompactFlash) and Pera Putnik's IDE interfaces.
+<li><b>Scorpion SMUC and ProfROM:</b> the SMUC interfaces adds IDE hard-disk support, real time clock, NVRAM, CMOS and a PC-compatible serial to the Scorpion. The 512K ProfROM includes full SMUC support, as well as other features.
+</ul>
+
+<a name="FILEFORM">
+RealSpectrum supports the following file formats:</a>
+<br><br><br>
+<div align="center">
+<table border=1>
+<tr>
+	<td align="center"><strong>Category</strong></td>
+	<td width="45%" align="center"><strong>File formats</strong></td>
+	<td align="center"><strong>Notes</strong></td>
+</tr>
+<tr>
+	<td align="center">Snapshots</td>
+	<td>Z80 (with +3/Scorpion extensions)<br>SNA<br>SLT<br>SP</td>
+	<td>All variants supported.<br>SLT is supported only for reading.</td>
+</tr>
+<tr>
+	<td align="center">Tapes</td>
+	<td>TAP<br>TZX<br>WAV<br>CSW<br>RealTape (soundcard sampling)<br>MP3<br>OGG</td>
+	<td>All formats both read and write. Accelerated loading with FlashLoading and FastLoading. TZX DRBs supported.</td>
+</tr>
+<tr>
+	<td align="center">Disks</td>
+	<td>MGT, IMG (DISCiPLE/+D)<br>TRD, SCL (TRDOS)<br>MBD (MB-02+)<br>OPD (Opus Discovery)<br>DSK, EDSK (+3)<br>D80 (D80/Didaktik)<br>RealDisk (direct PC drive access)</td>
+	<td>RealDisk can read, write and format real floppy disks of all types into the PC drive. Both reading and writing for all formats, apart from SCL (read only).</td>
+</tr>
+<tr>
+	<td align="center">Other mass storage</td>
+	<td>MDR (Interface I microdrives)<br>HDF, HDD (hard-disk files)<br>
+	WDR (Wafadrive cartridges)</td>
+	<td>Integrated HDF management utility</td>
+</tr>
+<tr>
+	<td align="center">Audio/Video</td>
+	<td>AVI (audio/video recording)<br>WAV, YM, AZX (audio recording)<br>AY (music player)<br>SCR, BMP, PCX, TGA (screenshot saving)</td>
+	<td>AVI recorder supports selectable frame rates and capture area</td>
+</tr>
+<tr>
+	<td align="center">Extras</td>
+	<td>AIR (input recording and playback)<br>POK (pokes and cheats)<br>ROM (custom ROMs and IF-2 cartridges)</td>
+	<td>AIR is HCC Cup game tournament compliant. Custom ROMs can be used for all computer models and interfaces supported.</td>
+</tr>
+</table>
+</div>
+<br><br>
+
+Other features:
+<ul>
+<li><b>FlashLoading: </b>RealSpectrum can load <i>instantaneousely</i> (zero time) not only the old TAP files, but also many turbo TZX tapes, including all the most popular loading schemes used in commercial games.
+<li><b>FastLoading: </b>For all the other loaders not covered by FlashLoad, RealSpectrum provides an universal acceleration technique which reduces loading time by 30-50 times.</li>
+<li><b>Real Tape support: </b>Very reliable loading and saving to/from a tape recorder connected to the soundcard.
+<li><b>Network emulation via TCP/IP: </b>the Sinclair Network (found in the Interface I and DISCiPLE devices) is fully emulated over the Internet. Additional goodies are the integrated live chat system and the file exchange service. You can also play multiplayer games online.
+<li><b>DemoMode: </b> a special visualization mode which replaces the Spectrum screen with selectable graphic effects inspired by the background music. Also includes a .AY music player to reproduce .AY files. 
+<li><b>Real Disk support: </b>RealSpectrum can read and write real Spectrum disks (for all interfaces and models supported) inserted into the PC's floppy disk drive.
+<li><b>Parallel port emulation:</b> The Centronics port of DISCiPLE, +D, Opus Discovery, +2A/+3 and Scorpion can be redirected either to the PC printer port or to a file.
+<li><b>Serial port emulation:</b> Besides the standard Interface-1 and Spectrum 128K serial ports, the emulator can be easily configured to intercept any custom RS-232 I/O routine. The four COM1-COM4 port of the PC are supported, as well as file redirection.
+<li><b>Video recorder: </b> The emulator can save AVI files of your favourite games and demos. The movies can contain both audio and video or video only, and you can also specify the desired frame rate as long as several other quality parameters.
+<li><b>Machine debugger: </b>a complete low-level monitor to check and edit the internals of the emulated Spectrums.</li>
+</ul>
+</td></tr></table></p>
+
+
+
+
+<a name="REQUIRES"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+3.
+</b></font></td><td><font size="+2">
+Requirements
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+<h4>System</h4>
+The high detail of emulation offered by RealSpectrum requires intensive computations and memory accesses, so you'll probably need a 200 MHz Pentium
+class CPU (AMD are also fine, of course) to run smooth at any resolution
+with all features on. Yes we know that you're used to lower requirements with other past emulators, but that's the fee for the very top quality available today. Recommended at least 8MB of RAM.<br>
+RealSpectrum runs fine under Windows 9x/ME and pure MSDOS. It has been reported to work also under Windows NT4, 2000 and XP, but we do not recommend this environment due to several limitations imposed to DOS applications by the operating system (no sound, no real disk access, no network and more); in particular, NT4 seems to be more untolerant. See below for some notes on getting sound under these OSes.<br>
+To run under plain DOS (i.e. not within a Windows DOS box) you need the DPMI
+extender CWSDPMI.EXE.<br>
+To enhance disk performance when running RealSpectrum under pure MSDOS, we
+strongly suggest you to activate a disk cache program such as SMARTDRIVE
+(this is particularly needed when the WAV/AVI writer is active).
+<h4>Video</h4>
+RealSpectrum will run on any VGA card, but a VESA2 compliant video card is HIGHLY
+recommended. Depending on the selected video mode, RealSpectrum will choose the best driver amongst standard VGA, X-Mode and VESA1/2/3. VESA2/3 resolutions dramatically improve the performance. Video speed is really determinant for overall efficiency. If the BIOS of your video card does not support low-resolution VESA2 modes (320x240, etc), please download some of the extenders available such as Scitech's Display Doctor (or GX00VBE.EXE for Matrox G200/G400 cards).
+<h4>Soundcards</h4>
+The sound library used by RealSpectrum supports all the Soundblaster brand,
+ESS1688 and Windows Sound System (all cards based on AD1848/CS4231 chipsets). Most modern PCI soundcards provide some sort of SoundBlaster emulation to DOS programs when run under Windows, so RealSpectrum will usually run fine in a DOS box.
+If you want to run under plain DOS with sound, you'll probably need an ISA
+soundcard, since PCI cards like SB Live! or SB PCI64/128 usually have
+problems running in pure MSDOS; this is not our fault. If you have a PCI card,
+you'd better run RealSpectrum in a fullscreen DOS box under Windows 9x/ME.<br>
+To get sound under Windows NT/2000/XP you must install a software SB-16 emulator such as <a href="http://ntvdm.cjb.net/">VDMSOUND</a>, which is highly recommended to enjoy the RealSpectrum experience fully and to increase compatibility.
+<h4>ROM files</h4>
+The freely distributable roms are available in a separate archive which
+must be downloaded from our website. The package contains the following files:
+<p>
+<div align=center>
+<table width="75%" cellspacing="2" cellpadding="2" border="1">
+<tr>
+    <td align="center" bgcolor="#ffffd0"><b>Computer/Peripheral</b></td>
+    <td align="center" bgcolor="#ffffd0"><b>ROM filename</b></td>
+    <td align="center" bgcolor="#ffffd0"><b>ROM size</b></td>
+    <td align="center" bgcolor="#ffffd0"><b>Notes</b></td>
+</tr>
+<tr>
+    <td align="center">Spectrum 16/48K</td>
+    <td align="center">48.rom</td>
+    <td align="center">16384</td>
+    <td align="center">Standard 48K ROM</td>
+</tr>
+<tr>
+    <td align="center">Spectrum 128K</td>
+    <td align="center">128.rom</td>
+    <td align="center">32768</td>
+    <td align="center">Standard 128K ROM</td>
+</tr>
+<tr>
+    <td align="center">Spectrum +2</td>
+    <td align="center">plus2.rom</td>
+    <td align="center">32768</td>
+    <td align="center">Standard +2 ROM</td>
+</tr>
+<tr>
+    <td align="center">Spectrum +2A/+3</td>
+    <td align="center">plus3.rom</td>
+    <td align="center">65536</td>
+    <td align="center">+2A/+3 ROM v4.0</td>
+</tr>
+<tr>
+    <td align="center" rowspan=2>Pentagon 128K</td>
+    <td align="center">pentagon.rom</td>
+    <td align="center">32768</td>
+    <td align="center">Standard ROM</td>
+</tr>
+<tr>
+    <td align="center">trdos.rom</td>
+    <td align="center">16384</td>
+    <td align="center">TRDOS v6.04</td>
+</tr>
+<tr>
+    <td align="center">ZS Scorpion 256K</td>
+    <td align="center">scorpion.rom</td>
+    <td align="center">65536</td>
+    <td align="center">Standard ROM</td>
+</tr>
+<tr>
+	<td align="center">ZX Interface I</td>
+	<td align="center">if1.rom</td>
+	<td align="center">8192</td>
+    <td align="center">Standard ROM v2</td>
+</tr>
+<tr>
+    <td align="center">MGT DISCiPLE</td>
+    <td align="center">gdos.rom</td>
+    <td align="center">16384</td>
+    <td align="center">GDOS3 + System 3b</td>
+</tr>
+<tr>
+    <td align="center">MGT +D</td>
+    <td align="center">gdos-pd.rom</td>
+    <td align="center">16384</td>
+    <td align="center">G+DOS + System 2a</td>
+</tr>
+</table>
+</div>
+<p>
+RealSpectrum will also work perfectly with different versions of the ROM files, just specify the new filenames in the INI or select them directly from the F3 menu. For example, you may wish to use a v4.1 ROM for +2A/+3 or an old Interface I v1 ROM, special Pentagon/Scorpion systems, and so on.
+<p>
+In order to use certain emulated interfaces (such as the Multiface), you need the appropriate ROM files which are *NOT* included in the standard ROMs package for copyright reasons; if you own any of the files listed below, just copy them into the RealSpectrum's directory.
+<p>
+<div align=center>
+<table width="85%" cellspacing="2" cellpadding="2" border="1">
+<tr>
+    <td align="center" bgcolor="#ffffd0"><b>Peripheral</b></td>
+    <td align="center" bgcolor="#ffffd0"><b>ROM filename</b></td>
+    <td align="center" bgcolor="#ffffd0"><b>ROM size</b></td>
+	<td align="center" bgcolor="#ffffd0"><b>Notes</b></td>
+</tr>
+<tr>
+    <td align="center">UNIDOS DISCiPLE</td>
+    <td align="center">uni-disc.rom</td>
+    <td align="center">8192 or 16384</td>
+    <td align="center">UNIDOS v2 for DISCiPLE</td>
+</tr>
+<tr>
+    <td align="center">UNIDOS +D</td>
+    <td align="center">uni-pd.rom</td>
+    <td align="center">8192 or 16384</td>
+    <td align="center">UNIDOS for +D</td>
+</tr>
+<tr>
+    <td align="center">Multiface One</td>
+    <td align="center">mf1.rom</td>
+    <td align="center">8192</td>
+    <td align="center">ROM for v2.1</td>
+</tr>
+<tr>
+    <td rowspan="3" align="center">Multiface 128</td>
+    <td align="center">mf128v35.rom</td>
+    <td align="center">8192</td>
+    <td align="center">v87.1 ROM for v3.5</td>
+</tr>
+<tr>
+    <td align="center">mf128.rom</td>
+    <td align="center">8192</td>
+    <td align="center">v87.2 ROM for v3.6-DIS</td>
+</tr>
+<tr>
+    <td align="center">genie.rom</td>
+    <td align="center">16384</td>
+    <td align="center">Same with pre-loaded Genie</td>
+</tr>
+<tr>
+    <td align="center">Multiface 3</td>
+    <td align="center">mf3.rom</td>
+    <td align="center">8192</td>
+    <td align="center">ROM for v5.0</td>
+</tr>
+<tr>
+    <td align="center">Multiprint</td>
+    <td align="center">mprint.rom</td>
+    <td align="center">8192</td>
+    <td align="center">ROM for v1987/5</td>
+</tr>
+<tr>
+    <td align="center">Softcrack</td>
+    <td align="center">softcrck.rom</td>
+    <td align="center">8192</td>
+    <td align="center">Softcrack ROM</td>
+</tr>
+<tr>
+    <td align="center">SpecMate</td>
+    <td align="center">specmate.rom</td>
+    <td align="center">8192</td>
+    <td align="center">SpecMate ROM</td>
+</tr>
+<tr>
+    <td align="center">MB-02+</td>
+    <td align="center">mb02.rom</td>
+    <td align="center">2048 or 32768</td>
+    <td align="center">Boot ROM or BSROM + BSDOS</td>
+</tr>
+<tr>
+    <td align="center">Opus Discovery</td>
+    <td align="center">opus.rom</td>
+    <td align="center">8192</td>
+    <td align="center">Opus shadow ROM</td>
+</tr>
+<tr>
+    <td align="center">D80/D40 MDOS</td>
+    <td align="center">d80.rom</td>
+    <td align="center">14336</td>
+    <td align="center">MDOS ROM</td>
+</tr>
+<tr>
+    <td align="center">Didaktik Kompakt</td>
+    <td align="center">didaktik.rom</td>
+    <td align="center">16384</td>
+    <td align="center">Requires also D80 ROM</td>
+</tr>
+<tr>
+    <td align="center">Scorpion ProfROM/SMUC</td>
+    <td align="center">zsprof.rom</td>
+    <td align="center">524288</td>
+    <td align="center">ProfROM for SMUC support</td>
+</tr>
+<tr>
+    <td align="center">Wafadrive OS</td>
+    <td align="center">wafadrv.rom</td>
+    <td align="center">8192</td>
+    <td align="center">Wafadrive ROM v1.80</td>
+</tr>
+</table>
+
+</div>
+<p>
+The normal DISCiPLE/+D BIOS files (both GDOS and UNIDOS) are 8K in size, but a 16K interface memory image can be provided; in this case the operating system is pre-loaded and doesn't need to be booted.
+<p>
+For the MB-02+ we strongly recommend to use a dump of the integrated Eprom (2K), which enables the full booting procedure (system disk required). Alternatively, a 32K memory image of BSROM + BSDOS (the first two SRAM banks once the system is booted) can be used, but the original boot procedure will be unavailable - too bad! ;-)
+<p>
+The ZS Scorpion Professional Extension ROM (ProfROM) actually includes 2 independent 256K banks that can be switched from the hardware properties panel (F3+F3).
+<p>
+The Softcrack software is available for download from the <a href="http://www.ramsoft.bbk.org/realspec.html">RealSpectrum download page</a>. The ZIP includes the manual and version 9.2 (for ZX-IF1 and Beta) and 9.4 (for DISCiPLE/+D and Opus Discovery) on 2 different .TAP files. To save them as a "ROM dump" you can simply load them in the Softcrack memory, press the snapshot button, enter the debugger-monitor and then dump the lower memory area in a file (16384 bytes from address 0) using the options in the F9 panel.
+<p>
+<b>Important:</b> Please don't ask us to send you any of these ROMs - we can't, really.
+<h4>Networking</h4>
+Please read the <a href="#NETWORK">"Internet Networking"</a> chapter carefully.
+</td></tr></table></p>
+
+
+
+
+<a name="KEYS"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+4.
+</b></font></td><td><font size="+2">
+General usage (keyboard, fileselector, etc)
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+<h4>Running RealSpectrum</h4>
+To install RealSpectrum, simply unpack the archive into some directory on your hard-disk and launch the executable (REALSPEC.EXE). If you are using Windows, first open a DOS prompt (Start->Programs->DOS Prompt) and move to the RealSpectrum directory (e.g. if you installed it in C:\REALSPEC then type "CD C:\REALSPEC"). Make sure your system meets the requirements reported in the previous chapter (operating system, supported hardware, additional ROM files, etc).
+<br><br>
+RealSpectrum should be quite easy to use, since everything is done through a series of graphic menus; you can press F1 at any time to get a multi-page list of the keys for the various functions.<br>
+The startup settings are read from the REALSPEC.INI configuration file, a plain text file which can be edited to suite your needs; each option line of the file is commented, so you should be able to understand it clearly once you have read this manual.<br>
+RealSpectrum can also accept command line parameters. The list of the available switches can be obtained by typing "REALSPEC -?" (or -h); the parameters entered from the command line take priority over the INI settings.
+<p>
+Once started, RealSpectrum can be controlled through the following keys, which give access to the various GUI menus to change settings and parameters.
+<p>
+<div align="center"><table width="80%" border="1" cellpadding="4">
+<tr><td align="center"><b>F1</b></td><td>Show help screen</td></tr>
+<tr><td align="center"><b>ALT-F1</b></td><td><a href="#KEYB">Tokenizer</a></td></tr>
+<tr><td align="center"><b>CTRL-F1</b></td><td><a href="#EXTRASETT">Additional emulation settings</a></td></tr>
+<tr><td align="center"><b>F2</b></td><td>Generate NMI (Multiface, DISCiPLE/+D without Multiface, etc.)</td></tr>
+<tr><td align="center"><b>SHIFT-F2</b></td><td>Generate NMI (for DISCiPLE/+D when Multiface is enabled)</td></tr>
+<tr><td align="center"><b>ALT-F2</b></td><td>Reset Spectrum</td></tr>
+<tr><td align="center"><b>F3</b></td><td><a href="#PNLHW">Hardware configuration menu</a></td></tr>
+<tr><td align="center"><b>ALT-F3</b></td><td><a href="#PNLCOMM">Communication ports menu</a></td></tr>
+<tr><td align="center"><b>F4</b></td><td><a href="#PNLJOY">Joystick and mouse configuration menu</a></td></tr>
+<tr><td align="center"><b>ALT-F4</b></td><td><a href="#PNLAIR">Action recording/playback menu</a></td></tr>
+<tr><td align="center"><b>CTRL-F4</b></td><td><a href="#PNLIDE">IDE Hard-Disk control panel</a></td></tr>
+<tr><td align="center"><b>F5</b></td><td><a href="#SNAPSHOTS">Load snapshot file</a></td></tr>
+<tr><td align="center"><b>ALT-F5</b></td><td><a href="#SNAPSHOTS">Save snapshot file</a></td></tr>
+<tr><td align="center"><b>F6</b></td><td><a href="#DISKS">Load disk and cartridge files</a></td></tr>
+<tr><td align="center"><b>ALT-F6</b></td><td><a href="#RDISKUT">RealDisk utility or empty cartridge creation</a></td></tr>
+<tr><td align="center"><b>F7</b></td><td><a href="#TAPES">Open tape file</a></td></tr>
+<tr><td align="center"><b>ALT-F7</b></td><td><a href="#TAPEOPT">Tape options menu</a></td></tr>
+<tr><td align="center"><b>CTRL-F7</b></td><td>Start/stop tape</td></tr>
+<tr><td align="center"><b>SHIFT-F7</b></td><td>Tape browser</td></tr>
+<tr><td align="center"><b>F8</b></td><td><a href="#DEMOMODE">DemoMode</a></td></tr>
+<tr><td align="center"><b>ALT-F8</b></td><td><a href="#NETWORK">Network Options</a></td></tr>
+<tr><td align="center"><b>CTRL-F8</b></td><td><a href="#NETCHAT">Send chat message</a> (network)</td></tr>
+<tr><td align="center"><b>SHIFT-F8</b></td><td><a href="#NETFILES">Send file</a> (network)</td></tr>
+<tr><td align="center"><b>F9</b></td><td><a href="#POKES">Trainer selection menu (pokes)</a></td></tr>
+<tr><td align="center"><b>ALT-F9</b></td><td><a href="#MEMOPT">Memory block operations (load/save chunks)</a></td></tr>
+<tr><td align="center"><b>F10</b></td><td>Quit RealSpectrum</td></tr>
+<tr><td align="center"><b>ALT-F10</b></td><td>Quit immediately</td></tr>
+<tr><td align="center"><b>F11</b></td><td><a href="#VIDEO">Video resolutions menu</a></td></tr>
+<tr><td align="center"><b>ALT-F11</b></td><td><a href="#VIDEOXTRA">Extra video options menu</a></td></tr>
+<tr><td align="center"><b>F12</b></td><td><a href="#AUDIO">Sound options menu</a></td></tr>
+<tr><td align="center"><b>ALT-F12</b></td><td><a href="#AUDIOXTRA">Extra sound options menu</a></td></tr>
+<tr><td align="center"><b>ESC</b></td><td>Enter/leave <a href="#DEBUGGER">debugger</a></td></tr>
+<tr><td align="center"><b>TILDE</b></td><td>Run at full speed. (Tilde is the key before '1' and below ESC)</td></tr>
+</table></div>
+<p>
+<a name="KEYB"><h4>The Spectrum keyboard, the Tokenizer and localization</h4></a>
+Some special keys which require multiple keypresses on the Spectrum are replicated directly on the PC keyboard: the arithmetic operators on the keypad, ',' and '.'. Besides, the emulator has the following assignements: CTRL = Symbol Shift, CAPS = Caps Lock, BACKSPACE = Delete, TAB = Extend Mode.
+<p>
+The Tokenizer is a special feature to enter BASIC commands and program lines very easily. Now you can type the commands character by character also in the 48K BASIC editor, without having to remember the numberous token assignements of the Spectrum keyboard. The Tokenizer is opened by pressing ALT-F1 and it brings you a multi-line text editor where you can type any sequence of BASIC statements, including full program lines. To provide further help, the editor highlights the BASIC syntax by printing the various elements with different colors: white for valid statements and punctuation, green for line numbers, cyan for text strings, purple for numbers and yellow for variable names and other elements. Once that you have finished typing, close the editor by pressing ENTER and the emulator will automatically generate the proper sequence of keypressed to be passed to the BASIC editor: you will see the commands being autotyped at lightspeed for you!<br>
+For an example of use, go to 48K mode with the flashing K cursor, press ALT-F1 and enter some BASIC commands such as '10 BORDER 0: PAPER 0: INK 7: CLS: PRINT "Hello Tokenizer"' using the normal PC keyboard layout. Note the spaces, you must isolate the tokens clearly (watch the syntax highlighting colors to understand if you type the commands in the proper way). To finish, press RETURN and enjoy the show! :-) By the way, in this example you will have to press ENTER again to add the line to the program.
+<p>
+For a comfortable use, you must set the international layout of the keyboard for your country. To do so, use the "Keyboard: IT" line in the configuration file of RealSpectrum (realspec.ini), where "IT" stands for the international code of your country (Italy, in this case). The following codes are recognized: BE, BR, CH, CZ, DE, DK, DVORAK, ES, FI, FR, IT, NO, PT, RU, SE, SK, UK and US. By default (in absence of the "Keyboard:" line), RealSpectrum uses the US layout. 
+<h4>The Fileselector</h4>
+Some of the menus above will bring you a fileselector where you can choose a file to load or save.<br>
+The upper part of fileselector window shows a list of directory and files, sorted by name; the currently selected item is highlighted by a red bar, which you can move up and down using the arrow keys of the PC keyaboard. Only files of the matching types for the context are shown (i.e. SNA and Z80 for snaphots, and so on). You can also use the keys PGUP/PGDN to move faster and HOME/END to go to the first and the last item respectively. If a filename is too long to fit into the window, it will appear truncated with "..." at the end; in this case use ALT + the arrow keys to scroll left and right the whole fileselector window, so that you can see all the parts of the filename. ALT+HOME and ALT+END take you to the beginning and to the end of the filename respectively.<br>
+The first line of the window shows the path of the current working directory. At the bottom of the window there is an edit line where you can type the initials of the file your are looking for to speed up selection. Whenever you press an alphanumeric character, the selection bar is moved automatically to the file with the nearest name to the string appearing into the edit line. You can delete characters with the usual BACKSPACE key.<br>
+You can change the working directory and drive by highlighting the desired directory or drive letter and then pressing ENTER.<br>
+Once you have highlighted the desired file, press ENTER to confirm selection and quit the fileselector.<br>
+When the fileselector is opened for saving, it will only show directories and drives so that you can choose the path where to save the file and you must type in the filename which will appear in the edit field. In some cases you can also choose the file format with the left/right arrow keys; the currently selected format is shown in the "Save as" line. If the edit line looses the focus (i.e. the characters you type don't appear), use the TAB key to set it back.<br>
+Please note that RealSpectrum fully supports long filenames if run under Windows 95 and above.
+<h4>Compressed archives support</h4>
+RealSpectrum can handle automatic extraction of files contained into compressed archives. ZIP, RAR, ARJ and ACE archives are listed after ordinary files into the fileselector with the "ARC" label. When opened, the fileselector shows their content just like if they were common directories; then use the ".." dummy directory to close the archive content. If you open a file contained into a compressed archive, RealSpectrum will automatically invoke the appropriate procedures to extract it to a temporary directory. The default programs called are <i>rar.exe</i> for RAR, <i>arj.exe</i> for ARJ and <i>ace.exe</i> for ACE; of course these executables must be included in the default DOS path. ZIP archives can be decompressed without the need of any external programs; for the other formats, you can customize the name of the extractors in the [Archives] section of REALSPEC.INI; for example you may use <i>ace32.exe</i>, <i>unrar.exe</i> and <i>unarj.exe</i> - don't forget to include the various switches. To disable compressed files support completely, uncomment the line "ListArchives: 0" into the INI file. If the temporary directory cannot be created in the RealSpectrum startup path, an error message is given and compressed archives support is automatically disabled; the temporary directory is called "RSPECTMP" and it is deleted when you exit the emulator.
+<br>
+<b>Warning: </b>there are a couple of things to bear in mind: 1) DOS archiving utilities usually do not support long filenames, so you may get extraction errors if the archives contain such filenames (exception: ARJ v2.60+); please use LFN-aware equivalents is available (such as ace32.exe for ACE). 2) Calling text mode, 16-bit DOS programs from a graphical, 32-bit environment such as RealSpectrum may cause problems; under certain circumstances, the system may become unstable and in this case it is advisable to restart immediately. This is not our fault, sorry. If you are experiencing serious troubles, disable compressed files support in the INI (see above).
+<a name="PNLHW"><h4>The Hardware Configuration menu (F3)</h4></a>
+From this panel you can select the various Spectrum models and interfaces. Use the TAB key to move the cursor focus between the sub-panels. If you press F3 again, a popup panel will show some model-specific properties such as soundchip type, memory expansions, ROM filename, multicolor timings (see below) and so on; properties can be modified by using the usual left/right arrows or by pressing ENTER. If the Spectrum model is selected with SHIFT+ENTER, the CPU is not reset.<br>
+By pressing SPACE, you can choose and load a custom ROM file for the highlighted Spectrum model or peripheral; use the fileselector to selected the desired ROM image, which will be used from now on for the specified model. The same thing can be done by pressing ENTER over the ROM line of the properties panel. <br>
+Note that when you change Spectrum model and Multiface is enabled, the Multiface type is automatically changed to ensure hardware compatibility; RealSpectrum will advise you with a message on the screen when Spectrum emulation restarts.
+<br><br>
+Note about the multicolor timings option: a recent investigation has revealed that all Spectrums are not born the same. In certain 48K and 128K/+2 machines,
+the multicolor timings differ by 1 clock cycle from their usual values; this can be seen for in MDA demo and Megalomania demo (for 128K), and in a simple BASIC program which draws some stripes on the border (for 48K);
+the exact details, including the BASIC listing, can be found in a discussion on the CSS newsgroup.<br>
+Only a small number of Spectrums show the alternate timings (about 10-15%). At the moment, the exact hardware cause is unknown, but we already know that it does
+not depend on the issue revision or the manufacturer of the Z80 CPU chip. Until further investigations, we guess that it might have something to do with the components attached to the INT line of the processor.
+<a name="PNLCOMM"><h4>The Communication Ports menu (ALT-F3)</h4></a>
+This control panel lets you configure the parallel and serial ports emulation. Please read carefully the information below.
+<h4>Parallel port</h4>
+Parallel port emulation is available for DISCiPLE, +D, +2A/+3, Opus Discovery and Scorpion. The available settings are "OFF", "LPT1" (PC parallel port at address 0x378), "LPT2" (PC parallel port at address 0x278) or a mirror file (in this case, the file name is displayed). To change the dump file, press ENTER when the old file is showed and use the save-to fileselector normally.
+<h4>Serial ports</h4>
+RealSpectrum supports bidirectional serial communications using the standard PC RS-232 ports (COM1-COM4) or file redirection. On the Spectrum, the standard Interface-1 and 128K/+2 built-in serial ports are automatically attached to the serial line, with the Interface-1 taking precedence over the 128K if both are selected. Aiming to provide the most flexible support, we have included a special trapping system which allows RealSpectrum to work also with custom RS-232 routines and devices, other than the standard 128K and IF-1 ones; this includes third-party serial interfaces, modem communication programs and so on. In short, any serial I/O routine which respects a very common calling convention will work perfectly. Let's see the serial panel in detail:
+<ul>
+<li>RS-232: select the PC serial port (COM1-COM4) to use, or "OFF" to disable serial port emulation completely. Just like the parallel port emulation, you can also choose to redirect the RS-232 output to a file (press ENTER while the file name is showed to select a new one).
+<li>Baud rate: this is the speed of the PC serial port, ranging from 150 to 115200 baud. The baud rate must be the same as the speed used by the DCE device connected to the serial port. This value is ignored for file redirection.
+<li>Handshake: according to the type of your serial cable, you can set the RS232 handshake to none, hardware (RTS/CTS) or software (XON/XOFF).</li>
+<li>Routines: this line selects the type of serial I/O routines are currently used. If you are using the standard ROM routines, then either "Interface-1" or "Spectrum 128K" will be showed. To select custom routines, press the left arrow and type in two 4-digits hexadecimal addresses (separated by a space) for the input and output routines respectively (e.g. "8000 8100"). RealSpectrum uses the standard Sinclair conventions (Interface-1 and 128K routines):
+<ul>
+<li>Byte-Input routine: the byte received from the serial port is placed into the A register of the CPU. The carry flag is set if no errors occurred, otherwise the flags are C=0 and Z=1.</li> 
+<li>Byte-Output routine: the routine is called with the A register containing the byte to transmit. The carry flag is set if no errors occurred.</li> 
+</ul>
+</ul>
+For the RS-232 frame RealSpectrum uses eight data bits, one stop-bit, no parity and no flow-control handshake. This is the most common configuration for serial data transfers and the default behaviour for the standard ROM routines.<br>
+Note that the baud rate must be set according to the communication speed of the "remote" device, and not of the "local" routines that run on the emulator. The serial I/O routines at the emulated side are virtualized and so their settings are completely ininfluent. Let's see some simple examples:
+<ul>
+<li>Direct connection to a real Spectrum with a null-modem cable: if you set the baud rate on the Spectrum to 9600 baud, then you must use 9600 also on the emulator. On the Spectrum 128K you set the baud rate with <i>FORMAT "p";9600</i> (or any other valid rate), while on the Interface-1 you must use channel "b" or "t" instead of "p". Please read the Interface-1 manual for more details about serial communications.
+<li>Modem control: if you are using your usual 56K modem, choose a baud rate of 115200; for older modems, use the maximum DTE-DCE speed allowed by the device.
+<li>Connection between two PCs running RealSpectrum: in this case there's no reason to limit the baud rate below 115200 (provided that the PCs have fast UARTs, of course), since both ends are virtualized.
+</ul>
+So you can now surf the Internet at 56 Kbps also with the Spectrum! Shall we see a PPP dialer and a web browser soon? :-)
+
+<a name="PNLJOY"><h4>The Joystick and Mouse Configuration menu (F4)</h4></a>
+RealSpectrum supports up to 4 PC joysticks and the PC cursor keys; each of them can be mapped to any supported Spectrum joystick such as Kempston, Sinclair 1 and Sinclair 2. The number of physical joysticks currently connected to the game port of your PC is reported in the last line of the menu. Use the arrow keys to select the various types and to set the assignements.<br>
+You can also use the PC keyboard to emulate any of the joysticks. The "Emulated joystick keys" section of the menu shows the current key assignements for the various directions and they can be completely redefined; to change a key, follow this procedure: select it and press RETURN (the previous assignement goes blank), then press the key on the PC keyboard that you want to use (it can be any key, including special ones) et voila'; repeat the procedure for all 5 keys if you wish. The number printed in brackets on the right of the key name is its associated scancode; you will need this number if you want to store your custom assignements permanently into the INI file: locate the line "Joystick-Keys:" under [PERIPHERALS] and put the five scancodes for up, down, left, right and fire (in this exact order) separated by spaces, just like in the default example provided.<br>
+With the Mouse Type option you can turn on/off the Kempston mouse emulation, which is supported in many many programs for Pentagon and Scorpion (utilities, games, disk loaders, etc) and some classic software like Art Studio.
+
+<a name="PNLIDE"><h4>IDE Hard-Disk control panel (CTRL-F4)</h4></a>
+Starting from beta 10 release, RealSpectrum supports emulation of the most common IDE/ATA interfaces designed for original Spectrums and clones using virtual hard-disk image files in plain-dump or Ramsoft HDF format . Pressing left/right arrows on the first entry in the panel allows you to select between: 
+<ul>
+<li> SMUC IDE controller for ZS Scorpion (16-bit data bus)
+<li> +3e simple IDE controller (8-bit data bus)
+<li> Pera Putnik's simple (8-bit) and standard (16-bit) IDE controllers (both 48K and 128K-compatible versions)
+<li>ZXCF Compact Flash interface (with 1MB RAM).</li> 
+</ul>
+You can "connect" up to 2 virtual drives at the same time (the usual master and slave drives on an IDE channel) simply by pressing ENTER on the appropriate line on the panel and choosing the file you want. If the image you selected is not in HDF format, the emulator will try to guess the HD geometry parameters; please NOTE that this operation does NOT guarantee 100% correct detection. If you think that RealSpectrum didn't report the correct values, you can alter them using left/right arrows and plus and minus keys on the keypad.
+If you don't have any hard-disk image, you can create a new one using the INS key; you will then be asked to enter the following parameters:
+<ul>
+<li>Model: a string containing the hard disk brand and model to be read when the host issues an "Identify drive" command.
+<li>Cylinders: the number of cylinders (tracks) in the drive (up to 1023).
+<li>Heads: the number of heads in the drive (max. 16).
+<li>Sectors: the number of sectors per cylinder (up to 63).
+<li>Sector size: you can switch between 512 (default) and 256 bytes per sector. This option MUST be set to 512 bytes for images used on IDE interfaces with 16-bit data bus (i.e. SMUC and Pera Putnik's standard IDE) or DATA LOSS will occur. Choosing 256 bytes per sector will generate an image suitable only for 8-bit interfaces (as +3e and Pera Putnik's simple IDE) which effectively halve the capacity of a disk. Note that images with sector length of 512 bytes can be used on 8-bit interfaces as well, with the only inconvenient that half of the image will result unused; in fact, the purpose of the 256-bytes trick is to reduce the disk space taken by the hard-drive image file. If you're NOT SURE of what you're doing, please USE THE DEFAULT OPTION.
+</ul>
+
+Each parameter can be altered using left/right arrow and keypad '+' and '-' keys. Once you're happy with your settings press ESC or ENTER to save your image on disk; all the informations you entered are saved in a header of the resulting .HDF file so that next time you open the drive image you won't need to re-enter them.
+<br><br>
+For HDF files specifications, look in our <a href="http://www.ramsoft.bbk.org/tech.html">technical section</a>. Garry Lancaster made some tools to read and write HDF files to and from real hard disk drives. The HDF utilities are available for download both at the official homepage of RealSpectrum and at the +3e site (see the credits chapter for the links).
+<br><br>
+Please visit the official homepages of the various IDE interfaces for information about the circuitry and the syntax to access the hard-disk filesystem. Links are provided into the <a href="#SITES">links</a> section of this manual.
+
+<a name="PNLAIR"><h4>Action Recording menu (ALT-F4)</h4></a>
+RealSpectrum can record all the keypresses and joystick movements you make and store them into AIR files. Then you can tell the emulator to replay the same sequence back whenever you want, and watch exactly what you did without moving a single finger. This feature can be useful in several ways, for instance you can:
+<ul>
+<li>Record the complete solution of a game, from the beginning to the end. In this way you can let other people see how you finished the game, or simply watch it yourself how many times you want like a movie :-) A comprehensive archive of games solutions is being created at <a href="http://www.thespian.demon.co.uk/air">CSS AIR collection</a> and everybody is invited to contribute!</li>
+<li>Take part in game tournaments, by recording your best attempt to beat the highest score in the competition. AIR files were designed specifically for the HCC Cup and are being used for the Speccy Tour 2001.</li>
+<li>Record a particular procedure, e.g. to show someone else how to use a certain program.</li>
+</ul>
+AIR files are extremely small: the complete solution of Robocop fits into as little as 2 KB of data, so they are perfect for sharing on the Internet. The files are also encrypted, so it is not possible for anyone to alter the data and cheat.
+<p>
+The Action Recording menu has the following options:
+<ul>
+<li>Start new recording: use the fileselector as usual to enter the AIR filename and then the action recording begins. If the Snapshot Sync option is enabled (see below), you will be asked to load or save a snapshot first: press ENTER to load a snapshot, or CTRL-ENTER to save a new one. Please use .Z80 snapshots only.</li>
+<li>Start new playback: select the AIR file to replay with the fileselector. Don't forget to load the proper program/game, first :) If the Snapshot Sync option is enabled (see below), you will be asked to load a snapshot; in this case, remember to load the same snapshot that was used for the recording.</li>
+<li>Compo mode (HCC Cup codes): this option is specifically intended for game competitions, and it enables the SA-codes mechanism required for authentication. When Compo mode is enabled, RealSpectrum enforces several security measures to prevent cheating. For all non-competition purposes, you should disable it. See below for more information.</li>
+<li>Snapshot Synchronizer: if enabled, you will be asked to load or save a snapshot before starting a new playback or recording, respectively. This option has been introduced to enforce a perfect timing synchronization between the program execution and the recorded action for subsequent playbacks, and in general it is a good idea to keep it enabled, especially with games. Such a strong condition is required when the game (or program) you are about to run contains action schemes generated randomly on a timing-dependent basis (e.g. random enemy waves). Let's take Batman the Movie as an example: in the third level of the game you must guess a combination of symbols, which is different each time you play the game; this is a problem, because if a different combination occurs when you play back the recorded action, the third level will not be played correctly and the game will start to behave differently from that point on. To avoid this, you must enable the snapshot sync feature with Batman, <em>both when you record and when you replay</em> the action; in particular, for the replay remember to load back exactly the same snapshot that was saved (or loaded) contextually with the recording. RealSpectrum will change automatically the computer model accordingly to the loaded snapshot, regardless of the "Model switching" setting in CTRL-F1; for this reason, please use only .Z80 snapshots, because .SNA files do not contain detailed computer model information (only 48K and 128K can be discerned).<br>
+On the other hand, other games seem to work also without using snapshots, e.g. Robocop and Arkanoid. Since there are no easy criteria to determine whether a game requires the snapshot sync or not (apart from direct experiments), we recommend you to leave this setting enabled. The golden rule is: always replay the AIR files and make sure they work, before spreading or submitting them!</li>
+</ul>
+During recording or playback, the menu options change to "Pause rec/play" and "Stop rec/play". During playback, the Spectrum keyboard and joystick controls are disabled (you can only watch). When the playback finishes (or it is stopped/paused), you can control again the keyboard and joystick. Pausing is disabled in compo mode.
+<p>
+<b>Command line:</b> to begin recording or playback when the emulator starts, you can use the commandline switches "<em>-playback game.air</em>" or "<em>-record game.air</em>"; give your S-code with "<em>-scode 555</em>" and RealSpectrum will tell you your A-code when it's started. For instance, you can start to record an attempt at Batman (by loading the already-existing snapshot file <em>batman.z80</em>) with the command "<em>realspec batman.z80 -record batman.air</em>"; to play it back, start the emulator with "<em>realspec batman.z80 -playback batman.air</em>". If specified, RealSpectrum will use the directory indicated into the INI for the action recording files, or the emulator's directory if not specified. Controlling the action recording function from the command line automatically ensures a perfect timing sinchronization (see the Snapshot Sync option for more details about this subject).
+<p>
+<b>Important notice: </b>for other people to be able to replay the action exactly, it is a good idea to state expressly the context about the recording. For example, you should specify whether the game/program was loaded as a snapshot, a tape or a disk (and possibly provide the file or a link), the moment when you started the recording (end of loading, main menu, etc), what to do in case of multiload games (e.g. pause before starting the tape and restart after loading), etc. If the starting point is critical, provide an accurate description of the situation when the user must start playback or pause/unpause (e.g. report the text messages displayed by the game on the screen). It is up to you to ensure that playback starts under the same conditions as the original recording. If necessary, specify the use of the Snapshot Sync option, or command line operation mode.
+<p><strong>Game competitions.</strong>
+Online games tournaments are available. The HCC Megaman Cup is a popular game tournament on the net and it provides several ZX Spectrum competitions. AIR files were expressly created for this event to ensure fair play (no cheating). To take part in the tournament, check the
+<a href="http://get.to/hcc">HCC Cup official homepage</a> and read the rules of the competition first.<br>
+Another popular compo is the Speccy Tour which is organized every year. Again, AIR files are used. See the <a href="http://www.image.dk/~frankie/">Speccy Tour offical homepage</a> for more information.
+<br><br>
+<b>S/A codes instructions: </b>Basically, you record a certain number of attempts at the games decided for the compo; then you submit the AIR files with the best scores to the organizers, who will play back the files to verify that you really scored without cheating and finally accept your entry into the top-scores chart of the competition.<br>
+To ensure that you respect the rules, the compo rules use the SA-codes mechanism which allows you to submit only a maximum number of valid attempts. When you sign in for a game competition, you will receive a number called S-code (start code) which will identify your series of attempts. When you are about to play an "official" attempt for the Cup on the emulator, you must first turn on the "HCC Cup codes" option in the Action Recorder menu. As soon as the recording starts, you will be asked for your S-code and RealSpectrum will give you back an A-code (accept code) for response. Both the S-code and the A-code will be stored into the AIR file and will be checked by the competition judges, so that you cannot cheat.<br><br>
+<b>Compo mode anti-cheating measures: </b>for security reasons, during a compo-mode AIR recording the following functions of RealSpectrum are disabled: snapshot saving and loading, pokes and memory control panels, debugger, NMI (magic button), Action recorder pausing and speed throttling. Also, the emulator speed is constantly checked and it is not allowed to fall outside the security range of +/-10% around the standard speed of 50 frames per second for any reasons; this means that when the high-precision timer is not available (i.e. the initial CPU test performed by the emulator says "TSC not used", e.g. under Windows 2000/NT or with Cyrix 6x86 processors), then  you must either have sound enabled or use a video resolution with 50 Hz screen refresh (376x208), otherwise you'll get "Speed Violation" errors. Joystick autofire is also prohibited and will produce invalid competition entries. These restrictions apply only in compo mode, so remeber to disable S/A codes if you are recording AIR files for general purposes (not official competitions).
+<br><br>
+If you are a competition organizer and you plan to use AIR files in compo mode, contact us to receive additional support for judge-only features.
+
+<a name="EXTRASETT"><h4>Additional emulation settings (CTRL-F1)</h4></a>
+This menu contains some additional options for the emulator that don't fit into any other menu.
+<ul>
+<li>Emulation speed: This control lets you accelerate RealSpectrum ranging from <em>normal</em> speed (1x) and up to <em>full throttle</em> (beyond 9x), which is the absolute maximum speed allowed by your computer (no fixed multiplier). Note that this setting affects the global speed of RealSpectrum, and not the clock frequency of the emulated Z80. This also means that video and sound recording will work normally, because the emulator doesn't actually skip video or audio frames (it just plays them faster); in other words, speed throttling is very useful to accelerate the recording of AVIs or WAVs ;-)
+<li>Model switching: if set to <em>auto</em>, RealSpectrum will change the Spectrum model automatically when loading a snapshot file saved for a certain computer. In <em>manual</em> mode, instead, the emulator will load the snapshot on the current model, adopting the best compatibility measures if necessary. Please read the Snapshots chapter for more information.
+</ul>
+</td></tr></table></p>
+
+
+
+
+<a name="SNAPSHOTS"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+5.
+</b></font></td><td><font size="+2">
+Snapshots
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+RealSpectrum supports the most common types of snapshot files, the Z80 and SNA formats which alone represent nearly the totality of the snapshots available worldwide. Several versions of both Z80 and SNA files exist, but RealSpectrum is able to deal with them all transparently.<br>
+<p>
+Using snapshots is very easy, they can be loaded with F5 at any time. In the configuration file, you can specify a default directory where you keep your collection of snapshots. RealSpectrum will change the hardware model by itself when opening a snapshot saved for a different machine only if the <em>Model switching</em> setting in CTRL-F1 is set to <em>auto</em>; the emulator informs you about a model change with an on-screen message. When the option is disabled, you are in charge of manually selecting a suitable computer model in F3 before loading the snapshot; in this way you can run the snapshot on any computer model, but if it is not a compatible one, the program will probably crash.<br><br>
+Of course you can also save snapshots: press ALT-F5 and then type in the name of the file to be written. Besides the various keys described for all the various fileselectors, with the left/right arrow keys you can choose the format of the snapshot (SNA or Z80). In general, the Z80 format is preferred because it compresses data to reduce disk space occupation and it includes accurate information about the computer model, but SNA is more portable to other emulators. RealSpectrum saves Z80 files version 2.01 or 3.x depending on the extensions needed.<br>
+<p>When you need to load and save a temporary snapshot quite often (e.g. for savegames), RealSpectrum comes in help with the <i>flash-snapshot</i> feature. Instead of wasting time to open the fileselector, choose the path and filename, etc., just press ALT + SCROLL LOCK to save the snapshot to system memory instantaneousely, and then SCROLL LOCK (alone) to load it back; you can do both actions how many times you like.
+<p>
+Snapshots are very handy because they load and save instantaneously, but they have the major disadvantage that they are commonly considered "ugly". They start the program somewhere in the middle, not from the beginning, and something of the original program is lost; besides, they cannot store the data levels for multiload games and so are also incomplete in many cases. Consequently, snapshots should not be used to archive your collection of old games, but only as a temporary form for fast usage. Tapes, and especially TZX files, are the best choice for archiving purposes. 
+</td></tr></table></p>
+
+
+
+
+<a name="TAPES"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+6.
+</b></font></td><td><font size="+2">
+Tapes
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+RealSpectrum supports several types of tapes, including the direct connection of a tape recorder to the soundcard of your PC - both for loading and for saving. Each format has special peculiarities in the way it can be handled by the emulator.<br>
+<ul>
+<li><b>WAV, MP3 and OGG</b> files are direct audio samples of the real Spectrum cassettes and can be obtained with any sound recording program; they usually take up a very large amount of space on the hard disk and are not very versatile. Loading a program from a WAV files is pretty much the same thing as doing it on the Spectrum - endless wait... :) RealSpectrum supports only 8-bit, mono, uncompressed WAV files.<br>
+<li><b>CSW</b> files are produced by Ramsoft's CSW.EXE utility and are a compressed and digitally preprocessed form of audio data taking much less space.<br>
+<li><b>TAP</b> files are a very common way of storing normal speed Spectrum data, i.e. programs and information which has been created by the default ROM tape routines (LOAD/SAVE commands). They load instantaneousely into the various emulators and 
+the contents can be browsed to jump to a specific data block. The main disadvantage is that programs which use custom loading routines such as turbos cannot be stored in TAP files.<br>
+<li><b>TZX</b> files are the most advanced way of storing Spectrum tapes on PC. Thanks to a sophisticated structure, they can digitally reproduce any kind of data ranging normal speed programs to the latest turbo-encoded commercial games. They can also include extra information such as instructions, archive records, screenshots, pokes and so on. Ideally, TZX files should completely replace any other type of tape file. Like TAPs, they can be handled in an intelligent way by emulators. TZX files can be obtained with programs such as <a href="http://www.ramsoft.bbk.org/maketzx.html">MakeTZX</a> and Taper. RealSpectrum doesn't currently support Direct Recording Blocks in TZX files.
+<li><b>Real Tape</b> is finally the easiest way to load your real Spectrum tapes into the emulator. All you have to do is connect the tape recorder to your soundcard and select "Physical-Device" in the tape fileselector. Loading from real tape is extremely reliable, so don't be afraid to use it. The only requirement is that your CPU is fast enough to run RealSpectrum at full speed (see the system requirements chapter for that).
+</ul>
+In RealSpectrum you can load a tape file with the fileselector shown when you press F7. Like with snapshots, there is a setting in the INI file to tell RealSpectrum which directory to use by default when loading tape files. Once you have opened a file, you can start/stop the tape by pressing CTRL-F7 (or you can use the autostart/autostop feature); this applies to real tape operations too. A tape icon appears on the screen when the tape is running. You can browse the contents of the tape with SHIFT-F7 (TAP and TZX only); to jump to a specific block, select it using the arrow keys and then press ENTER.<br>
+<h4>Notes about real tape support</h4>
+If you want to load from a real tape you will probably need an old ISA soundcard, since most modern PCI cards (including SB Live!) fail at sampling in legacy emulation (i.e. using the classic SoundBlaster DSP commands). Sorry, that's MSDOS, guys... :-(<br>
+With the current version of the sound library used by RealSpectrum, loading from real tape (sampling) will stop the sound output. This is not a RealSpectrum's limitation. When the authors of the library will enable full-duplex support in their sound drivers, RealSpectrum will automatically benefit from that.<br>
+When you open "Physical-Device" in F7, the tape is automatically started. You can still use CTRL-F7 to start and stop the sampling as you need.<br>
+Obviousely, realtime loading/saving requires that your computer is fast enough to run RealSpectrum at full frame rate (50 fps, currently achieved with a 166/200 MHz CPU), otherwise some data will be lost causing a loading error. Note that the real tape support is totally independent from general sound emulation, so if you have a slow CPU you can try to turn off sound to gain more speed.
+<a name="TAPEOPT"><h4>Tape Options</h4></a>
+By pressing ALT-F7 you open the Tape Options control panel, where you can alter some settings.
+<ul>
+<li>The FlashLoading, FastLoading and Tape Saving sections are described in detail in the next paragraphs.
+<li>Tape Loading Noise determines whether you hear the tape sounds while loading (like on the real Spectrum) or not.
+<li>AutoRewind is used to control the behaviour when the end of the tape is reached. If it is enabled, the tape is automatically rewinded to start and loading continues from the beginning of the tape; otherwise, the tape is stopped. AutoRewind is enabled by default for TAP files.
+<li>Start / Stop select the tape control mode, either manual or automatic. Manual means that you must press CTRL-F7 to start and stop the tape explicitly. In automatic mode, instead, RealSpectrum will try to guess by itself when the program wants to read from the tape and when it has finished, starting and stopping the tape as needed (but you can still take control with CTRL-F7); please always keep an eye on the tape icons and act manually if the emulator does something wrong.
+<li>AutoLoading means that when you open a tape file, the emulator will force the Spectrum to load it immediately and automatically, saving you from having to reset and then type the usual LOAD "" (or use the 128K Tape Loader). Tapes are loaded in USR 0 mode, which is very useful for demos. Remember that a very little number of 128K programs might expect to be loaded from the Tape Loader instead of USR 0, in which case they may not work properly; but in the vast majority of cases it will be just fine.</li>
+<li>As the name suggests, the Rewind function rewinds the tape at the beginning.
+<li>Tape Transfer is used to transfer tape files from PC back to a real Spectrum or cassette recorder. See below for more details.
+<li>CD Cable refers to the CodeMasters CD games pack. When enabled, the cable is virtually connected to the Sinclair Joystick port 2, so remember to select this option in the CD loading software. The CD audio tracks containing the games must be dumped to any tape file format supported by RealSpectrum (WAV/MP3/OGG/CSW/TZX) and can then be loaded as normal tape files. Note that due to the particular structure of the turbo loader, the tape autostart/autostop function may not work in all cases, so please use CTRL-F7 to start/stop the tape manually if necessary.</li>
+<li>To eject the currently opened tape (for loading), press the DEL key.</li>
+</ul>
+During TZX playing, RealSpectrum introduces some artificial noise into long silence gaps in order to provide the best accurate emulation of a real tape deck. This feature is actually useful with certain weird loaders that do expect some random spikes during pauses. You can disable this feature and revert to the original behaviour (with "clean" pauses) by setting "SimulateTapeNoise: 0" into the INI file. 
+<h4>FlashLoading</h4>
+FlashLoading is the ability to load tape data <i>instantaneousely</i>, without having to wait like on the real Spectrum. This is a common feature with TAP files, but we did it even better: RealSpectrum is the first emulator which is able to flashload turbo TZX files too! This means that you can now load games (with levels too!) from their original tapes as if they were snapshots or on disk! Please note the difference from other kinds of so-called "flashloading": we are not just speeding up the emulator while loading, but rather autodetecting the tape routines and loading the data directly into the Spectrum memory as requested. In this way, the full loading of a 128K game happens in zero time! The only pauses that you will see are due to the various decrypters/decrunchers commonly used by games before startup to set up themselves; the actual loading only takes place during the short periods when the FlashLoad icon in on. This cool feature is possible thanks to the <a href="http://www.ramsoft.bbk.org/maketzx.html">MakeTZX</a> technology which is embedded into RealSpectrum.
+<ul>
+<li>FlashLoading currently works with the following turbo loaders: Alkatraz, all Speedlocks (1-7), BleepLoad, Paul Owens, Softlock, PowerLoad and Digital Integration. These schemes alone cover the vast majority of games ever produced; of course we will add more schemes in the next releases. You don't have to worry to identify the various loaders, RealSpectrum will do it automatically for you.
+<li>FlashLoading works with levels too. In this way, it will be pretty much the same as playing the same game on disk - no more waiting between the levels!
+<li>Of course, FlashLoading requires original versions of programs, preserving the original custom loader. Hacked versions using different loaders will not be recognised.
+</ul>
+To enable FlashLoading, turn on the corresponding option in the ALT-F7 control panel. FlashLoading is automatically enabled with TAP files and disabled with CSW and WAV; if you want to load TAPs in the old-fashioned "slow" way, disable the option right after opening the tape file (and remember to start playing with CTRL-F7 if autostart is disabled). With the "FlashLoad Levels" option you can choose to load instantaneousely game levels too.
+<p>
+The "Screen Pause" setting is used to introduce a small pause right after the loading screen to let you see it (otherwise in most cases it would disappear immediately); it is particularly interesting with Alkatraz games, which usually show the loading screen in a very fancy way and we thought that it was nice to give you the ability to replay the screen in the original way. Choosing "NONE" disables the pause/animation at all, while the other three settings ("Slow", "Medium" and "Fast") affect the pause/animation speed. Note that it's only an artificial slowdown, since the real screen is internally loaded instantaneousely :-)<br>
+<p>
+FlashLoading is also useful outside the expected situations. When it is enabled, RealSpectrum loads normal speed blocks found in TZX files just like it does with TAPs, so it can be used to skip any standard block also in unsupported loading schemes. If it stops before a custom turbo block because that particular loader is not directly supported by RealSpectrum, all you have to do is simply press CTRL-F7 and loading will continue normally according to the old-fashioned way (if autostart is enabled, the tape will start automatically); in this case, FlashLoading will be automatically disabled until you open the next tape. In general, you can switch between FlashLoading and conventional "slow" loading at any time from the ALT-F7 menu.<br>
+In conclusion, with RealSpectrum's FlashLoading there's no reason to prefer TAP files to TZX archives.
+<h4>FastLoading</h4>
+When FlashLoading isn't available, RealSpectrum has another resort to save you from endless waiting. FastLoading is a cool feature that allows you to load your TAP/TZX/CSW tapes at extremely high speed. The basic principle of our technique is to avoid time wasting and superfluous sampling cycles in loaders, while still preserving exact timings. In practice, we accelerate the tape recorder to the maximum speed, while the Spectrum continues to run at normal speed. The result is that the loading process takes the smallest time possible, due to a sort of time compression for the loader which does not depend on the emulator speed (it is fixed for all PCs); both a Pentium 200 MHz and an Athlon 1 GHz will give you the same speed gain in terms of loading time. The typical speedup factor is 5x/8x -- even on the slowest PC, let us stress this fact. However, we also provide a way to exploit the full horsepower of your brand new PC, of course!<br>
+FastLoading comes in two "flavours": <em>normal</em> and <em>warp</em>. They both work in the way described above, but warp mode enables full speed throttling on the emulator automatically, thus increasing the loading speed much more: in this way the absolute speedup merely depends on the brute force of your CPU. On an 800 MHz PC you easily get an amazing 50x/60x boost!<br>
+<br>
+To enable FastLoading just press ALT-F7 to show the Tape Options control panel and use the left/right arrow keys to select OFF/ON/WARP; like FlashLoading and the autostart/autostop feature, you can set the default FastLoading preference also in the INI file. Note that FlashLoading (if enabled) takes priority over FastLoading, because RealSpectrum always chooses the better performing technique amongst those available at the moment. You can monitor FastLoading activity by looking at the on-screen display: when the loader has been "hooked", a red "fast-forward" arrow will replace the green one in the usual cassette icon, showing that RealSpectrum is fastloading the tape.<br>
+<br>
+<b>Note:</b> as FastLoading is based on edge-loading routines detection, it can't obviously work with the totality of custom loaders. At the moment it has been tested with several tapes with different loaders and it leads to successful identification on 90% of cases. FastLoading has proved NOT to work with Digital Integration (it misses the first block), hybrid Speedlock 5 (like Ping Pong) and a few other (very) weird loaders (note that both Speedlock and Digital Integration are flashloaded, so you'll hardly realize that :-)). WAV files cannot be fastloaded yet, but they will in the next release.
+<h4>Tape Saving</h4>
+RealSpectrum can save ZX tapes in all the file formats supported also for reading, that is you can choose amongst TZX, TAP, WAV and CSW. This is an useful capability, since it gives you the absolute freedom to manipulate any kind of data on writing, including turbo and custom loaders.<br>
+To initiate tape writing, enter the Tape Options menu with ALT-F7, move the cursor to the "Tape Saving" section and select the "Open tape for saving" menu entry by pressing RETURN. This will open the usual fileselector where you can choose the destination directory and the filename of the tape to save. With the left/right cursors you can choose any desired tape format. When you have done, press RETURN again and tape saving will be activated. What happens then, it depends on the tape format chosen:<br>
+<ul>
+<li><b>TZX, TAP:</b> RealSpectrum will trap the normal SAVE routines in ROM and write blocks to tape. This way of operation is ok for normal BASIC commands like SAVE and also for headerless ROM blocks, but it is not suitable for saving turbo-speed (custom) data. Although the TZX format is able to contain non-standard data, at this moment TZX writing is supported only at TAP compatibility level (blocks 0x10). In the next releases, however, RealSpectrum will be able to write turbo TZX files too using an embedded version of MakeTZX's decoding engine.
+<li><b>WAV, CSW:</b> RealSpectrum starts recording output data to the sample file; this activity starts right after you open the tape file for writing and stops when you close it; the default sampling rate of the output file is 44100 Hz. This way of operation allows recording of any kind of turbo data and custom loaders and so it is extremely versatile. Typically, you may then wish to translate the WAV or CSW file to the TZX format with a TZX decoder like <a href="http://www.ramsoft.bbk.org/maketzx.html">MakeTZX</a>. CSW files have the main advantage that they are usually 8-10 times (and more) smaller than WAV files.
+<li><b>Real Tape:</b> In this case, the beeper output is suppressed and instead you will hear the data saved to tape (any speed, any custom routine). You can connect a tape recorder to your soundcard output connector, or even directly the EAR socket of a Spectrum. Note that the "Device Balance" setting in the sound control panel affects the output level of the signal.
+</ul>
+Once you have finished to save the data, close the tape with the "Close <i>tapefile</i>" menu entry in the Tape Options menu (ALT-F7).
+<h4>Tape Transfer</h4>
+This function lets you transfer the tape files used by PC emulators back to the cassette recorder for use with a real Spectrum. RealSpectrum plays TZX, TAP and CSW files through the soundcard's output, so all you have to do is connect the tape recorder (or directly the EAR socket of the Spectrum) to the line-out or speaker-out jack of the board. The tape playing requires a very little CPU power, so it can be successfully used also on the slowest processors (66+ MHz) regardless of the speed at which RealSpectrum globally runs.<br>
+When the Tape Transfer utility is activated, use the fileselector to select the tape file to transfer; if you start the function with CTRL-ENTER instead of ENTER, the tape previousely loaded into the emulator with F7 will be used (if present). During playback you can press 'P' to pause/unpause and ESC to exit immediately. RealSpectrum shows some information about the transfer process, such as the remaining time, the completion status and the usual loading stripes :-)<br>
+For playback, RealSpectrum uses the same sampling frequency as during normal emulation. We recommend to use a sampling rate of 44 KHz for the maximum realiability, especially for turbo tapes.<br>
+You can also record the sound into a WAV file to play it with external programs, just activate the sound recorder (ALT-F11) before using the tape transfer.
+</td></tr></table></p>
+
+
+
+
+<a name="DISKS"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+7.
+</b></font></td><td><font size="+2">
+Disks and cartridges
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+Currently RealSpectrum implements seven disk interfaces: DISCiPLE, +D, Beta 128, +3, MB-02+, Opus Discovery and D80/D40. Besides, Interface I microdrives are also emulated, allowing up to 8 cartridges. DISCiPLE and +D are very similar and compatible, so they are often referred to as MGT interfaces (from the name of Miles Gordon Technology, the manufacturer). Beta 128 (a.k.a. TRDOS) is the default disk system for the Russian Spectrum clones such as Pentagon and Scorpion; it is based upon Technology Research's interface. The +3 system is obviousely found in the latest Spectrum model by Amstrad. The MB-02+ is an extremely advanced disk interface and RealSpectrum is the world's first emulator capable of emulating this beast; see below for more details about it. The Opus Discovery is another widely spread interface. The ZX Microdrives, attached to the ZX Interface I, were the most popular mass storage peripheral produced by Sinclair itself.<br>
+From the F3 menu you can enable one of these interfaces for each Spectrum model. MGT and TRDOS are mutually exclusive because of some port conficts; TRDOS is enabled automatically when you select Pentagon mode, but you can change the disk interface as you like it.<br>
+<h4>Disk Options</h4>
+Press F6 to access the disk drives configuration. For each available drive, RealSpectrum shows the disk images currently loaded in that drive and the write protection status of the disk. To insert a new disk, select the desired drive, then press ENTER and choose the disk file to load. To eject a disk, simply select it and then press the DEL key. To toggle the write protection on/off, use the left/right arrow keys. A default directory for disk files can be specified in the INI file.
+<h4>Physical disk support (RealDisk)</h4> 
+Besides disk image files, RealSpectrum allows you to use real Speccy floppy disks directly by inserting them into the disk drive of your PC (1.44MB, 3.5" units, A: or B:); this feature is codenamed <i>RealDisk</i>. To enable real disk mode, just open the disk fileselector and select the special file called "Physical-Device" instead of a normal image file; this name corresponds to the first disk drive (A:), while "Physical-Device-2" indicates the second drive (B:). The Physical-Device is the last entry in the fileselector, and remember that you can move the cursor immediately there by pressing END.<br>
+Using real Spectrum disks with RealSpectrum is extremely reliable and efficient, because the emulator accesses the hardware PC controller directly instead of calling the motherboard's BIOS (which is often slow and buggy). Our DMA low-level routines allow very fast data transfers and 100% compatibility with all the disk formats of the various interfaces emulated, no matter how weird they are. Even low-level formatting of new disks works perfectly, so you can use RealSpectrum to format all kinds of Spectrum disks to use with the real interfaces.<br>
+<p>
+Note: due to a peculiarity of the PC disk controller, for real Spectrum disks formatted with a sector skewing different from 1 it is adviceable to disable the "Track Caching" option in the ALT-F6 menu (see below). If you are uncertain, leave the default setting and try to change it if RealDisk doesn't work.
+<p>
+Note about UniDos (DISCiPLE/+D) disks (and probably D80 too): for some reason (bug?), the low-level format utility provided with UniDos creates non-standard floppy disks with unusual side information values. Unlike the FDC chip used inside the mentioned interfaces, the PC disk controller is sensible to the "wrong" information and refuses to read/write those disks. So, if you want to use such a disk with RealSpectrum directly from the PC drive, we suggest you to reformat the disk to standard values using the following simple procedure: dump the disk to an image file using the RealDisk utility (see below), then write the image back onto the disk with the "Format before write" option turned on. The procedure is safe: the disk will contain its original data, you will still be able to use it on the real interfaces and besides it will also work perfectly with RealSpectrum.
+<p>Note about 40 track drives: some interfaces (e.g. the Opus Discovery) may be equipped with 40 tracks disk drives, which record thicker magnetic tracks respect to modern 80-tracks drives found in your PC. For this reason, the PC (and thus RealSpectrum) can read floppy disks recorded with 40-tracks drives, but it can only write them in a manner that cannot be later read by the original 40-tracks drive. So, writing on floppy disks formatted with 40-tracks drives is discouraged unless you know what you are doing.
+<p>
+<a name="RDISKUT"></a>
+<h4>The RealDisk utility</h4>
+The ALT-F6 combination activates the RealDisk utility, a control panel with special functions to read real Spectrum disks into image files, write image files to a real disk and create new, empty image files. In this way you can convert between physical floppy disks and the various file formats supported by the emulator, in both directions and with the maximum reliability and performance (even for the weirdest track formats); no external utilities are needed aymore. For example, you can convert a real DISCiPLE disk to the MGT format, or write a TRD file to a real TRDOS disk.<br>
+These are the options available:
+<ul>
+<li>Disk type: select the disk type amongst all the various formats available, by using the left and right arrows.
+<li>RealDisk drive: choose the physical drive (A: or B:) to be used by the functions of this panel.
+<li>Read disk into image file: this reads a physical disk of the type specified above and saves it to an image file. Use the fileselector to enter the filename and the file format as usual. This function can read disks formatted by UniDos too (a warning is displayed in such cases).
+<li>Write image file to disk: this writes an image file of the type specified above to a real floppy disk, optionally formatting the disk before writing (see below). Use the fileselector to choose the image file to write.
+<li>Format before writing: if this option is on, a low-level format of the disk is performed before writing the data. This is necessary if the disk inserted is not yet formatted with the correct parameters for the type specified.
+<li>Create empty image file: this creates an empty image file of the type specified above.
+<li>Track caching: this is an optimization to make disk reading faster. It applies both to the Read Disk function in this menu and to the general real-disk reading of the emulated Spectrum. Leave this setting always enabled, unless a disk doesn't work in this way; for example, it seems that disks formatted using the sector skewing technique (e.g. original Opus disks) require this setting to be disabled. RealSpectrum disables Track Caching automatically if required during emulation, so you don't have to worry about that.
+</ul>
+<h4>Reading disks in +3 modes</h4>
+When <em>+3DOS</em> or <em>+3DOS 720K</em> are selected as disk types, RealSpectrum will create an image file from the floppy disk in Extended DSK (EDSK) format. This file format can store a perfect reproduction of the disk, supporting also variable-sized tracks, non standard sectors and other copy protection techniques. An additional menu will appear, where you can select some details about the disk to be dumped:
+<ul>
+<li>Tracks: enter the number of tracks to scan, ranging from 1 to 82</li>
+<li>Sides: the number of sides of the disk, 1 for single and 2 for double-sided</li>
+<li>Rate: this is a number from 0 to 3 which depends both on the disk drive which was used to record the floppy disk and the drive type of your PC. RealSpectrum shows some suggestions in the form "720K/1.44M" where the first string is the type of the floppy disk (720K in this case) and the second is your drive type (match this with the indication at the top of the box). For instance, if you want to dump a DD 3.5" disk (e.g. 720K - 800K) using the 1.44MB drive of your PC, select a rate of 2.</li>
+<li>Step: set to "Double" ONLY when you are using an 80-tracks drive to read a floppy disk formatted into an old 40-tracks drive, otherwise always leave this setting to "Normal". It represents the actual number of steps the drive head will advance at each logical track increment; this is usually 1 (normal), but when you insert a 40-tracks floppy into an 80-tracks drive you must set it to 2 (double) to compensate for the thicker tracks of the disk.  When double stepping is selected, the number of tracks is automatically halved. Note that if you connect the internal +3 drive to the PC controller (to dump 3" disks), you must use "Normal" (and remember to limit the tracks number to 40).</li>
+</ul>
+<p>
+<b>Note: </b>The RealDisk utility does not appear if ALT-F6 is pressed with the Interface-I emulation enabled. In this case, instead, you create an empty cartidge file. Newly created Interface-1 cartridges (MDR) must be formatted before you can use them.
+<h4>DISCiPLE and +D</h4>
+The MGT interfaces support up to two double density, double face floppy disks (MGT1 and MGT2), usually 80 track x 10 sectors of 512 bytes each (800K total). In order to able to use them, you need the ROM files GDOS.ROM for DISCiPLE and GDOS-PD.ROM for +D, which must be placed in the same directory where RealSpectrum is. Then you need a boot disk containing the DOS (a file called "sys*" or "+sys*" respectively). Please read our <a href="http://www.ramsoft.bbk.org/tech.html">DISCiPLE/+D Guide</a> to learn everything you need to get the most from these two wonderful interfaces. The devices are equipped with a magic button (NMI) which freezes the currently running program and lets you save a snapshot to disk, print the screen and many other things.<br>
+RealSpectrum supports also UNIDOS, a powerful operating system for both DISCiPLE and +D which is available as an EPROM upgrade for the interfaces; you need UNI-DISC.ROM for DISCiPLE UNIDOS and UNI-PD.ROM for the +D version. You can choose between GDOS and UNIDOS from the F3 menu at any time.
+If the DISCiPLE/+D ROM file (default or manually specified into realspec.ini) is 16384 bytes long instead of 8192, RealSpectrum assumes that it contains the pre-loaded operating system and so you don't need to boot the DOS with the usual "RUN" command.
+<br>
+<h4>Beta 128 (TRDOS)</h4>
+The Beta 128 interface allows to control up to four disk drives (TRD1-TRD4), usually 80 tracks x 16 sectors of 256 bytes each for a total of 640K. The supported file formats are .TRD and .SCL (FDI coming soon).
+<br>
+<h4>+3 Disks</h4>
+When the +3 model is selected, you have two disk drives available (DSK1 and DSK2) where you can insert .DSK file images. +3 floppies are usually 3" 40 tracks x 9 sectors, single sided disks, but RealSpectrum supports any kind of disks, including copy-protected ones.
+<br>
+<h4>Microdrive cartridges</h4>
+If the ZX Interface I is enabled from the F3 menu, the Microdrives control panel is shown instead of the usual disk screen. RealSpectrum supports 8 microdrives where you can insert a cartridge image (.MDR files). This panel works pretty much in the same way as the disks menu, with the only difference that the Write Protection info is displayed as an 'R' (Read only) character before the drive info; the write protection status is changed with the left and right arrow keys. All the other keys work as in the disks menu.
+<br>
+<h4>MB-02+</h4>
+This is an extremely powerful disk interface, probably the most advanced ever built for the ZX Spectrum; just the fact that it was designed by Busy Soft should be enough to say. Apart from many technical delights, it has a very good DOS (BSDOS) and it also replaces the normal Spectrum ROM with an improved version. RealSpectrum fully emulates the MB-02+ supporting 512KB of SRAM, Z80 DMA chip for CPU-independent data transfers, real time clock processor (RTC) and 4 HD/DD disk drives. The disk fileformat is .MBD (a plain dump of an MB-02 floppy, in a fashion similar to .MGT), typically high-density 82 tracks x 11 sectors of 1024 bytes each. For more information about MB-02+, visit the <a href="http://www.8bc.com/SINCLAIR/index.htm">8-Bit Company</a> homepage.
+<br>
+<h4>Opus Discovery</h4>
+This is another popular device, featuring two disk drives, optional 2KB RAM expansion (IC6116), a bidirectional parallel port, and a Sinclair/Kempston joystick port; all these features are emulated, but the parallel port is write-only. The Opus is a pretty massive interface, so much that it covers the Spectrum's rear completely and it provides power and TV signal. The disk fileformat is .OPD (guess what, again a plain dump of the floppy data with MGT-style track order for two-sided disks); they are identical to .OPU files which you may encounter with some utilities (just rename the files). RealSpectrum supports both 40 tracks, single sided (standard) and 80 tracks, double sided image files; the format is autodetect from the file size; if using RealDisk, remember to set the desired disk type from the RealDisk Utility menu, and to disable "Track Caching" in the RealDisk Utility menu if the disk was formatted using the normal FORMAT command on the real Opus.
+<br>
+<h4>D80/D40 (MDOS)</h4>
+Again a disk interface, commonly integrated into the Didaktik Kompakt clone and widely spread in Czech. It has a 2KB RAM, two disk drives support and an i8255 chip (currently not emulated). The disk fileformat is .D80 (no need to say what it is, right? :)) with a capacity of 720KB.
+</td></tr></table></p>
+
+<a name="PERIPHERALS"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+8.
+</b></font></td><td><font size="+2">
+Additional peripherals
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+This chapter covers only additional emulated hardware that isn't described into any other section of this manual.
+<h4>Romantic Robot Multiface</h4>
+<p>
+The Multiface is probably the most used interface to study and alter programs on original Spectrums. It incorporates an 8K ROM that contains the driving software and an 8K RAM extension, which can either be used as a buffer or loaded with custom software (e.g. Genie Disassembler) to run in place of the one that resides in ROM. With Multiface you can also save snapshots of the whole Spectrum memory to several mass storage devices. RealSpectrum fully emulates the following Multiface models:
+<ul>
+<li><b>Multiface One</b>: the very first version for 16K and 48K machines only. It has a built-in kempston joystick port and a hardware inhibit switch to make it invisible to programs and protection systems. The kempston port can be enabled or disabled from the joystick menu (F4) and the inhibit switch can be controlled from the hardware properties panel (F3+F3).
+<br><br>
+<li><b>Multiface 128</b>: this is the answer to Spectrum evolution (although it can be plugged on 16K and 48K machines as well). There is no joystick interface anymore, and the switch has become software-controlled. There are 2 variants of this interface, and RealSpectrum emulates both of them: revision 3.5 (firmware v87.1) can save snapshots to tape at hyper speed, but it's not DISCiPLE compatible; revision 3.6 (firmware v87.2) grants DISCiPLE compatibility but lacks the hyper-tape feature.
+<br><br>
+<li><b>MultiPrint</b>: this card has a built-in Centronics standard interface and emulates a ZX Printer through it, it is equipped with 8K ROM and 8K RAM, it incorporates a toolkit but it has some options for printer settings instead of the load/save facilities as Multifaces. It can also run the usual Multiface software such as Genie and Inifinity.
+<br><br>
+<li><b>Multiface 3</b>: this is the last model produced by Romantic Robot. As the name suggests, it was designed to plug into Spectrum +3 (also on +2A) computers which have a consistently different hardware design compared to previous 128K machines. RealSpectrum emulates all necessary things for the interface to be fully-operational; anyway there are a couple of undocumented features which are not considered but that would be nice to see them one day :)
+</ul>
+Multiface can be enabled from the F3 hardware panel, and the appropriate model will be selected depending on what kind of Spectrum you are using in that moment. In case that you change Spectrum model while Multiface emulation is active, the emulator changes Multiface type according to the new model to ensure hardware compatibility (you'll be advised with an on-screen message).
+<h4>Softcrack</h4>
+<p>
+Proposed by Lars Jespersen, this is a modified version of the Multiface 128 that has 16K of RAM instead of the standard 8K ROM + 8K RAM. This means that you have to load the "operating system" in the Softcrack RAM before you can press the MAGIC button. The author has written two versions of the Softcrack software, both coming with a debugger-monitor and a snapshot facility (for 48K programs only) that can operate with several mass storage devices: version 9.2 allows saving on ZX Microdrives and Betadisk, while version 9.4 can handle DISCiPLE and Opus interfaces. However you can also install on it any other suitable software as well.
+<br><br>
+The Softcrack can be selected as a Multiface on the hardware panel properties (F3+F3).
+<h4>Spec-Mate</h4>
+<p>
+Built by ATeY, this interface has 8K ROM and no RAM. The firmware can save a snapshot of the running program to tape (normal and turbo speed), Microdrive, Wafadrive, Betadisk and Opus. The Spec-Mate is compatible with the Spectrum 48K only.
+<h4>SMUC (Scorpion & MOA Universal Controller)</h4>
+<p>
+The SMUC is an add-on card for ZS Scorpion computers. It allows you to connect 2 IDE hard disk drives and offers an XT bus extension to the system, plus 2K of NVRAM; optionally you can install a real-time clock chip and a programmable interrupt controller. The Professional Extension ROM (ProfROM) detects the presence of SMUC in the system, tries to guess which peripherals are attached to it and initializes them. It also provides basic support for hard disk operations such as partitioning, formatting and mounting TRDOS partitions as physical drives. However the ProfROM is not essential for the SMUC to be operational, as you can control the various peripherals by directly accessing the appropriate ports.
+<br><br>
+RealSpectrum emulates SMUC version 1.2 completely except for the interrupt controller. The serial output is sent directly to one of the RS232 ports installed on your machine; you can select the port you wish from the F4 menu. For informations on how to connect hard disks to the IDE port, please refer to the <a href="#PNLIDE">IDE configuration panel</a> section.
+<br><br>
+To preserve the SMUC settings permanently, RealSpectrum saves the CMOS and NVRAM status in a file called <i>smuc.dat</i>, which resides into the installation directory of the emulator; if the file does not exist (e.g. it's the first run or you have deleted it), the ProfROM will signal a checksum error and reinitialize the non-volatile memory. The file is automatically loaded and saved on the emulator's startup and exit.
+<br><br>
+To activate SMUC emulation, simply select Scorpion computer and go to the hardware properties panel (F3+F3).
+</td></tr></table></p>
+
+
+
+<a name="VIDEO"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+9.
+</b></font></td><td><font size="+2">
+Video
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+RealSpectrum can run at several video resolutions, which can be changed on-the-fly from the Video Options menu (F11) by selecting the desired mode and then pressing RETURN. You can also type in the resolution manually in the edit field, e.g. "320 200". If the selected mode is available on your system, RealSpectrum will change the videomode immediately, otherwise the old mode is kept. The emulator automatically uses every single pixel of the available video area to display the largest possible portion of the full ZX Spectrum screen. This means that at 320x200 you will see 4 lines of upper and lower border, while at 376x308 and above the entire picture will be shown (usually beyond the normal TV capabilities).
+<p>
+The list of video modes shown in the F11 panel is only a very small subset of all the available resolutions. RealSpectrum comes with the following built-in modes:
+<div align="center">
+<p>
+<table border=1>
+<tr>
+	<td>320x200</td>
+	<td>320x240</td>
+	<td>256x200</td>
+	<td>256x224</td>
+	<td>256x240</td>
+	<td>256x256</td>
+</tr>
+<tr>
+	<td>320x100</td>
+	<td>320x350</td>
+	<td>320x400</td>
+	<td>320x480</td>
+	<td>320x600</td>
+	<td>360x200</td>
+</tr>
+<tr>
+	<td>360x240</td>
+	<td>360x270</td>
+	<td>360x360</td>
+	<td>360x400</td>
+	<td>360x480</td>
+	<td>360x600</td>
+</tr>
+<tr>
+	<td>376x282</td>
+	<td>376x308</td>
+	<td>376x564</td>
+	<td>400x150</td>
+	<td>400x300</td>
+	<td>400x600</td>
+</tr>
+</table>
+</div>
+<p>
+If your enter one of the resolutions listed above, RealSpectrum first
+tries to see if your BIOS supports it as VESA2 and if it doesn't then it
+uses X-Mode.
+<p>
+Besides these modes, RealSpectrum supports all the VESA 1/2/3 modes supported by the BIOS of you graphics card. You can use a VESA diagnostic tool to get the full list of your VESA modes. Typical VESA2 modes are 640x480 and 640x400, but many BIOSes implement also some of the low-res modes listed in the table above.<br>
+The 376x282 mode has a 50.3 Hz vertical refresh, which is very close to the ZX Spectrum PAL rate. This means that scrollers and animations will be perfectly smooth also on the PC's monitor, a result differently impossible to achieve due to the VGA's refresh rates. Note that some old monitors could not be able to deal with such a low frequency.<br>
+The 376x308 resolution (X-Mode) is particularly interesting too because the hardware scanlines make the monitor image very similar to the classic TV screen. The refresh rate in this case is about 86 Hz, which could exceed the capabilities of some monitors.
+<p><b>Important:</b> we strongly recommend you to always use VESA2 or VESA3 whenever possible, since this dramatically improves the speed performance of the emulator. The last line of the F11 control panels shows a text line describing the currently active video mode; you should try to work with resolutions that are reported as "VESA2" or "VESA3".
+<p>
+If the low-res modes such as 320x240 are not available as VESA but only as
+X-Modes, we recommend you to try the Scitech Display Doctor. 
+If RealSpectrum doesn't run at fullspeed on your machine even in VESA2 modes,
+then try the good old 320x200. Check that the video driver used is
+"Standard VGA" (aka mode 13H). You can always force the VGA mode 13H
+by entering a non-existent resolution into the INI file (e.g. "VideoMode: 333 333").
+<a name="#VIDEOXTRA"><h4>Extra video preferences</h4></a>
+In the ALT-F11 menu some extra options are available.
+<ul>
+<li><b>Vsync: </b> this parameter controls vertical retrace synchronization. If it is enabled, RealSpectrum will try to synch the video updates with the VGA's electron beam, resulting in smoother animation and images with no flickering. However, in some cases this may slowdown the emulator excessively; if you hear gaps or repetitions in the audio, try to disable vsync. Also, remember that under Windows 9x it is almost impossible to get 100% sinchronization and so at some intervals some flickering may occur even if vsync is enabled.
+<li><b>Gamma:</b> this setting determines the contrast between bright and dark colours of the ZX Spectrum palette. Increasing the value will make the dark colors brighter and vice versa.
+<li><b>Save screenshot:</b> this opens the fileselector to save the current Spectrum screen to a graphic file; the available formats are BMP, SCR, PCX and TGA.
+<li><b>O.S.D:</b> this is the maximum number of text lines simultaneosely displayed by the On-Screen Display (OSD).
+<li><b>Video Recorder start/stop:</b> select this option to control the Video Recorder. If the line says "Start video recorder" then you will presented with the Video Recording Options panel, which is described below. If RealSpectrum is already recording the video, the line will read "Stop recorder" followed by the current length of the movie expressed in minutes and seconds.
+<li><b>ULA effects:</b> select extended ULA graphic modes introduced by some hardware tweaks for Pentagon. "Hardware multicolor" is almost the same as the Multitech effect (8 attributes per character). "GigaScreen" blends the two videorams into a single image, great for watching interlaced demos and graphics.</li>
+<li><b>Color mode:</b> by choosing "Greyscale" RealSpectrum will turn in black and white mode, which is great for looking at some MB02 Multitech images.
+<li><b>Filter:</b> select the post-rendering graphic filter for special visual effects. At the moment the only filters available are Chunky Vision and Chunky Vision Selective, which are designed for viewing 4x4 chunky graphics used in recent demos (e.g. Refresh, Melange and many others).
+<ul><li>Chunky Vision: this filter will scan the whole screen as 4x4 pixel blocks and replace them with a grey shadow computed according to the block's fill ratio. This is great for many recent demos which use this graphic rendering technique (mainly for realtime 3D effects and plasmas): the action becomes much clearer and better looking. Try it!</li>
+<li>Chunky Selective: same as Chunky Vision, but the filter translates only some pixel patterns, possibly leaving ordinary graphics intact (see Melange). RealSpectrum recognizes a default set of chunks, which has been calibrated with a sample set of demos; if Chunky Selective doesn't work well with the particular demo you are watching, don't worry because you can customize the set yourself to fit your needs best. Once you have a chunky image on the screen, activate the debugger and press SHIFT-C: RealSpectrum will detect the chunks currently displayed on the screen and add them to the set, so when you exit the debugger you will see the demo properly. Use CTRL-C to clear the set completely if you need to (no chunks are recognized after that). You can even instruct RealSpectrum to remember the new chunks set permanently by pressing ALT-C: this will save a disk file called "chunks.dat", which will be automatically loaded by RealSpectrum on startup and will override the built-in set. To restore the factory defaults, simply delete that file.</li></ul>
+</li>
+</ul>
+In the realspec.ini configuration file you can alter the frameskip value. RealSpectrum will send a video frame to the VGA only once every <i>frameskip</i> frames; it can be useful on slow graphics cards and the default value is 0 (no frameskip at all).
+<h4>The Video Recording options</h4>
+When you select "Start video recording" from the Extra Video Preferences menu, a simple control panel appears to let you make some customizations about the movie that is going to be recorded.<br>
+The available options are:
+<ul>
+<li>Frame rate: this is the video stream capture frequency, and is set to 50 fps (frames per second) to record every single image generated by the Spectrum (smoothest animation). Lowering this value (down to 1 fps) reduces video smoothness, but also the disk space taken by the movie file.
+<li>Video size: here you select the frame capture area, which can be either the full Spectrum picture (screen + border) or the screen area only (256x192). The exact video resolution is shown in brackets.
+<li>Record OSD: this setting determines whether the OSD superimposed information produced by the emulator (such as text messages, icons and so on) must be recorded into the movie or not.
+<li>Compressor: this affects the compression efficiency for the AVI file; the better the compressor, the smaller the disk space taken by the movie. The default setting is <i>best</i>, which compresses very well and it is the recommended choice. The other available setting is <i>normal</i>, which is slightly faster but produces a bigger movie file; note that you don't generally want this, unless you require smooth emulation also during video recording on a slow CPU.
+<li>AV streams: here you may choose whether to record both audio and video or video only.
+</ul>
+When you are happy with the various parameters, hit ENTER and use the fileselector to specify the file name and location for the movie. Video recording starts when you have finished with the fileselector.<br>
+Note: you cannot change resolution while the video recorder is active.
+<p>
+RealSpectrum saves the video stream in the popular AVI file format using a lossless compression scheme (MRLE). AVI files are very common and they are well supported under most operating systems. Please note that video recording requires intensive data transfers to the disk, so you may experience emulation slowdown under certain circumstances. If you are running RealSpectrum under pure MSDOS (not from a DOS box under Windows), please make sure you also load a disk caching program such as 'smartdrive'.
+<p>
+Warning: even a few seconds of video recorded at full quality can result in a very large movie file, so make sure you have enough disk space :-)
+<p>
+Once you have your AVI, you may consider to convert it to anything else which fits your needs best. Using the various tools freely available on the net, you can for example recompress the data with different codecs, such as MPEG 1/2/4, Div-X, Cinepak, Indeo and so on; however, remember that lossy compression schemes may significantly reduce the visual quality of the movie. The lossless compression algorithm used by RealSpectrum is optimized for palettized graphics (such as the ZX Spectrum 16-colors video) and it offers very good compression ratios while fully preserving the image integrity.
+</td></tr></table></p>
+
+
+
+
+
+<a name="AUDIO"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+10.
+</b></font></td><td><font size="+2">
+Audio
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+RealSpectrum has a very rich set of features concerning music and sound, because audio quality is one of its main design goals. You have already learned the capabilities in chapter 2 from the emulation point of view. This chapter explains the user interactions with the sound system. RealSpectrum can produce sound in many configurations: 8 or 16 bit, mono or stereo and at any sample rate supported by your soundcard. The recommended configuration is 8-bit stereo at 44100 Hz (16 bits are usually not necessary).
+<h4>Sound Options</h4>
+By pressing F12 you enter the sound options panel where the following controls are available:
+<ul>
+<li><b>Master volume:</b> this is the global volume of the sound which comes out of your loudspeakers. For some mathematical considerations concerning sound quality, it is usually better to keep this setting at the maximum value and use the loudspeaker's controls to adjust the volume.
+<li><b>AY stereo panning:</b> you can set the stereo position of each of the three channels of the Spectrum 128K soundchip (AY) in 256 steps ranging from full left to full right. This feature gives extremely pleasing results. Many demo musics have been composed to sound better in some stereo configuration (see later).
+<li><b>Device balancement:</b> this controls the relative power of the digital channel (i.e. the internal beeper and sound devices such as Covox/Soundrive) against the AY chip. In the original Spectrum 128K the beeper alone sounded as loud as the three AY channels together and this was unpleasant to many users. The default setting of RealSpectrum is that the beeper has the same power of a single AY channel (so each channels has 1/4th of total power). When the cursor is at the full left you hear only the AY and the beeper is muted; when the cursor is at the full right, the AY is muted and the beeper sounds at full loudness. The original Spectrum 128K behaviour is obtained when the cursor is set halfway.
+<li><b>Stereo mode:</b> this lets you use some presets for AY panning; "ABC" configuration (channel A on the left, B center and C on the right) is used by Pentagon and many eastern clones and boards; "ACB" was used with many Czech demos (Busy Soft); "NONE" gives monaural output (all channels centered) and "USER" lets you define you own custom stereo panning.
+<li><b>Surround FX:</b> this cool feature improves the sound spatiality. Usually, external soundspeakers give better results than headphones. Play with the speakers disposition to achieve the maximum effect.
+<li><b>Sound state:</b> toggles sound on/off.
+</ul>
+The last line of the control panel shows the playing mode currently used by RealSpectrum: resolution, stereo and sampling rate; these parameters cannot be changed on-the-fly and must be set into the configuration file (realspec.ini).
+<a name="AUDIOXTRA"><h4>Extra audio settings</h4></a>
+With ALT-F12 some extra audio features are available:
+<ul>
+<li><b>Sound recorder:</b> RealSpectrum can record the Spectrum sound (AY and beeper) to a WAV, AZX or YM file for later use. In this way, you can record your favourite Speccy musics and sound effects and play them back with your music player or even record them on CD. The sound recorder can be started/stopped at any time by pressing ENTER when the recorder option is selected; the line will show "Start" or "Stop sound recorder" depending on the current state. When you start a new recording, you must use the fileselector in the usual way to choose the file format (WAV/AZX/YM) and the file name and path.<br>
+Note about YM files: RealSpectrum saves uncompressed YMs type 5; you can compress the files yourself using LHA.EXE (use option "-h0", e.g. "lha -h0 a compressed.lzh uncompressed.ym") and the final .LZH archive can be eventually renamed to have a .YM extension without any further action.
+<li><b>AY-LPT circuit:</b> this is a small electronic circuit which allows you to connect a real AY-38910/12 soundchip to the parallel port of your PC. RealSpectrum can play AY music through the AY-LPT device so that you can listen to the "real thing" too besides the digital emulation through the soundcard. To enable AY-LPT, type in the hexadecimal address of the LPT port the device is connected to (usually 378 for LPT1 and 278 for LPT2). To disable AY-LPT enter the value 0 or press ESC.
+<li><b>Digital device:</b> here you can select a digital playback interface. The supported devices are Covox (port $FB on Pentagon and $DD on Scorpion), Stereo Covox (ports $0F and $4F), Soundrive, Music Machine and SpecDrum. The digital sound output is played through the beeper channel, so you can't hear 48K sound effects while Covox etc. are enabled (but AY music is still played normally). This also means that you can adjust the digital channel volume using the Device Balance setting in the main Audio Controls menu (F12); for example, to hear the digital music with the best quality (maximum volume) you must drag the slider to the full right (AY muted). 
+</ul>
+<b>Note about PCI soundcards:</b> like all DOS programs, the MSDOS version of RealSpectrum may not work correctly with PCI soundcards. This is not a limitation of RealSpectrum, but a DOS-imposed restriction. PCI soundcards are almost
+unaccessible from DOS programs due to specific hardware design problems. See the FAQs in this manual.
+</td></tr></table></p>
+
+
+
+
+
+<a name="POKES"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+11.
+</b></font></td><td><font size="+2">
+Pokes (cheats) and Memory Options
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+At the good old times, lots of cheat modes and trainers were available for many games, typically printed as POKES in the magazines. With RealSpectrum there are two ways to enter such pokes: you can enable the Multiface 128 and then use its menu to insert the poke, or you can use the trainer control panel which is accessed with the F9 key.
+<p>
+When you load a tape or a snapshot file, RealSpectrum automatically looks for a file having the same name and the .POK extension. POK files are produced by the popular SGD (Spectrum Games Database) utility by Martijn van der Heide and contain the cheat definitions. When POK files are available, the F9 panel shows a list of the available cheats for the running game; each trainer can be activated and disabled with the left/right cursors. Sometimes it is possible to specify a number as the value of a trainer, for example the number of lives; in this case you can alter the number which is shown when the trainer is active by using the +/- keys on the numeric keypad of the keyboard.
+<p>
+If no POK file is available for the loaded game, you can still enter pokes manually by typing the values in the edit field, e.g. for a POKE 32654,201 you will enter "32654 201" or "32654,201" (use space or comma to separate address and value).
+<p>
+If you prefer, you can keep POK files altogether into a single directory which is pointed to by the "PokesDir: " setting found in REALSPEC.INI.
+<p>
+<a name="MEMOPT"><h4>Memory Options</h4></a>
+The Memory Options control panel is activated with ALT-F9 and contains some functions to load and save memory chunks. In the first three lines you can set the block start address, length and RAM page; on the desired line, press the right arrow key and then enter the value in decimal format, using RETURN to confirm the data; you can also enter hexadecimal values by using the "%" prefix, the "H" suffix or even the C-style notation, e.g. valid numbers are "%100", "100H" or "0x100".<br>
+Once you have set the source/destination boundaries, select either "Load Memory Block" or "Save Memory Block" and use the fileselector to locate the file to load in or enter a filename for the file to save. Memory blocks are saved with a .BIN file extension.
+</td></tr></table></p>
+
+
+
+
+
+
+
+
+<a name="NETWORK"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+12.
+</b></font></td><td><font size="+2">
+Internet Networking (TCP/IP)
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+Perhaps one of the most innovative aspects of this emulator is that it can expand your Spectrum experience over the Internet in several ways. Before you try to use these capabilities, however, you need to be familiar with the Internet, the Interface-1/DISCiPLE Sinclair Network architecture and RealSpectrum's networking features; please do read carefully this chapter (including the "special notes" paragraph) and the other documentation required for such knowledge.
+<h4>System requirements for networking</h4>
+The following requirements need to be met if (and only if) you want to use the Internet capabilities of RealSpectrum:
+<ul>
+<li><b>Windows 3.1 or above.</b> The networking features use the TCP/IP stack of Windows 3.1 or Windows 95/98, so you must run the emulator from a DOS box under Windoze. It won't work from Windows NT and pure MSDOS (e.g. if you use "Restart in DOS mode" or even worse from the old DOS 6.x).
+<li><b>SOCKVXD.EXE:</b> Under Windows 95/98, you must have installed this additional module which can be obtained from the RealSpectrum download page; this is a virtual device driver developed for the CODA project which allows a DOS application like RealSpectrum to communicate with the Win32 networking functions. To install the module, double click on the executable and select "Dynamic Loading" when asked about the type of installation; this only needs to be done the first time when you install RealSpectrum. You will be able to safely uninstall the module from the Control Panel at any time.<br> 
+You can freely download this module from the RealSpectrum official homepage. The latest version of the module can be found at the CODA homepage: <a href="ftp://www.coda.cs.cmu.edu/pub/tools/95/windows-socket-extension.exe">ftp://www.coda.cs.cmu.edu/pub/tools/95/windows-socket-extension.exe</a>
+<li><b>TCP/IP connection.</b> This can be you usual Internet access, or a local network such as an Ethernet LAN.
+</ul>
+<h4>The Network Options menu (making a connection)</h4>
+First of all you must setup your machine for the communication. This can be done with the Networking Options, which is found in the ALT-F8 menu.<br> Before enabling the connection, enter your nickname by pressing the right arrow when the cursor is on the "Nick-Name" line, and confirm with ENTER. Your nickname is just an identifier that will appear on your friend's screen when you make some actions. Of course you can leave the default nickname, if you don't want to set your own. You can specify your nickname also in the INI file with the "NickName: your-nick" line.
+<p>
+Now you must enter the IP address of the remote computer. An IP address has the form of four numbers separated by dots, e.g. "192.168.0.1". Of course, you must find a way to know your friend's IP address first, and this must be probably done outside RealSpectrum, for example on IRC or ICQ, with a phone call, and so on.<br>
+If you don't know your friend's IP, you can enter "0.0.0.0" as the remote IP (the default choice); in this way, RealSpectrum will wait for a call and determine automatically the remote IP. Note that, doing so, your friend MUST enter your IP address in his Network Panel. The rule is that a remote IP must be known at least at one side.
+<p>
+Once that you are ready, enable Networking and exit the menu with ENTER or ESC. If a connection wasn't already estabilished before, the two computers will try to contact each other. During this phase, RealSpectrum displays "Connecting to..." or "Waiting for a call". You can cancel the connection process by hitting ESC. Note that when your are not connected, RealSpectrum can also accept incoming connections on-the-fly during the normal emulation  (provided that both Networking and NetMonitor are enabled in ALT-F8).
+<p>
+Once that the connection is activated, you will see a message like "Sanchez connected from 192.168.0.1" on your screen and now everything is ready. Note that the the bottom line of the Network Option control panel shows your real IP address only after that a connection has been successfully estabilished. Due to technical limitations concerning SOCKVXD, RealSpectrum has no way to know this information before.
+<p>
+The connection status is shown in the penultimate line of the ALT-F8 panel, where it says if someone is connected and if he/she is listening to the chat messages and file sends. Note that, on the local machine, the networking functions will operate indipendently of the remote connection status; for example, this means that you can send chat messages even if your friend is reported as "not in chat", but he won't probably see them. 
+<h4>Sinclair Network (Interface-I and DISCiPLE)</h4>
+This is the standard network that can be found on the Interface-1 and DISCiPLE devices, which are reciprocally network-compatible. With the real thing, up to 63 Spectrums can be connected together using a normal audio cable with fits into common mono audio jack socket. The ROM software extends the Sinclair BASIC with a set of new commands dedicated to exchanging data and programs via the network. Each Spectrum on the network must be assigned an unique station number ranging from 1 to 63; for example, if you want to be station 10 you must enter <i>FORMAT "n";10</i> on the Interface-1 or <i>FORMAT n10</i> on the DISCiPLE. Then you can send data using the normal LOAD and SAVE commands, with all their variants. If you are station 10 and you want to send a screen to station 11, you must enter <i>SAVE *"n";11 SCREEN$</i> (or <i>SAVE n11 SCREEN$</i> on the DISCiPLE) and your friend must first listen with <i>LOAD *"n";10 SCREEN$</i> (or <i>LOAD n10 SCREEN$</i> for DISCiPLE). Station number 0 is reserved for broadcast, that is you can send/receive data from any station in general (e.g. with LOAD n0 SCREEN$ you expect a screen from anyone who entered SAVE n0 SCREEN$). The Sinclair Network is very powerful and there are several things to know to use it correctly. For a full description of the network commands, please read the Interface-1 manual and our DISCiPLE technical guide which can be found on the tech page of our website.
+<p>
+Now, with RealSpectrum you can connect two virtual Spectrums all over the world thanks to the Internet. When the global "Networking" setting is enabled in the Network Options menu, all the networking routines will act just like as if the remote RealSpectrum would be connected to you with the Sinclair network cable. Please note that Internet is much slower than the original Sinclair Network and it's also very chaotic, so the overall performances are strongly dependant on the traffic conditions in that moment. Please read the "Special notes" paragraph below for some important things to know about this.
+<h4>NetMonitor</h4>
+NetMonitor is a special function which enables some additional networking services such as a live chat system and file sharing. The chat lets you talk interactively with your friend while running your Spectrum programs normally. File sharing is used to exchange files over the net. See below for a detailed description of these features.<br>
+NetMonitor can be enabled only if the global Networking setting is enabled too. In general, you should keep NetMonitor always enabled because of the cool things it does. However, we give you the ability to disable it in case you are watching your favourite demo and you don't want external interferences :-)<br>
+If both users have NetMonitor enabled, RealSpectrum will also try to keep track of the connection status, i.e. it will be able to detect whether you friend is still online on the internet, if he/she is listening to your chat messages and so on.
+<a name="NETCHAT"><h4>Internet Chat</h4></a>
+While using the network, it is vey useful to talk with your friend. For example, you will probably wish to chat in this way: "I'm station 10, send me a screen", "Ok I'm station 11 instead, here it comes", "Let's restart the connection", "Ready to receive" and so on.<br>
+For this reason, RealSpectrum offers a simple but effective chat system. To use it, you must enable the "NetMonitor" feature in the Network Options menu and make sure that you have already Connected to your friend (see above).  When you want to say something, just press CTRL-F8, type in your message and press ENTER to send it. Incoming and outgoing messages will appear superimposed on the Spectrum screen for a few seconds (using RealSpectrum's multi-row OSD), while the program continues to run normally. If you don't see your messages echoed on the screen, it means that there's a network communication problem: check the configuration in ALT-F8 and your Internet connection. 
+<a name="NETFILES"><h4>File send</h4></a>
+With RealSpectrum you can also send and receive files to/from your friend. If you want to send a file, just press SHIFT-F8 and use the fileselector to select any file on your system. The NetMonitor function is required to be enabled in order to be able to see incoming files (but you will be able to send files regardless of it). If RealSpectrum's NetMonitor detects that someone is about to send you a file, an information box will automatically pop up on your Spectrum screen, showing the name and the size of the file and asking you whether to accept or refuse the transmission. If you decide to accept, the fileselector is opened in save mode to let you specify the destination directory and possibly a different name for the incoming file; the fileselector is already preconfigured with the default filename, so if you don't need to change it just press ENTER to confirm. By default, RealSpectrum saves the files in the startup directory, or in the folder specified by the "DownloadFolder:" line of the INI file (if present).
+<br>With the "Get Files" option in the ALT-F8 menu you can customize the default behaviour for incoming files: "Never" automatically refuses all files, "Ask me" lets you choose each time by prompting you with the requester described above, and "Always" automatically accepts any file.<br>
+During the file transfer, the completion status is constantly showed on the screen with a progress bar. Both the sender and the receiver can stop the transmission at any time by pressing ESC.
+<h4>Special notes and troubleshooting</h4>
+The original Spectrum networking protocol is designed for a quiet and fast physical link, while the Internet is instead very chaotic, slow and unpredictable. The Sinclair network protocol itself can explicitly handle any transmission errors (packet loss or corruption), providing a reliable data link also in presence of disturbs.<br>
+RealSpectrum's emulation of the Sinclair network is fully software-transparent, so the original error recovery routines (in ROM) still work and provide an error-protected communication also over the internet; a nice modernization, isn't it? ;-) The only difference is that the real IF-1 protocol detects the transmission errors with a timeout of just a few milliseconds, which is a reasonable value for a cable bus like the Sinclair network cable but certainly not for the internet, which is typically much slower and complex, so we have artificially raised the timeout value to 8 seconds.<br>
+We are telling you this stuff because it can happen that a data packet goes lost in the internet and so your LOAD or SAVE command blocks. In this case don't worry, because after some seconds (about 8) the transmission will resume automatically! You should BREAK (SHIFT+SPACE) the LOAD/SAVE command only if the transfer remains blocked for a long time, say 20-30 seconds or more. Note that the blocking occurs also with the real Interface-1 (or DISCiPLE), but you don't realize it because the timeout is too short to perceive it.
+<p>
+Also, consider that RealSpectrum is a DOS program and it really needs to do some magics to access the Internet using Windows. There are some technical limitations which cannot be overcome by a DOS program, for example an intense IF-1 network activity could slow down the emulator sometimes (you hear repeated sounds in the audio); this is normal, and it's the small fee to pay for such a cool feature.
+<p>
+If the connection seems definitely broken, i.e. you can't see chat messages and the IF-1 network doesn't work, you can always close the connection by disabling "Networking" and then retry to connect (by re-enabling the setting). Remember that, at any time, you may have a guess about the connection status by looking at the bottom lines of the Networking Panel where it says if your friend is connected and listening for the chat messages.
+<h4>NetPlay</h4>
+NetPlay allows you to synchronize the two emulated Spectrums on the network. Both machines share the same virtual keyboard which is the logical union of the two real keyboards at each side, while the program execution on the two emulators is constantly kept synchronous (within a certain user-defined precision factor). In practice, this means that when the "local" user presses a certain key on the keyboard, the "remote" user will see the same keypress on its Spectrum - and vice versa.<br>
+Amongst the possible uses of this feature, one of the most temptating is playing multiplayer games on the net. Yes, you can do it :-)<br>
+The Network Options control panel shows the following lines concerning NetPlay:
+<ul>
+<li>NetPlay: this enables the NetPlay synchronization. Both users must turn this switch on for NetPlay to be actually activated.
+<li>Latency: this affects the system responsiveness across the network and it is the crucial parameter for overall playability and performance in multiplayer games. See below for more information.
+<li>Play role: the "Challenger" setting is used to start a multiplayer game with your friend; "Neutral" waits for a challenge (it just does nothing). See below for the instructions.
+</ul>
+Latency is defined as the maximum delay allowed for input events to propagate across the network; if the instant round-trip-time of the connection is greater than the latency, the two RealSpectrums will probably have to pause quite often, waiting one each other for resync. Lower values mean a better responsiveness and thus better synchronization between the two machines (1 is the best case), but this implies also a faster network connection. On the other hand, higher values improve action smoothness, but at the cost of a greater slackness in synchronization constraints: as time passes, the two users could start to see completely different things on their respective screens.
+<p>
+With NetPlay you can play multiplayer games with a friend over the network. The initiator (the guy who chooses the game) must set his play role to "Challenger", while the other leaves "Neutral"; then connect normally. Once the connection is estabilished, the challenger must load the snapshot file of the game to play (the fileselector pops up automatically); the choice is then notified to the remote computer, which will load the same snapshot file and the game begins. If the snapshot cannot be found on the hard-disk, the remote user will be prompted to search for it manually using the fileselector; if the user closes the fileselector without loading the required snapshot (i.e. he hasn't got it), the game will be aborted. Note that both computers will stay blocked until the connection hasn't completed at both ends.
+<p>IMPORTANT: Please note that Spectrum games aren't Unreal or Quake! Unlike modern PC games, they were not thought to be played over a network, and it's very difficult for us to give you the ability to do so. For an acceptable gameplay, you need a very fast network (such as a LAN) and excellent conditions (no congestion, very low traffic, etc - all the opposite of the Internet! ;-)). You will have to set the latency as low as possible, otherwise you'll end up seeing different things on the screen (and goodbye multiplaying). In conclusion, don't expect NetPlay to work smooth and flawless over the Internet; it works decently on a LAN, instead. Unfortunately we can't do much for that, sorry.
+<p>
+If you have problems, please don't exhitate to ask us for help: send us an email with a detailed description of the problem and the conditions when it happened.
+</td></tr></table></p>
+
+
+
+
+
+
+
+<a name="DEBUGGER"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+14.
+</b></font></td><td><font size="+2">
+Debugger
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+The debugger is activated by pressing the ESC key during the normal Spectrum emulation. The monitor screen consists in several control panels, each dedicated to a particular function; a graphic resolution of at least 320x240 is recommended to view the complete cockpit. The debugger is a quite complex application, so remember to press F1 to get a list of the available keys until you are not familiar with the controls. Most of the information boxes are interactive, that is you can change/edit the contents using the debugger keys. At any time, the input focus is received by the panel whose name is printed in the bottom right; this is important, because while some keys are global (i.e. they have the same effect regardless of where the focus is), others behave differently depending on the currently selected panel. To move the focus, use TAB (forward) and SHIFT-TAB (backward).
+<p>
+The available control panels are:
+<ul>
+<li><strong>Z80 program:</strong> the program section currently being executed by the processor. The white line shows the next instruction to be processed. Press SPACE to execute one instruction (trace into), CTRL-SPACE to step over (execute till the following opcode, timeout 50 frames) and SHIFT-SPACE to go to near the end of the frame (about 32T before the next ULA interrupt). The HALT istruction is automatically bypassed if the interrupts are enabled (otherwise you are in a DI/HALT deadlock :)). When the panel has the focus and the program trace mode is set to the new style, the following keys are also active: UP/DOWN to move 1 instruction backward/forward; PGUP/PGDOWN to move 9 instructions; +/- on the keypad to increase/decrease the number of instruction displayed before the current one.</li>
+<li><strong>Z80 registers:</strong> the whole set of the Z80 internal registers, including the program counter and a human-readable dump of the flags register. When the panel has the focus, use the arrow keys to highlight a particular 16-bit register and press ENTER to modify it, CTRL-ENTER to change only the low-order 8-bit register (LSB) or SHIFT-ENTER for the high-order one (MSB). Press I to toggle the interrupt status, ALT-I to change the interrupt mode and CTRL-I to set the IM2 vector. Press 0-7 to toggle the respective bits of the flags register.</li>
+<li><strong>Soundchip registers:</strong> the internal registers of AY-3-8912A or YM-2149F are arranged in rows for tone periods, volumes, envelopes and mixer + I/O registers. The columns stand for the A,B,C channels from left to right.</li>
+<li><strong>Breakpoints: </strong>there are 16 slots available to set breakpoints. To select a particular slot, use the up/down arrow keys when the panel has the focus. RealSpectrum supports both program and I/O ports breakpoints. For program breakpoints, press B to enter a breakpoint or ALT-B to set a range breakpoint (insert the start and end addresses, all the locations comprised will be marked). For I/O breakpoints, press O to enter a single-port address, or ALT-O to add a masked breakpoint; you can also select the access type, i.e. I/O read, write or read/write using the left/right arrow keys. To set up masked I/O breakpoints, you must enter the port address and a decoding mask which has the same meaning as IP's netmasks: the I/O addresses generated by the Z80 are ANDed with the decoding mask and if the result matches the I/O port specified as the first parameter, then the breakpoint is hit. For instance, the ULA has Port=0x00FE Mask=0x0001 (represented as 0x00FE &amp; 0x0001) and the 128K memory pager has 0x7FFD &amp; 0x4002. Press DEL to delete the selected breakpoint (both program and I/O types).</li>
+<li><strong>I/O ports: </strong>the most important I/O ports are listed, namely 0xFE both for input (keyboard) and output (listed as >>FE), port 0x7FFD and 0x1FFD if available. In the last line of the box, the current memory mapping is displayed as four identifier for the respective 16K memory pages (0000-3FFF, 4000-7FFF, 8000-BFFF and C000-FFFF); the color is yellow for ROM and white for RAM.</li>
+<li><strong>CPU stack: </strong>when the panel has the focus, use the arrows and ENTER to select and modify the stacked values.</li>
+<li><strong>Custom: </strong>the bottom window shows additional information selected by the user. Press F12 to display the available sub-panels in turn:
+<ul>
+<li>Memory dump: a list of the memory contents starting from the indicated register or location. When the window has the focus, press +/- on the keypad to change the base register or fixed address; press M to set a fixed address and ALT-M to set it as the current register (hold shift if you don't want to auto-focus over this panel). Press T to poke an ASCII string at the current address, and ALT-T to insert a sequence of hex bytes or words separated by spaces; note that this function alters both RAM and ROM. Press PGUP/PGDN to move the offset by 32 and hold SHIFT to increment by 1, ALT by 256 and CTRL by 8.</li>
+<li>Floppy disk controller: the internal registers of the FDC for the active disk interface, showing the track position, head, sector, drive and data. "WP" means write-protected, "RW" read-write (unprotected) and "--" disk not inserted.</li>
+<li>Hard disk controller: the internal IDE/ATA controller status for the active hard-disk interface, both for channel 1 (left) and 2 (right).</li>
+</ul>
+</li>
+</ul>
+Debugger keys summary:
+<br><br>
+<div align="center">
+<table border=1 width="75%">
+<tr>
+	<td align="center">F1</td>
+	<td>Help (list of debugger keys)</td>
+</tr>
+<tr>
+	<td align="center">F2</td>
+	<td>Generate NMI</td>
+</tr>
+<tr>
+	<td align="center">ALT-F2</td>
+	<td>Reset machine</td>
+</tr>
+<tr>
+	<td align="center">F5 / ALT-F5</td>
+	<td>Load /Save snapshot</td>
+</tr>
+<tr>
+	<td align="center">F9 / ALT-F9</td>
+	<td>Trainer browser (pokes) / Memory options (load/save blocks)</td>
+</tr>
+<tr>
+	<td align="center">F10</td>
+	<td>Quit immediately</td>
+</tr>
+<tr>
+	<td align="center">F12</td>
+	<td>Change custom panel displayed</td>
+</tr>
+<tr>
+	<td align="center">ENTER</td>
+	<td>Modify register, breakpoint or stack element currently selected</td>
+</tr>
+<tr>
+	<td align="center">SHIFT / CTRL-ENTER</td>
+	<td>Enter only the MSB / LSB of the 16-bit register pointed</td>
+</tr>
+<tr>
+	<td align="center">SHIFT / CTRL / SPACE</td>
+	<td>Goto ~32T before interrupt / Step over / Trace into program execution</td>
+</tr>
+<tr>
+	<td align="center">S</td>
+	<td>Show the Spectrum screen (press S again to go back to the debugger)</td>
+</tr>
+<tr>
+	<td align="center">ALT-S</td>
+	<td>Same as S, but forcing end-of-frame rendering.</td>
+</tr>
+<tr>
+	<td align="center">SHIFT / ALT / CTRL-C</td>
+	<td>Add/Save/Clear chunky vision patterns</td>
+</tr>
+<tr>
+	<td align="center">B / ALT-B</td>
+	<td>Set program breakpoint / breakpoints range (e.g. "8000 80FF")</td>
+</tr>
+<tr>
+	<td align="center">O / ALT-O</td>
+	<td>Set I/O breakpoint / masked breakpoints (e.g. "7FFD 4002")</td>
+</tr>
+<tr>
+	<td align="center">I / ALT-I / CTRL-I</td>
+	<td>Toggle interrupts / change IM mode / Alter IM2 vector</td>
+</tr>
+<tr>
+	<td align="center">0 - 7</td>
+	<td>Toggle bit 0-7 in the flags register</td>
+</tr>
+<tr>
+	<td align="center">M / ALT-M</td>
+	<td>Set memory address / set it to current register</td>
+</tr>
+<tr>
+	<td align="center">T / ALT-T</td>
+	<td>Poke ASCII string / sequence of hex bytes and words (e.g. "ED 79 7FFD C9")</td>
+</tr>
+<tr>
+	<td align="center">A</td>
+	<td>Inline assembler</td>
+</tr>
+<tr>
+	<td align="center">D / ALT-D / CTRL-D</td>
+	<td>Enter new disassembly address / Disassemble at PC / Toggle program history mode</td>
+</tr>
+</table>
+</div>
+<br>
+Most of these keys are exactly the same also outside the debugger. Remember that some of them are context-sensitive, that is they are active only when the proper panel has the focus. The debugger is not finished yet, and more features will be added in the next releases, such as additional breakpoint types (I/O and memory), more custom panels, and more functions in general.<br>
+To quit the debugger, press ESC again.
+
+<h4>Inline assembler</h4>
+
+The inline assembler can be activated by pressing A in the debugger screen. Firstly a small box appears, where you are prompted for the address to assemble to: by default, RealSpectrum assumes that you want to assemble at the location currently pointed by the program counter, but of course you can type in your own address (the default one will be deleted automatically by pressing any key but ENTER); press ENTER to confirm and the assembler box will appear.<br>
+The top part of the window (initially blank) represents the assembler history: it shows the last 16 instructions entered; on the lower part you will see three lines of text: the first one is the assembler line, i.e. the area where you are going to insert the instructions to be assembled; the second line shows the "ROM write" and "Auto-paste" settings status; finally, the third line is the assembler report for the line you just entered.<br>
+Once you've typed in your instruction, press ENTER; if it passes the syntax checking, it will be immediately assembled and POKEd into memory and then inserted in the history, otherwise an error report will be given. The assembler incorporates a "DOSkey"-like feature, i.e. it allows you to browse the history by using the UP and DOWN keys, just in case you want to repeat one of your last commands without need of retyping it (particularly useful for demomakers which usually use repetitions in their code).
+To change address, just press SPACE on an empty (or "highlighted") line and the small box will reappear; if you want to move near the current address, you can use the LEFT/RIGHT arrows to go back or advance of 1 byte (SHIFT+RIGHT will bring you to the next instruction) or PGUP/PGDN for steps of 64 bytes (256 with CTRL and 4096 with ALT pressed) bytes.<br>
+The "ROM write" setting takes control over writing on ROM areas, and you can use the CTRL+LEFT/RIGHT keys to toggle it on or off. With the "Auto-paste" features the instruction at the current address will be pasted in the assembler prompt automatically, just to show what you are about overwrite; press ALT+LEFT/RIGHT to change its status. Both settings can be set to a default by modifying the appropriate lines in the .INI file under the [ASSEMBLER] section.<br>
+The report line shows the result of the syntax check performed on the line you have just entered by displaying the following messages:
+<ul>
+<li><b>OK</b>: syntax checking was successful;</li>
+<li><b>Invalid opcode</b>: you entered a non-existing opcode;</li>
+<li><b>Too many parameters</b>: you entered more parameters than required by the opcode;</li>
+<li><b>Missing parameter</b>: a register or numeric value is missing in the instruction;</li>
+<li><b>Invalid argument</b>: an invalid (or non-existing) register or number has been specified;</li>
+<li><b>Syntax error</b>: can be caused by an invalid character or a missing comma or bracket;</li>
+<li><b>Out of range</b>: you entered a number out of the maximum allowed range.</li>
+</ul>
+RealSpectrum's inline assembler accepts any instruction, both documented and undocumented; for those instructions that can be assembled with multiple and/or undocumented byte combinations (such as "LD (NN),HL", "RETI", etc.) RealSpectrum will choose the shortest and better documented form. The undocumented Z80 opcodes are the following:
+<ul>
+<li>All instructions involving IXH, IXL, IYH and IYL (obtained by prefixing the opcodes which have registers H and L as operands)</li>
+<li>SLL r / (HL) / (IX+d) / (IY+d)</li>
+<li>LD r,RLC (IX+d) / (IY+d)</li>
+<li>LD r,RRC (IX+d) / (IY+d)</li>
+<li>LD r,RL (IX+d) / (IY+d)</li>
+<li>LD r,RR (IX+d) / (IY+d)</li>
+<li>LD r,SLA (IX+d) / (IY+d)</li>
+<li>LD r,SRA (IX+d) / (IY+d)</li>
+<li>LD r,SRL (IX+d) / (IY+d)</li>
+<li>LD r,SLL (IX+d) / (IY+d)</li>
+<li>LD r,RES b,(IX+d) / (IY+d)</li>
+<li>LD r,SET b,(IX+d) / (IY+d)</li>
+<li>OUT (C),0 - OUT (C),(HL)</li>
+</ul>
+where <b>r</b> can be B,C,D,E,H,L or A, <b>d</b> is an offset value between -128 (80h) and +127 (7Fh) and <b>b</b> a bit identifier between 0 and 7.
+<br><br>
+Note about JR displacements: there are several ways to indicate the displacement for relative jump instructions: you can state 1) the displacement in immediate form (a signed integer ranging from -80H to +7FH); 2) the absolute address to jump to (in this case the assembler will compute the displacement automatically); 3) a displacement using the '$' operator which represent the current assembling address (e.g. "0x8003 JR $-3" jumps to 0x8000, while "0x8000 JR $" loops).
+
+</td></tr></table></p>
+
+
+
+
+
+
+<a name="DEMOMODE"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+13.
+</b></font></td><td><font size="+2">
+DemoMode
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+DemoMode is a special visualization mode which transforms RealSpectrum into a music player. When you enter DemoMode, the Spectrum video output is replaced by a graphical screen which shows animations and other effects inspired by the background music. It's a sort of visualization plug-in which runs on top of the Spectrum emulation and that can be used every time you want to see some oscilloscopes, vu-meters and other effects while the Spectrum is playing some music.<br>
+When DemoMode is displayed, the Spectrum emulation still continues to run normally in background. You can return to the Spectrum screen at any time with ESC.<br>
+The effects shown can be cyclically changed by pressing F1; at the moment there are only a couple of effects implemented (oscilloscope and a Spectrum analyzer), plus the null effect, but expect something cooler soon :-)
+<h4>AY Player (F5)</h4>
+In DemoMode, RealSpectrum can also play the popular .AY music files. The .AY file format is the ZX Spectrum equivalent of the famous C64's .SID files, i.e. collections of computer tunes. The most popular Speccy songs have been extracted from games and demos and converted to the AY format. You can find a growing large collection of AY files at the <a href="http://www.worldofspectrum.org/projectay/">Project AY</a> website.
+<p>
+To play AY files in RealSpectrum, press F5 in DemoMode and select the music file using the usual fileselector. AY files may contain several tunes, and you can use the left/right arrow keys to change the playing song; the down arrow restarts the current song. Note that when you exit DemoMode after playing an AY file, the ZX Spectrum is automatically reset.
+<p>
+Remember that you can start the music recorder before entering DemoMode, so RealSpectrum can also act as a .AY to WAV/YM/AZX converter.
+<h4>Work in progress!</h4>
+We didn't have enough time for this release, but in the next versions there will be proper "demoish" effects (a water scope is already done) and loadable skins so that people can draw their own DemoMode graphic screens. Besides, we plan to implement an automatic .AY ripper to create your own .AY files easily.
+</td></tr></table></p>
+
+
+
+
+
+
+
+<a name="FAQ"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+15.
+</b></font></td><td><font size="+2">
+Frequently Asked Questions
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+<ol>
+<li><b>RealSpectrum hangs with a black screen at startup.</b><br>
+This shouldn't happen anymore, but if it does then most times it's due to a soundcard initialization problem, especially if you have a PCI card (see the next FAQ) or you are running RealSpectrum on a notebook. Return to the DOS prompt by pressing CTRL-ALT-DEL, then restart RealSpectrum with the command "realspec -nosound" or set "NoSound: 1" in REALSPEC.INI.<br><br>
+<li><b>RealSpectrum doesn't work with my PCI soundcard.</b><br>
+Unfortunately we can't do anything for that. PCI soundcards are almost unaccessible from DOS programs due to specific hardware design problems. Most vendors provide some sort of basic SoundBlaster software emulation (legacy device) but it's often buggy and it must be configured properly. Please use always the latest drivers available for your card and run the emulator in a DOS box under Windows 9x. Only a very few cards can work in pure DOS (e.g. Terratec Canyon 3D). RealSpectrum works with SB Live! only in a DOS box. We recommend that the legacy device is set with the usual SB configuration: I/O 220H, IRQ 5 or 7 and DMA 1 and 5.<br><br>
+<li><b>Yes, but I want to hear sound anyway!</b><br>
+Ok, there are a couple of things to check before giving up definitely with the soundcard compatibility issue.<br>If your soundcard offers some sort of SoundBlaster emulation, make sure that the BLASTER environment variable is correctly defined. If you type "set" from the command line, you should see a line similar to the following: BLASTER=A220 I7 D1 H5 T6 etc; A220 is the I/O address of the soundcard (220H), I7 is the IRQ line (7), D1 is the 8-bit DMA channel (1), H5 is the 16-bit DMA channel (5) and T6 is a type qualifier (6 means SB16, 4 SBPro and so on). Make sure that the values reported in your BLASTER string correspond exactly to the hardware settings of the soundcard. If the BLASTER variable is missing, you must define it manually.<br>
+If you still have problems, try to force RealSpectrum to use a specific audio driver. To do that, add the following text line at the end of the [sound] section in the ALLEGRO.CFG file: "digi_card = SB20", where "SB20" stands for the SB 2.0 driver; the available drivers are "SB16" (SoundBlaster 16), "SBP" (SoundBlaster Pro), "SB20" (SoundBlaster 2.0), "SB15" (SoundBlaster 1.5) and "SB10" (SoundBlaster 1.0). Maybe your soundcard doesn't work as SB16 but it does as a plain SB 2.0; remember that the various SB models have different capabilities in terms of maximum sampling rate supported, stereo playback and 8/16 bit sample quality.
+<br><br>
+<li><b>How can I hear sound under Windows NT/2000/XP?</b><br>
+Direct access to the hardware is not possible for a DOS application under Windows NT/2000. However, you can install a software SB16 emulator like <a href="http://ntvdm.cjb.net/">VDMSOUND</a> which will enable sound in all DOS programs including emulators and old games. RealSpectrum has been reported to work with VDMSOUND flawlessly.
+<br><br>
+<li><b>What are the recommended settings for the best sound quality?</b><br>
+The optimal settings are 8-bit stereo at 44.1 KHz (or 45454) and they are the factory defaults. RealSpectrum always uses 16 bits of precision for internal sound mixing, so you can safely use 8-bit sound without actually loosing anything respect to 16-bits modes in terms of quality (and it's faster). Enable 16-bit sound only if you have problems with 8-bit. 
+<br><br>
+<li><b>Sound is dirty at 44KHz with SB16/32 ISA cards under Windows ME</b><br>
+For some obscure reason, Windows ME degrades your good old original SB16/32 ISA soundcard to a mere SoundBlaster Pro II compatible; the WDM driver automatically installed by ME actually emulates (badly) the hardware you have (don't ask why). In other words, you only get a SBPro under WinME, meaning that you cannot have 16-bit modes and you cannot go higher than 22727 Hz in stereo. This is the reason of the poor sound quality.
+<br><br>
+<li><b>What file formats are supported?</b><br>
+RealSpectrum supports a very wide range of file types, including all the standard formats diffused in the Spectrum community. For the full list, click <a href="#FILEFORM">here</a>.</li>
+<br><br>
+<li><b>How can I improve emulation speed?</b><br>
+The extra-high detail of RealSpectrum requires a faster CPU respect to other emulators. First of all make sure that you are using a VESA2 video mode. Try to disable VSYNC from the ALT-F11 panel (or in the INI file), especially if you hear gaps or repetitions in the audio and you have a slow processor. Use a lower resolution; 320x200 is the fastest. If it is still slow, disable sound. Try increasing the frameskip value into the INI file. You can also gain extra speed by disabling contended memory emulation with the setting "ContendedMemory: 0" in the INI, at the cost of renouncing to 100% perfect multicolor effects (this doesn't affect russian models, which have no contended memory at all).
+<br><br>
+<li><b>When will the next release be available?</b><br>
+A 10 billions dollars question! :-) Actually, it all depends on the amount of spare time we are left with after our regular lives (work, study, girls, etc), with certain periods being busier than others. As the revision history clearly shows, RealSpectrum development never stops, and it's growing amazingly fast; every single day of delay means more features accumulating for the next release. Please check the WIP section of the official RealSpectrum homepage regularly for the latest news.
+<br><br>
+<li><b>I think I have found a bug in RealSpectrum!</b><br>
+It happens :-) First of all make sure that it's really a bug, and not a false alarm because you haven't read the manual properly. When sending in a bug report, please follow the general guidelines described in the "Bug reporting" section later in this manual.
+</li>
+<br><br>
+<li><b>RealSpectrum crashes on startup and says "SIGILL".</b><br>
+Probably, you are using the wrong version of RealSpectrum. Please visit our official homepage and download the package with specific optimizations for your CPU. There are three available: for AMD processors, for Intel i686 (Pentium II, Celeron, Pentium III and above) and for Intel Pentium/Pentium MMX (i586). RealSpectrum doesn't run on 486 or older CPUs.
+</li>
+<br><br>
+<li><b>Is RealSpectrum's source code available?</b><br>
+Not at the moment, sorry.
+</li>
+</ol>
+</td></tr></table></p>
+
+
+
+
+<a name="LICENSE"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+16.
+</b></font></td><td><font size="+2">
+License, credits and contact info
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+RealSpectrum is freeware. It can be freely used and distributed as long as no money is charged for it and the original packages, program and documentation are not altered in any way. If you host copies of RealSpectrum on your website, please keep them up to date with the most recent release and provide a link to the original homepage; we don't like to see obsolete releases lying around for ages. Before including RealSpectrum into a commercially sold media (such as a magazine CDROM), you must contact us first. You are not allowed to distribute this program together with ZX Spectrum commercial software and other copyright-protected material (such as games snapshots, copyrighted roms, etc) in any form. Disassembly, hacking and any other forms of reverse engineering of the program files are strictly prohibited.
+<p>
+RealSpectrum comes without any kind of warranty, both implied and expressed. By using this program, you accept that the authors are not responsible for any damage or data loss caused directly or indirectly to your system by the emulator. Use it at your own risk solely. If you don't accept the terms of the present license, you are not allowed to use RealSpectrum and you are asked to remove it from your system.
+<p>
+The latest version of RealSpectrum can always be obtained from Ramsoft's official website:
+<ul><li><a href="http://www.ramsoft.bbk.org">http://www.ramsoft.bbk.org</a></ul>
+If you want to send your impressions, suggestions or even better bug reports, please write to:
+<ul><li><a href="mailto:ramsoft@bbk.org?subject=RealSpectrum">ramsoft@bbk.org</a></ul>
+Before asking for something, please make sure that your question or your problem isn't already covered in this manual. Please don't ask us for games, roms, etc.
+<h4>Reporting bugs</h4>
+When sending in bug reports, please include the following information in your mail:
+<ul>
+<li>Description of the problem (symptoms)
+<li>Exact procedure to replicate the problem (how to make it happen again) - this is probably the most important point!
+<li>Files involved, e.g. the tape, disk or snapshot file(s)
+<li>If the bug is difficult to describe or replicate, please record it in a video (AVI) or sound file (WAV) using RealSpectrum's integrated audio and video recorders, then zip it and send it to us. This will save us a lot of time.
+<li>Include your "realspec.ini" file and a dump of the system messages printed by RealSpectrum (start the emulator with the command "realspec > rsdump.log" from the DOS prompt and then send us the "rsdump.log" file on exit).
+<li>Operating system you run RealSpectrum on (e.g. Windows 98 SE DOS box, MSDOS 6.22, Windows 98 in pure DOS mode, etc)
+<li>Exact soundcard model (e.g. Creative SoundBlaster Live!, etc)
+<li>Videocard type (e.g. Matrox G400, NVidia GeForce 2 MX, ATI Radeon, etc)
+<li>CPU model and frequency (e.g. Athlon Thunderbird 800 MHz, Pentium III 733 MHz, etc)
+<li>Memory amount (e.g. 128MB)
+</ul>
+A detailed description of the problem will save us a lot of time for finding the bug, and it greately increases the chances that your report will be actually useful.
+<h4>Greetings</h4>
+We would like to thank the following people who contributed useful suggestions or bug reports:<br><br>
+<div align="center"><table border=0 width="75%"><tr><td>
+Francesco Piccardo, Davide Barlotti, Rodolfo Edison Guerra,<br>
+Miodrag Stancevic, Henk van Leeuwen, Pepa Kokes, Mac Buster,<br>
+Raul Gomez Sanchez, Simone Voltolini, Carl Murray, Enrico Maria Giordano,<br>
+UnBEL!EVER^x7m, Michael Loft, Alex Rybinskiy, Jordan/Exodus, Lars Jespersen,<br>
+Michael Bruhn, John Cleveland, The Starglider, John Constantinides,<br>
+Ralf Nagel, Jeff Braine, Massimo Mileto.<br>
+</td></tr></table></div>
+<a name="SITES">
+<h4>Credits</h4>
+The Sinclair and Amstrad roms are distributed with permission of Amstrad plc<br>
+The MGT DISCiPLE and +D roms are distributed with explicit permission of <a href="http://www.datel.co.uk">Datel</a><br>
+<p>
+The following technical material was consulted during the creation of RealSpectrum, credits go to the respective authors/maintainers:
+<ul>
+<li><a href="http://www.msxnet.org/tech/z80/">Z80 undocumented features</a> by Sean Young
+<li><a href="http://www.z80.info">Z80 CPU Official Support Page</a> by Thomas Scherrer
+<li><a href="http://www.srcf.ucam.org/~pak21/cssfaq/index.html">Official ZX Spectrum FAQ</a> by Philip Kendall
+<li><a href="http://www.worldofspectrum.org/TZXformat.html">TZX Specifications</a> v1.13 by Tomaz Kac
+<li><a href="http://www.worldofspectrum.org/rusfaq/index.html">Russian Spectrum Machines FAQ</a> by Random/CC
+<li>Gerton Lunter's TECHINFO.DOC (accompanying Z80 v4.x emulator)
+<li><a href="http://piters.tripod.com/zx.htm">ZX Spectrum Hardware DIY</a> by Pera Putnik (IDE interfaces and more)
+<li><a href="http://www.zxplus3e.plus.com/index.html">Spectrum +3e</a> by Garry Lancaster (IDE extensions to +3)
+<li><a href="http://www.ramsoft.bbk.org/tech.html">Ramsoft tech info</a> with documents about the floating bus, DISCiPLE/+D, AY-LPT, etc.
+</ul>
+Many thanks to LaesQ/RA for contributing some MB-02+ stuff.<br>
+The AIR support library was kindly provided by <a href="mailto:AleyKeprt@bigfoot.com">Aley Keprt</a> who is also the organizer of the HCC Cup.<br>
+Additional thanks to the maintainers of the <a href="http://www.talula.demon.co.uk/allegro/">Allegro</a> programming library.
+</td></tr></table></p>
+
+
+
+
+
+
+<a name="HISTORY"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+17.
+</b></font></td><td><font size="+2">
+Revision history
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+<b>New in v0.97.26 (November 6th 2004)</b>
+<ul>
+<li>This is a micro-release mainly intended to fix a bug in RS32 possibly affecting Speccy Tour 2004 players (see below).</li>
+<li>CodeMasters CD support: RealSpectrum emulates the CD cable supplied with the CodeMasters CD pack, allowing you to load the games from the original CD audio tracks converted to any tape file format of your choice supported (WAV/MP3/OGG/CSW/TZX). When enabled from the Tape Options menu (ALT-F7), the virtual cable is connected to the Sinclair Joystick Port 2, so you must select this option in the CD software. Note that due to the particular structure of the turbo loader, the tape autostart/autostop function may not work in all cases, so please use CTRL-F7 to start/stop the tape manually if necessary.</li>
+<li>Fixed a small bug in the RZX recording menu (RS32 only) which caused a crash when an external snapshot was not found.</li>
+</ul>
+
+<b>New in v0.97.23 (July 19th 2004)</b>
+<ul>
+<li>Improved +3 disk emulation: better handling of copy-protected disks and extended DSK files.
+All disk images from the TZX Vault collection now work.</li>
+<li>Alternate set of timings for 48K and 128K: a recent investigation has revealed that in certain
+48K and 128K/+2 machines the multicolor timings differ by 1 clock cycle from their usual values;
+this is evident in MDA demo and Megalomania demo (for the 128K), and in a simple BASIC
+program which draws some stripes on the border (for the 48K). The alternate timings, which occur in a small number
+of machines, can be now selected from the model-specific properties menu (press F3 twice).
+Please refer to the <a href="#PNLHW">Hardware configuration menu</a> section for more information.</li>
+<li>CSW v2.00 support: RealSpectrum now loads tape files in the new CSW v2.00 format,
+which is now supported by many other tools and emulators too.</li>
+<li>ZXCF IDE interface: support for the ZX Compact Flash interface with 1 MB of RAM, which
+provides access to IDE storage memory via HDF files. The ZXCF can be activated from the IDE
+interfaces menu.</li>
+<li>Video blitting FX (RS32 only): the Spectrum screen can be resized to 2x using either
+a simple pixel doubler or an intelligent rescaler for smoothed edges. See the new option in ALT-F11.</li>
+<li>MP3 and OGG support (RS32 only): RS32 can now load tape files in MP3 and OGG
+Vorbis formats.</li>
+<li>Universal WAV support: RealSpectrum can now read also stereo and/or 16-bit WAV files.
+Besides, RS32 is able to decode WAV files compressed with any audio codec installed in Windows.</li>
+<li>Ultra-precise tape loading: RealSpectrum now performs sampling interpolation when reading
+audio data from WAV, MP3 and OGG files. This extra precision achieved dramatically improves the loading reliability
+with super-fast turbo loaders, such as Ultracargas (~6000 baud) and even the Codemasters CD (~14000 baud!).</li> 
+<li>Improved RS232 emulation (RSDOS): the serial ports menu now includes an option to select
+the handshake type, in order to support different kinds of cables. Linking has been successfully
+tested with a standard 128K and 48K+IF1.</li>
+<li>Z80 core enhancements: implemented our findings on the undocumented behaviour of the PF flag with I/O block instructions; CPU emulation is now even more perfect.</li>
+<li>Sound system stability: changed the sound synchronization code for better compatibility.</li>
+<li>Several bugfixes: FastLoading (Biturbo III and others); extraction of files from ZIP archives;
+Microdrives ERASE_M hook code (changes were committed to the wrong sector);
+tape saving in WAV format (the last pulse was not closed correctly); and several other fixes in many places of the code.</li>
+</ul>
+
+<b>New in v0.96.16 (September 10th 2002)</b>
+<ul>
+<li>Wafadrives emulation: a Microdrive-like tape device by Rotronics. Cartridges are emulated via the new .WDR files (format specs available at our website).</li>
+<li>Sinclair Lightgun emulation: this is the lightgun provided with the Action Pack bundle and it is supported by a few games. The gun is controlled with the mouse and it is enabled from the F4 menu.</li>
+<li>ATeY Spec-Mate: another Multiface-like interface, selectable as a Multiface variant (F3+F3).</li>
+<li>Support for DRBs in TZX files: Direct Recording Blocks are very rare (and undesired) encounters, but with this addition the TZX support is now definitely complete.</li>
+<li>Intec audio interface: another digital audio interface which adds to the list. Only the DAC (playback) is emulated at the moment.</li>
+<li>Tape autoload: if enabled, when you open a tape file RealSpectrum will start loading it automatically in USR 0 mode, so you don't need to type LOAD "" manually (or use the 128K Taper Loader). If you are fast enough, you can see LOAD "" being autotyped on the command prompt :-) Autoload is turned on automatically for tape files specified from the command line. This new option can be found in the Tape menu (ALT-F7) and in the INI file (setting "AutoLoad:"). </li>
+<li>Integrated ZIP extraction: now RealSpectrum has built-in support to decompress zipped files. External programs such as PKUNZIP.EXE or UNZIP.EXE are no more needed (which even caused lots of troubles).</li>
+<li>Improved debugger: you can now disassemble any portion of the Z80 memory and scroll up/down the program. The new trace mode and related keys are described into the Debugger section of the manual.</li>
+<li>Bugfixes: perfect emulation of the Z80 DAA instruction, 100% faithful to the original Z80. "Stuck-keys" problem eliminated (some key releases were missed, causing problems especially during input recording). Tape saving traps (GAC). Block seeking in the Tape Browser.</li>
+</ul>
+<b>New in v0.94.22 (April 26th 2002)</b>
+<ul>
+<li>Configurable joystick emulation keys: you can now customize the PC keys which are used for joystick emulation individually; check out the new section of the F4 menu for live reconfiguration and the new "Joystick-Keys:" line in the INI. More information in the joysticks section of this manual.</li>
+<li>SLT and SP support: SLT is an old snapshot format now obsoleted by FlashLoad, but it is nice to have anyway. SP is another snapshot type and it is supported both for loading and for saving.</li>
+<li>Perfect floating bus emulation: at last we have discovered all the details of the floating bus effect of the 48K and 128K. Technical information available at our website. NOTE: since this affects timings, AIR files saved by RealSpectrum beta12 and above cannot be played back on older versions of the emulator (an error message will invite you to update); of course, RealSpectrum beta12 plays all AIR files correctly (both old and new ones)!</li>
+<li>New D80 disk formats: added D40 360K disks and 10-sectors formats both for D40 (400K) and D80 (800K). The format is autodetected from the file size. For RealDisk operations, select the proper format from the ALT-F6 panel.</li>
+<li>Speed optimizations: the emulator is now 8% faster than the previous releases.</li>
+<li>Bugfixes: important Z80 core fixes. Finally found a mysterious bug concerning AY/YM sound updates which caused occasional clicks in music (such as in Mutants 128K). Fixed a couple of embarassing bugs in multicolor timings (ahem). Fixed reset of drive B: for RealDisk. Some stuff in the debugger.</li>
+</ul>
+<b>New in v0.92.21 (November 3rd 2001)</b>
+<ul>
+<li>High-fidelity AY/YM sound model: RealSpectrum now uses empiric DAC tables directly measured from real AY and YM soundchips to reproduce the exact sound dynamics (thanks to Davide Barlotti for the WAVs). The old mathematical volume ramping scale is still available by setting "Physical-DAC: 0" into the INI file.</li>
+<li>Tape browser: the long-forgot TAP/TZX browser finally has been bugfixed and it is now usable! Press SHIFT-F7 to activate it, move the block pointer around the tape with the usual cursor keys (including PGUP, PGDN, HOME and END) and press ENTER to seek the desired position.</li>
+<li>Various bugfixes.</li>
+</ul>
+<b>New in v0.92.16 (September 6th 2001)</b>
+<ul>
+<li>This is a maintenance release which corrects some compatibility issues affecting the previous version. Users of v0.92.12 are strongly invited to update.</li>
+<li>Bugfixes and enhancements: Windows 2000/NT timing, debugger, Opus QuickDos, AIR stability, Scorpion ProfROM configuration from the INI, FDC765 (Speedlock DSKs), patch for Cyrix 6x86 bug.</li>
+</ul>
+<b>New in v0.92.12 (September 1st 2001)</b>
+<ul>
+<li>Tape Transfer: an integrated utility to transfer TZX, TAP and CSW files from PC back to a real Spectrum or cassette. Simply connect a tape recorder (or directly the Spectrum) to the soundcard's output, select the Tape Transfer function in ALT-F7 and choose the file to transfer. Read the "Tapes" chapter of the manual for more information.</li>
+<li>Debugger extensions: an inline assembler with multiline editor which recognizes ALL Z80 instructions, including the weirdest undocumented opcodes such as OUT(C),0 or LD A, RLC (IX+d). I/O breakpoints: besides program locations, now you can trap also all kind of accesses to I/O ports (read, write or read/write).</li>
+<li>Security enhancements for AIR: when recording in compo mode (SA-Codes enabled), even more restrictions are enforced to prevent any sort of cheating in official game competitions (Speccy Tour 2001 and HCC Cup). Now the emulator speed is contantly checked and any violation of the allowed limits (slowdown or speedup) will stop recording. Special features are available for the competition judges to evaluate the gameplay correctness (contact us).
+<li>Bugfixes: debugger, +3 snapshot loader, OSD, scanlines, joysticks, Z80 core and many others.</li>
+<li>Mentioned the <a href="http://www.image.dk/~frankie/">Speccy Tour 2001</a> and the <a href="http://www.thespian.demon.co.uk/air">CSS AIR files collection</a> in the manual.</li>
+</ul>
+<b>New in v0.90.38 (August 8th 2001)</b>
+<ul>
+<li>FastLoading: a cool tape loading acceleration technique which works will all loaders, including those not covered by FlashLoading. It dramatically reduces the loading time of any tape by at least 5-8 times, with the emulator still running at the usual 50 fps. But with the "<em>warp</em>" setting (ALT-F7), the boost reaches an amazing 30x-50x and above, depending on the speed of your PC! Check out the FastLoading section of the manual for more information.
+<li>Action recorder: RealSpectrum can now record and playback all the keyboard and joystick events! Thanks to AIR files (Advanced Input Recording) you can do several nice things, such as record the moves to finish your favourite games and create your own collection of game solutions to put online, or take part in the available online game tournaments where you can challenge other players to reach the highest scores in some classic games. Check <a href="#PNLAIR">this section</a> of the manual for more information and links!
+<li>Brand new debugger: the oldest source code of RealSpectrum, still intact since the very first release, has been blasted away and replaced with the new powerful and colourful debugger where nearly everything is now possible (to be completed) ;-) Check out the <a href="#DEBUGGER">new section</a> in the manual, or press F1 for a list of the keys.
+<li>New Spectrum graphic modes: basic support for some ULA video tweaks available for Pentagon, namely hardware multicolor and GigaScreen. The effects can be activated from the extra video preferences menu (ALT-F11). More modes available soon.
+<li>RealDisk improvements: the RealDisk system supports also 5.25" disk drives, and Track Caching is now handled automatically. Support for EDSK reading for +3 disks (but not only), please check the new section called "Reading disks in +3 modes" which describes the DSK customization panel. More compatibility with +3 disks, especially copy-protected ones.
+<li>Improved +3 disk emulation: several enhancements and bugfixes to the FDC 765 disk controller, especially concerning non-standard disks and copy-protected games (CP/M, Dragon Ninja, Dynasty Wars, Alkatraz and Speedlock loaders, etc). Added 720K DSK type in ALT-F6.
+<li>Softlock and PowerLoad FlashLoading: with the addition of these two loaders, many more games can be loaded instantaneousely directly from TZX files.
+<li>Tape rewind and eject: check out ALT-F7 for these new functions concerning tape loading.</li>
+<li>Graphic OSD: on-screen icons have been introduced to represent the emulator status and global events, such as tape/disk loading (play, rec, fast/flash), network activity, audio/video/action recording/playback, and so on. From ALT-F11 you can customize the display corner where the icons appear and their number (also from the INI).</li>
+<li>Better sound: much louder and consequently cleaner audio (+12dB in dynamic range)! We finally found a method to convince the external audio library not to scale down the output level of our sound stream, which also reduced the dynamic range (clarity). This only affects the soundcard output (speakers/headphones), while WAV/AVI recording has always been ok. If it's too loud now, adjust the "MasterVolume:" setting into the INI :-)</li>
+<li>SpecDrum emulation: another popular 8-bit digital sound interface, selectable from ALT-F12.</li>
+<li>Multiprint emulation: another Multiface-like interface from Romantic Robot with advanced support for printing. It is selected as an additional Multiface variant in F3+F3.</li>
+<li>Issue 2 emulation: the keyboard type can be changed from the properties menu for the Spectrum 16K and 48K (F3+F3), or set into the INI file.
+<li>Greyscale color mode: a new setting in ALT-F11 can turn RealSpectrum in greyscale mode (black and white), great for watching MB-02 Multitech images.
+<li>Post-rendering graphic effects: another option added to ALT-F11 which allows you to apply additional visual effects to the Spectrum video. In this release the only filter available is Chunky Vision, designed for viewing demos which use the 4x4 monochrome pixel chunks (Refresh and many many others). Requires additional CPU power. See the manual for more information.
+<li>Tape noise: now RealSpectrum fills the silence gaps with some artificial noise like on a real tape; this accomodates some weird loaders. This feature can be disabled from the INI.</li>
+<li>Enlarged ProfROM support: now RealSpec accepts also 128K and 256K versions in addition to the full 512K ROM.
+<li>The fileselector now remebers the last directory accessed for each file type, and the position of the highlight bar.</li>
+<li>Moved the IDE control panel from ALT-F4 to CTRL-F4. ALT-F4 now shows the Action Recorder menu.</li>
+<li>Automatic model switching: if this new setting (CTRL-F1) is enabled, RealSpectrum will change the computer model automatically when you load a snapshot file (previous versions of the emulator never do this). The default value for this option can be specified into the INI file with the "ModelSwitching:" line.</li>
+<li>Many bugfixes (INI parser, double-sided DSK files, FDC765, .ROM loading, TAP/TZX saving, WD1793, Z80 core, CPU detection).
+<li>Updated the FAQ section of the manual with more common questions and troubleshooting.
+</ul>
+<b>New in v0.80.22 (March 15th 2001)</b>
+<ul>
+<li>Scorpion ProfROM: a 512K dual-banked ROM with many advanced features, including full SMUC support (hard-disk, etc) and a collection of ready-to-use utilities such as ZxZip, ZWord and more. The two banks can be switched from the usual Hardware Options panel (F3+F3). To activate the ProfROM, just load it.
+<li>Scorpion SMUC: this is an interesting peripheral with a real-time clock processor, CMOS and NVRAM memory, an IDE controller, a standard PC serial port and an optional i8259 interrupt controller (not emulated); in short, it brings an XT system into the Scorpion. It is supported by the ProfROM and other ROMs as well. SMUC emulation is activated from the F3+F3 (hardware properties) menu for the Scorpion computer model, and you can find more information about it into the new <a href="#PERIPHERALS">Additional Peripherals</a> chapter.
+<li>IDE Hard-disk emulation: RealSpectrum emulates an IDE controller which can be used with the following new peripherals: SMUC (see above), +3e and Pera Putnik's simple IDE interface. Hard-disks are supported as .HDF or .HDD (raw image files) of any size; an HDF management utility is now integrated into the emulator.
+<li>NetPlay: this new function shares the keyboard control with another friend over a (fast) network, allowing simultaneous control of the computers. For example, you can challenge a friend to play a game in multiplayer mode. Please do read the NetPlay paragraph in the Networking chapter for all the details.
+<li>Opus Discovery emulation: another popular disk interface, supporting two floppy disks with realdisk or via .OPD image files. 2KB RAM extension included (IC6116).
+<li>D80/D40 emulation: another disk interface, quite spread in Czech and other european countries. Two floppy disks, using .D80 image files or realdisk.
+<li>New RealDisk: the physical drive access routines have been completely rewritten and now RealSpectrum uses direct DMA access to the PC disk controller for high operation speed and reliability. The motherboard's BIOS routines are completely bypassed, thus achieving 100% compatibility with all systems and for all the various disk types! Besides, the FORMAT commands now work also with physical floppies. Both A: and B: drives can be used (if available).
+<li>RealDisk utility: with this new control panel (ALT-F6) you can now dump real floppy disks to image files (IMG, MGT, TRD, MBD, OPD and D80) and vice versa. No more need for external utilities, all can be done from within the emulator. Use this tool to read, write and even format real Speccy disks in any format supported by the various interfaces, it's very fast and reliable. Of course you can still create empty image files (all formats). Click <a href="#RDISKUT">here</a> for more info.
+<li>Didaktik Kompakt emulation: basically a Spectrum 48K with a D80 interface inside.
+<li>Softrack emulation: a simple variant of the Multiface 128, proposed by Lars Jespersen, with 16K of RAM and no ROM (you must pre-load the software, of course).
+<li>Emulation speed throttling: from the new CTRL-F1 menu you can alter the emulation speed to 1x-9x and full-throttle (max speed). Besides, you can also hold down <em>tilde</em> to force full speed till the key is pressed (tilde is the key before '1' and below ESC). Please read <a href="#EXTRASETT">this</a> for more information.
+<li>Flash snapshot saving and loading in RAM using a single keypress (SCRLOCK to load, ALT+SCRLOCK to save): no fileselector, no filenames, no paths, etc - very handy when trying to finish that hard game :) 
+<li>Fixes and changes: Z80 core, AY-LPT, INI parser, Sinclair networking, fileselector cosmetic improvements, and several others.
+</ul>
+<b>New in v0.75.20 (December 24th 2000)</b>
+<ul>
+<li>MB-02+ emulation: probably the most powerful interface ever built for the Spectrum! A dream device with 512K of integrated SRAM, supporting 4 high-density disk drives, with a Z80 DMA chip inside for CPU-independent operations! RealSpectrum emulates the Z80 DMA chip as well as the integrated real time clock (RTC). The MB02 disks are supported as .MBD disk images, which are just a dump of the real disk (same rule as .MGT files).
+<li>Video recorder: with the new VTR function in ALT-F11, you can now record your favourite Spectrum games or demos into movie files :-) RealSpectrum saves compressed AVI files containing both audio and video or video only; the new VTR control panel lets you customize several settings such as the frame rate of the captured video, the screen size (full picture with border or screen only) and other things.
+<li>New hardware properties panel: a hardware configuration menu has been added to include some additional model-specific properties. The new panel is accessed by pressing F3 twice and it contains (and allows you to change) the ROM filename, the soundchip type and so on. The properties list is model-specific.
+<li>Multiface I and III emulation: this completes the range of Multiface peripherals supported. The proper version is automatically activated depending on the current Spectrum model selected.
+<li>Pentagon 512K support: the memory extension can be activated in the properties box of the hardware configuration menu.
+<li>Serial port emulation: RealSpectrum supports bidirectional RS-232 communications through the COM1-COM4 PC serial ports and file redirection. Besides the standard Interface-1 and Spectrum 128K interfaces, you can customize the code traps to use your own input/output routines, allowing a wide rage of third-party programs to work using their own code. Please read the appropriate section of this manual to learn all the details about the new RS-232 emulation (CTRL-F3).
+<li>Improved FDC765 emulation and support for Extended DSK files.
+<li>Zipped files support: automatic extraction of compressed files (ZIP, RAR, ARJ and ACE archives). The archives are listed into the fileselector as special directories. See the "Compressed archives support" paragraph in chapter 4 for details and for some important warnings.
+<li>The usual amount of bugfixes: WD1793 (TRDOS writing and formatting), black screen at startup when no soundcard is available and more.
+</ul>
+<b>New in v0.70.19 (October 21st 2000)</b>
+<ul>
+<li>Real-tape support: reliable loading and saving of real Spectrum tapes directly through your soundcard. To enable it, select "Physical-Device" in the tape fileselectors. Please read the new dedicated sections in the Tapes chapter.
+<li>Covox, Stereo Covox, Soundrive and Music Machine emulation: added a digital channel for 4 x 8-bit stereo sound DACs with linear interpolation, providing high quality music and effects. When enabled (ALT-F12), the digital sound devices replace the beeper channel (so they are subject to the "Device Balance" setting in the main sound panel of F12).
+<li>Empty disk images creation: with ALT-F6 you can create empty IMG, MGT, TRD, DSK and MDR files. Note: DSK disks and MDR cartridges are blank and must be formatted.
+<li>Parallel port emulation for DISCiPLE, +D, +2A, +3 and Scorpion. Data can be sent to LPT1, LPT2 or a disk file. See the Communication Ports menu (CTRL-F3).
+<li>Ability to change ROMs also for the various peripherals in F3 (DISCiPLE, +D, TRDOS, IF-1, Multiface).
+<li>Improved Scorpion emulation: exact multicolor timings, enabled Shadow Monitor (NMI) and fix for "128 TRDOS". Coming next: turbo speed emulation.
+<li>Better real disk support: improved BIOS compatibility; now it works with TRDOS disks too.
+<li>Joystick emulation also via PC cursor keys (select "Cursor Keys" as stick in ALT-F3).
+<li>Updated help pages (F1).
+<li>Added switch "AY-48K:" in the INI file to enable/disable the AY soundchip for the 16K and 48K Spectrum models; the available settings are: 0=OFF (original 48K), 1=AY38912 and 2=YM2149; the default is 1 (AY enabled).
+<li>Support for 256K .Z80 snapshots in Scorpion mode (both reading and writing). Improved Z80/SNA snapshot handling with +2A/+3 and Scorpion models.
+<li>Many bugfixes (+2A/+3 timings, custom ROMs loading, DemoMode, .AY player, Z80 core, FlashLoading, etc).
+</ul>
+<b>New in v0.60.42 (August 24th 2000)</b>
+<ul>
+<li>Interface I emulation with 8 microdrives (MDR files). The IF-1 ROM is now included into the standard ROMs package.
+<li>Interface I and DISCiPLE network emulation over the Internet (TCP/IP)! You can connect two virtual Spectrums anywhere in the world using the standard DISCiPLE or Interface I networking features (e.g. the channel "n" BASIC commands, but not only)! Requires Windows 3.1 or 95/98 (recommended) and it works on any TCP/IP connection such as Internet or a LAN. Networking options are in the ALT-F8 menu. Please do read the <a href="#NETWORK">"Networking" chapter</a> very carefully!
+<li>Integrated chat system for Internet/LAN (TCP/IP): you can talk with other spec-chums while running your favourite games/demos (CTRL-F8). The messages appear directly on the Spectrum screen thanks to the new multi-row on-screen display (OSD).
+<li>File exchange system for Internet/LAN (TCP/IP): you can send and receive any files from within RealSpectrum (SHIFT-F8).
+<li>DemoMode screen (F8) with special gfx effects for music playing. Integrated player of .AY files. Still under development.
+<li>48K BASIC Tokenizer: also in 48K mode, you type BASIC commands or whole program lines character by character in the Tokenizer editor (ALT-F1) with syntax highlighting, and then it translates everything into the proper sequence of keypresses which are passed to the 48K editor automatically at lightspeed. It's a very nice show, try it! :-)
+<li>Keyboard localization: you can set the layout of the keyboard to your national standard (line "Keyboard:" in realspec.ini).
+<li>Multi-row OSD (On-Screen Display) which can show both graphic icons and text messages. The maximum number of text lines displayed simultaneosely can be changed in the ALT-F11 menu. The OSD is currently used only by the network subsystem, but will be used for a complete graphic messaging system for the emulation status (disk/tape leds, special events, etc.).
+<li>Memory block loading and saving (ALT-F9)
+<li>Runtime selection of custom ROMs for the various models (press SPACE in F3 on the selected model).
+<li>Many bugfixes (pokes panel, 48K romfile loading, read-only disk files, +D BetaDos, +2A/+3 address decoding, etc).
+</ul>
+<b>New in v0.50.23 (May 14th 2000)</b>
+<ul>
+<li>New Spectrum models: 16K, +2A, +3 and Scorpion 256. Note: the ROM set archive has changed!
+<li>Kempston mouse support for Pentagon and Scorpion (ALT-F3).
+<li>Great speed improvement, over 30% faster in terms of FPS!
+<li>Heavy Z80 core changes.
+<li>48K multicolor timings inserted (based on issue 4S).
+<li>Ability to disable contended memory emulation to gain extra speed at the cost of a degraded visual quality. Contended memory is required for 100% exact rendering of multicolor effects. This does not affect Pentagon and Scorpion models, which have no contended memory for themselves.
+<li>DISCiPLE/+D rom files can be specified in the INI file; support for pre-booted (ROM+SYS) rom files (16384 bytes instead of 8192).
+<li>Default directory customizations in the INI file for snapshot, tapes and disks.
+<li>Screenshot saving in BMP, SCR, PCX and TGA format (ALT-F11)
+<li>AZX and YM music recording and new Sound Recorder dialog (ALT-F12)
+<li>Switch to skip the welcome message ("-nopause" from the command line and "WelcomeMessage" in the INI).
+<li>Tons of bugfixes (Z80 snapshot loader, UNIDOS saving, Z80 core, etc.)
+</ul>
+<b>New in v0.41.06 (March 13th 2000)</b>
+<ul>
+<li>Kempston/Sinclair joystick support (ALT-F3)
+<li>Added Digital Integration loading scheme to FlashLoading
+<li>Z80 core bugfixes (Melange, Kolobok2 and Digital Integration)
+<li>Other bugfixes
+</ul>
+<b>New in v0.40.26 (March 5th 2000)</b>
+<ul>
+<li>TZX FlashLoading (turbo games, with levels included)
+<li>Tape saving to TZX, TAP, CSW and WAV
+<li>Tape Options control panel (ALT-F7)
+<li>SCL support for TRDOS disks
+<li>Z80 core bugfix (Dizzy V)
+<li>POK files automatic support
+<li>Command line switches
+<li>Automatic selection of TRDOS in Pentagon mode
+<li>Help menu (F1)
+</ul>
+<b>New in v0.34.21 (January 21st 2000)</b>
+<ul>
+<li>UNIDOS support enabled (both DISCiPLE and +D)
+<li>Basic TRDOS support (not widely tested yet)
+<li>Major speedup (+50% faster!)
+<li>Z80 core bugfixes and changes
+</ul>
+<b>New in v0.32.20 (January 3rd 2000)</b>
+<ul>
+<li>+D emulation enabled, disk writing enabled
+<li>Disk selection control panel
+<li>Speed up and bugfixes
+</ul>
+<b>December 31st 1999: Millennium Release (v0.31.999)</b>
+</td></tr></table></p>
+
+
+
+<hr>
+<div align="center">
+<font size="-2">RealSpectrum and this manual are &copy 1999-2001 Ramsoft ZX Spectrum demogroup</font></div>
+</font>
+</body>
+</html>

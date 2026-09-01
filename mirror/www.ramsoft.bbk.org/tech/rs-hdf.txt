@@ -1,0 +1,48 @@
+                             Ramsoft RealSpectrum
+
+                      HDF 1.0 File Format Specification
+                     ***********************************
+                        document revision 0.3 20/02/01
+
+                               (C)2001 RAMSOFT
+
+
+HDF files are used to store hard-disk data into image files for emulation
+purposes. They consist in a file header, followed by a raw dump of the
+tracks data.
+
+The following is the format of the HDF header. All numbers are
+hexadecimal and in Intel-byte-order (little endian).
+
+
+Offset   Len   Meaning
+-----------------------------------------------------------------------------
+    00    06   "RS-IDE"
+    06    01   0x1A
+    07    01   Revision number (BCD), current: 0x10 (v1.0)
+    08    01   b0: halved sector data (only LSB of sector words is stored)
+    09    02   offset of hard-disk data (0x0080)
+    0B    0B   reserved (MUST be set to 0x00)
+    16    6A   IDE/ATA identification data, as returned by ATA command 0xEC
+
+word[09]  ??   raw hard-disk data (C0 H0, C0 H1 ... C0 H15, C1 H0, C1 H1 ...)
+
+Note: IDE devices transfer data in 16-bit words. Since the Z80 data bus
+is only 8-bit, so some IDE adapters use additional logic to split the IDE
+word into two bytes so that the Z80 can fetch them. However, other adapters
+discard the most significant byte of the word completely, in favour of a
+simplified circuitry; in this case, only half of the nominal capacity of a
+disk sector is used. Bit 0 at offset 0x08 is introduced to signal this
+evenience: when it is set, it means that the sector size specified by
+the IDE identification data is actually halved in the HDF file. This
+is done to reduce the HDF file size, by storing only the "usable" significant
+data; for all the supported adapters, the least significant byte is stored.
+
+The IDE identification data format is reported into any IDE/ATA technical
+paper. It contains information about the drive geometry (cylinders, heads,
+sectors, sector size), the device model name, the supported features and so on.
+
+
+----
+The Ramsoft staff   <ramsoft@bbk.org>
+http://www.ramsoft.bbk.org

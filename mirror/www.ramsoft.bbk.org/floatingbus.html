@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta name="Keywords" content="ZX Spectrum ULA contended memory video timings Z80 microcode Ramsoft">
+<title>
+Floating bus technical guide
+</title>
+</head><body>
+<font face="Verdana">
+
+<div align="center">
+<table bgcolor="#7070ff" border=1 cellpadding=8><tr><td align="center">
+<font size="+1" color="#70ffff"><strong>Ramsoft presents:</strong></font>
+<br>
+<strong><font color="#FFFFFF" size="+3">The floating bus </font><font size="+3" color="#ffff70">explained!</strong></font>
+<br>
+<font size="+1" color="#e7e7ff">technical report - <font size="-1">rev 1.06 (apr 25 2002)</font></font>
+</td></tr></table>
+<br><br><br><br>
+
+<font size="+2">Summary:</font><br><br><br>
+<TABLE WIDTH="40%">
+<TR><TD ALIGN=LEFT><OL>
+<LI><B><A HREF="#FLOATINGBUS">The floating bus</A></b></LI>
+<LI><B><A HREF="#SNOWEFFECT">The snow effect</A></B></LI>
+</OL></TD></TR></TABLE>
+</div><br><br>
+</div>
+
+<a name="FLOATINGBUS"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+1.
+</b></font></td><td><font size="+2">
+The floating bus on the 48K and 128K
+</font></td></tr></table>
+<br>
+<p>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+Due to the resistors which decouple the two dedicated buses inside the Spectrum, when the Z80 reads from an unattached port (such as 0xFF) it actually reads the data currently present on the ULA bus, which may happen to be a byte being transferred by the ULA from video memory for the screen rendering. If the ULA is building the border, then its data bus is idle (0xFF), otherwise we are perfectly able to predict whether it is reading a bitmap byte, an attribute or again it's idle. This "nice" effect goes under the name of <em>floating bus</em>. Unfortunately some programs do rely on the exact behaviour of the floating bus, so we can't simply forget about it; notable examples are Arkanoid (first edition), Cobra, Sidewize, Duet and DigiSynth.
+<p>
+In the next table we show the locations which are read by the ULA with their respective times (T-STATES), both in the 128K and in the 48K. Remember that during a port read, the Z80 fetches the input byte from the bus in the last cycle of the I/O transaction (i.e. T4).
+<br><br><br>
+<div align="center">
+<table border=1 width="50%">
+<tr align="center" bgcolor="#e0e0e0"><td align="center"><strong>Value</strong></td><td align="center"><strong>128K time</strong></td><td align="center"><strong>48K time</strong></td></tr>
+<tr bgcolor="#f7f7f7"><td colspan=4 align="center">First row of pixels</td></tr>
+<tr><td align="center">(0x4000)</td><td align="center">14368</td><td align="center">14347</td></tr>
+<tr><td align="center">(0x5800)</td><td align="center">14369</td><td align="center">14348</td></tr>
+<tr><td align="center">(0x4001)</td><td align="center">14370</td><td align="center">14349</td></tr>
+<tr><td align="center">(0x5801)</td><td align="center">14371</td><td align="center">14350</td></tr>
+<tr><td align="center">IDLE</td><td align="center">14372</td><td align="center">14351</td></tr>
+<tr><td align="center">IDLE</td><td align="center">14373</td><td align="center">14352</td></tr>
+<tr><td align="center">IDLE</td><td align="center">14374</td><td align="center">14353</td></tr>
+<tr><td align="center">IDLE</td><td align="center">14375</td><td align="center">14354</td></tr>
+<tr><td align="center">(0x4002)</td><td align="center">14376</td><td align="center">14355</td></tr>
+<tr><td align="center">(0x5802)</td><td align="center">14377</td><td align="center">14356</td></tr>
+<tr><td align="center">...</td><td align="center">...</td><td align="center">...</td></tr>
+<tr bgcolor="#f7f7f7"><td colspan=4 align="center">Second row of pixels</td></tr>
+<tr><td align="center">(0x4100)</td><td align="center">14596</td><td align="center">14571</td></tr>
+<tr><td align="center">(0x5800)</td><td align="center">14597</td><td align="center">14572</td></tr>
+<tr><td align="center">...</td><td align="center">...</td><td align="center">...</td></tr>
+</table>
+</div>
+<br><br>
+The ULA reads a whole row of pixels and attributes using 16 x 8T cycles, the first of which starts at 14368 on the 128K and 14347 on the 48K. The screen bytes are fetched during the first 4T of each cycle (order: bitmap, attribute, bitmap+1, attribute+1), while in the last 4T the bus is idle (0xFF). After that 128T, the ULA is busy drawing the border and it does not read the video memory, so it leaves the bus idle for the remaining 228-128 = 100T (or 224-128 = 96T on the 48K). Then, the second row of pixels is started to be read at 14368+228 = 14596T (or 14347+224 = 14571T on the 48K) with the same scheme, and so on until the 192th row is finished.
+<p>
+<b>The floating bus test program.</b><br><br>
+We have prepared a small test program to study the floating bus, which is available for download (see the bottom of this paragraph). It works on 48K/128K/+2 Spectrums and the specific ULA model is autodetected. Emulators must implement contended memory correctly for the program to produce reliable information.<br><br>
+The routines are calibrated so that the bus is sampled exactly at the T-STATE shown on the screen, i.e. the IN A,(0xFF) instruction is started exactly 10T before the target time. The IM2 T_OFS parameter takes into account the initial offset of the IM2 interrupt routine and it is automatically adjusted by the program according to the ULA type detected, so you don't need to change it. The first 8 lines of pixels are filled with bytes 0 through 255, while the attributes have values 64 through 95.
+<br>
+Using the keys shown at the bottom of the screen you can alter the various parameters, i.e. the sampling T-STATE, T_OFS and the input port (full 16-bit addresses accepted). Note that the sampling T-STATE is computed ignoring I/O contention delays (take this into account when you select a contended port).<br><br>
+We have also added a useful function to test and debug emulators: the self test routine is an automatic diagnostic procedure which tests the floating bus behaviour for the first 8 rows of pixels with absolute precision - a total of 228x8 (or 224x8) T-STATES are scanned one by one. The results are compared against the measurements from the real Spectrum (see the paragraph above for details); whenever a mismatch is detected, the program prints a warning with the expected value. If the emulator implements the floating bus correctly, at the end of the 128 burst reads performed by the test you should see "Floating bus OK" - otherwise the total error count is printed.
+<br><br>
+<div align="center"><font size="+1">Click <a href="http://www.ramsoft.bbk.org/tech/floatspy.zip">here</a> to download the latest version of the test program (TAP).</font></div><br>
+With simple modifications, this tool is suitable to study other effects too.
+</td></tr></table></p>
+
+
+
+
+<a name="SNOWEFFECT"></a>
+<p><table bbgcolor="#ffff90" width="100%" cellspacing="12" cellpadding="0" border="0"><tr>
+<td align="center" bgcolor="#ff7848" width="10%"><font size="+2" color="white"><b>
+2.
+</b></font></td><td><font size="+2">
+The snow effect
+</font></td></tr></table>
+<br>
+<table width="100%" border="0"><tr><td width="10%"> </td></td><td>
+Although the ULA is usually hyper-efficient to halt the Z80 even when not needed, sometimes it forgets to apply contention when it really should. Try the following program:
+<br><br>
+<pre>
+				DI
+				LD A, 0x40
+				LD I, A
+				EI
+				RET
+</pre>
+You will see random dots and patterns appearing on the screen, a nice visual effect called <em>the snow effect</em> which has been used as a "special fx" in the game Vectron.<br><br>
+Technically speaking, this happens because when the I register falls in the range 0x40-0x7F then the ULA gets confused by the memory refresh cycles of the Z80 (performed during each instruction fetch), and it doesn't apply contention to take precedence as usual. Under this circumstance, the IR address put on the bus by the CPU interferes with the video memory address generated by the ULA (who wants to read the videoram to draw the screen), with the result that the RAM chip which contains the display file perceives a mixture of the two addresses. Therefore the ULA reads the data from an unexpected memory location (which still belongs to videoram), and a wrong pattern is displayed on the screen.<br>
+In detail, the address which is actually read by the ULA is the following:<br><br>
+<pre>
+		A15-A8 = A15-A8 of the ULA address
+		 A7-A0 = the R register of the Z80
+</pre>
+Remember that the attribute and bitmap bytes for a given screen cell (e.g. addresses 0x4000 and 0x5800) are stored at the same row but a different column in videoram. Since the clash alters the row address only, the ULA always reads matching attribute/bitmap couples - it simply displays the pattern in the wrong cell. This rule applies both to the 48K and 128K Spectrum models.
+<br><br>
+At the moment it's not 100% clear to us what happens inside the ULA in terms of circuitry logic and which determines the snow effect.
+</td></tr></table></p>
+
+
+
+
+
+<hr>
+<div align="center"><font size="-2">
+&copy 2002 RAMSOFT ZX Spectrum demogroup - web: <a href="http://www.ramsoft.bbk.org">http://www.ramsoft.bbk.org</a> - email: <a href="mailto:ramsoft@bbk.org">ramsoft@bbk.org</a>
+<br>
+This document is part of "The ULA internals" technical report, which will be published as soon as it is finished.
+</font></div>
+</font>
+</body>
+</html>

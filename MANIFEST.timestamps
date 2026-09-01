@@ -1,0 +1,213 @@
+# Original file modification times
+#
+# Git does not store per-file mtimes: on clone every file is stamped with the
+# checkout moment. These are the ORIGIN SERVER's Last-Modified values -- when
+# RAMSOFT actually wrote each file -- recovered from the Wayback Machine's
+# preserved response headers (x-archive-orig-last-modified).
+#
+# These are NOT capture dates. A capture date says only "this existed by then";
+# these say when the file was made. Both are recorded in PROVENANCE.tsv.
+#
+# Every value here is cross-confirmed by the origin's Apache ETag, whose
+# inode-size-mtime triple independently encodes the same mtime and the same
+# byte count: all entries agree on both.
+#
+# Paths are relative to the mirror root -- the directory that contains
+# www.ramsoft.bbk.org/ (that is mirror/ in the published repository).
+# Format: <ISO-8601 mtime>  <path>
+# Restore by running this from the mirror root, with MANIFEST at $M:
+#   awk '$1!~/^#/{print $1, $2}' "$M" |
+#     while read t p; do touch -d "$t" "$p"; done
+#
+2007-02-22T20:18:59Z  www.ramsoft.bbk.org/about.html
+2001-02-20T22:28:27Z  www.ramsoft.bbk.org/cc999.html
+2003-08-01T12:30:33Z  www.ramsoft.bbk.org/csw.html
+2001-02-20T22:28:31Z  www.ramsoft.bbk.org/demos.html
+2000-07-28T17:59:19Z  www.ramsoft.bbk.org/demos/2ndreal1.zip
+2000-07-28T18:00:44Z  www.ramsoft.bbk.org/demos/cc999/anamnes.zip
+2000-07-28T18:00:45Z  www.ramsoft.bbk.org/demos/cc999/cc999.txt
+2000-07-28T18:00:53Z  www.ramsoft.bbk.org/demos/cc999/cc999gfx.zip
+2000-07-28T18:00:56Z  www.ramsoft.bbk.org/demos/cc999/cc999i4k.zip
+2000-07-28T18:01:02Z  www.ramsoft.bbk.org/demos/cc999/cc999mfx.zip
+2000-07-28T18:01:05Z  www.ramsoft.bbk.org/demos/cc999/cc999tap.zip
+2000-07-28T18:01:54Z  www.ramsoft.bbk.org/demos/cc999/cc99i512.zip
+2000-07-28T18:10:52Z  www.ramsoft.bbk.org/demos/doxy98/compo.zip
+2000-07-28T18:10:15Z  www.ramsoft.bbk.org/demos/doxy98/dc98full.txt
+2000-07-28T18:10:15Z  www.ramsoft.bbk.org/demos/doxy98/dc98mus1.zip
+2000-07-28T18:10:16Z  www.ramsoft.bbk.org/demos/doxy98/dc98mus2.zip
+2000-07-28T18:10:16Z  www.ramsoft.bbk.org/demos/doxy98/dc98mus3.zip
+2000-07-28T18:10:20Z  www.ramsoft.bbk.org/demos/doxy98/hstate.zip
+2000-07-28T18:10:54Z  www.ramsoft.bbk.org/demos/doxy99/clone.zip
+2000-07-28T18:10:57Z  www.ramsoft.bbk.org/demos/doxy99/dc99gfx.zip
+2000-07-28T18:10:59Z  www.ramsoft.bbk.org/demos/doxy99/dc99gfx2.zip
+2000-07-28T18:11:00Z  www.ramsoft.bbk.org/demos/doxy99/dc99late.zip
+2000-07-28T18:11:03Z  www.ramsoft.bbk.org/demos/doxy99/dc99msx.zip
+2000-07-28T18:11:13Z  www.ramsoft.bbk.org/demos/doxy99/minctrl.zip
+2000-07-28T18:11:13Z  www.ramsoft.bbk.org/demos/doxy99/omedron4.zip
+2000-07-28T18:11:13Z  www.ramsoft.bbk.org/demos/doxy99/zoooooom.zip
+2000-07-28T18:02:34Z  www.ramsoft.bbk.org/demos/enlight97/bc.zip
+2000-07-28T18:02:45Z  www.ramsoft.bbk.org/demos/enlight97/binlove.zip
+2000-07-28T18:05:48Z  www.ramsoft.bbk.org/demos/enlight97/bizarre.zip
+2000-07-28T18:04:59Z  www.ramsoft.bbk.org/demos/enlight97/bs-i.zip
+2000-07-28T18:03:20Z  www.ramsoft.bbk.org/demos/enlight97/e97gfx.zip
+2000-07-28T18:04:01Z  www.ramsoft.bbk.org/demos/enlight97/e97music.zip
+2000-07-28T18:04:56Z  www.ramsoft.bbk.org/demos/enlight97/ecstatic.zip
+2000-07-28T18:04:50Z  www.ramsoft.bbk.org/demos/enlight97/enlight96.rar
+2000-07-28T18:04:06Z  www.ramsoft.bbk.org/demos/enlight97/excess.zip
+2000-07-28T18:05:45Z  www.ramsoft.bbk.org/demos/enlight97/eyeahe_2.zip
+2000-07-28T18:05:51Z  www.ramsoft.bbk.org/demos/enlight97/noumenon.zip
+2000-07-28T18:05:29Z  www.ramsoft.bbk.org/demos/enlight97/powerup2.zip
+2000-07-28T18:05:31Z  www.ramsoft.bbk.org/demos/enlight97/realactn.zip
+2000-07-28T18:02:31Z  www.ramsoft.bbk.org/demos/enlight97/s4b.zip
+2000-07-28T18:05:58Z  www.ramsoft.bbk.org/demos/funtop98/5elment.zip
+2000-07-28T18:06:04Z  www.ramsoft.bbk.org/demos/funtop98/adrenalz.zip
+2000-07-28T18:06:06Z  www.ramsoft.bbk.org/demos/funtop98/airspace.zip
+2000-07-28T18:06:28Z  www.ramsoft.bbk.org/demos/funtop98/blame.zip
+2000-07-28T18:06:14Z  www.ramsoft.bbk.org/demos/funtop98/boom.zip
+2000-07-28T18:06:34Z  www.ramsoft.bbk.org/demos/funtop98/cr_love.zip
+2000-07-28T18:06:37Z  www.ramsoft.bbk.org/demos/funtop98/emergenc.zip
+2000-07-28T18:06:43Z  www.ramsoft.bbk.org/demos/funtop98/enthropy.zip
+2000-07-28T18:10:13Z  www.ramsoft.bbk.org/demos/funtop98/forever_final.zip
+2000-07-28T18:07:10Z  www.ramsoft.bbk.org/demos/funtop98/ft98dem1.zip
+2000-07-28T18:07:44Z  www.ramsoft.bbk.org/demos/funtop98/ft98dem2.zip
+2000-07-28T18:08:13Z  www.ramsoft.bbk.org/demos/funtop98/ft98dem3.zip
+2000-07-28T18:08:31Z  www.ramsoft.bbk.org/demos/funtop98/ft98gfx.zip
+2000-07-28T18:08:35Z  www.ramsoft.bbk.org/demos/funtop98/ft98in4k.zip
+2000-07-28T18:08:42Z  www.ramsoft.bbk.org/demos/funtop98/ft98mus-.zip
+2000-07-28T18:08:43Z  www.ramsoft.bbk.org/demos/funtop98/ft98res.txt
+2000-07-28T18:08:56Z  www.ramsoft.bbk.org/demos/funtop98/funtasy.zip
+2000-07-28T18:09:01Z  www.ramsoft.bbk.org/demos/funtop98/garlic.zip
+2000-07-28T18:09:05Z  www.ramsoft.bbk.org/demos/funtop98/katharss.zip
+2000-07-28T18:09:07Z  www.ramsoft.bbk.org/demos/funtop98/morbid_v.zip
+2000-07-28T18:09:53Z  www.ramsoft.bbk.org/demos/funtop98/refresh.zip
+2000-07-28T18:09:17Z  www.ramsoft.bbk.org/demos/funtop98/tv-x.zip
+2000-07-28T18:09:21Z  www.ramsoft.bbk.org/demos/funtop98/tyranny.zip
+2000-07-28T18:01:57Z  www.ramsoft.bbk.org/demos/pdx99/pdx_16kb.zip
+2000-07-28T18:01:58Z  www.ramsoft.bbk.org/demos/pdx99/pdx_4kb.zip
+2000-07-28T18:02:00Z  www.ramsoft.bbk.org/demos/pdx99/pdx_ay.zip
+2000-07-28T18:02:13Z  www.ramsoft.bbk.org/demos/pdx99/pdx_demo.zip
+2000-07-28T18:02:18Z  www.ramsoft.bbk.org/demos/pdx99/pdx_gfx.zip
+2000-07-28T17:59:22Z  www.ramsoft.bbk.org/demos/vtxplg11.zip
+2000-07-28T17:59:24Z  www.ramsoft.bbk.org/demos/vtxprc06.zip
+2001-02-20T22:28:35Z  www.ramsoft.bbk.org/doxy98.html
+2001-02-20T22:28:38Z  www.ramsoft.bbk.org/doxy99.html
+2001-02-20T22:28:42Z  www.ramsoft.bbk.org/e97.html
+2000-07-28T17:59:10Z  www.ramsoft.bbk.org/emul.html
+2005-05-01T11:52:15Z  www.ramsoft.bbk.org/emul/FdInstall.exe
+2001-03-15T22:57:12Z  www.ramsoft.bbk.org/emul/csdpmi5b.zip
+2001-04-11T10:13:25Z  www.ramsoft.bbk.org/emul/hdfutils.zip
+2002-09-10T09:42:59Z  www.ramsoft.bbk.org/emul/rs32-b13-amd.zip
+2002-09-10T09:33:16Z  www.ramsoft.bbk.org/emul/rs32-b13-i686.zip
+2002-09-10T09:38:28Z  www.ramsoft.bbk.org/emul/rs32-b13-pent.zip
+2006-08-23T12:06:03Z  www.ramsoft.bbk.org/emul/rs32-latest.zip
+2004-11-06T11:17:43Z  www.ramsoft.bbk.org/emul/rs32-r14b-amd.zip
+2004-11-06T11:18:05Z  www.ramsoft.bbk.org/emul/rs32-r14b-i686.zip
+2004-11-06T11:18:42Z  www.ramsoft.bbk.org/emul/rs32-r14b-pent.zip
+2003-11-10T11:38:12Z  www.ramsoft.bbk.org/emul/rsdos-latest.zip
+2001-03-15T23:18:40Z  www.ramsoft.bbk.org/emul/rspec-b10-pent.zip
+2002-09-10T01:16:39Z  www.ramsoft.bbk.org/emul/rspec-b13-amd.zip
+2002-09-10T01:08:30Z  www.ramsoft.bbk.org/emul/rspec-b13-i686.zip
+2002-09-10T00:55:19Z  www.ramsoft.bbk.org/emul/rspec-b13-pent.zip
+2000-07-28T18:25:11Z  www.ramsoft.bbk.org/emul/rspec-b6-i686.zip
+2000-07-28T18:24:11Z  www.ramsoft.bbk.org/emul/rspec-b6-k6.zip
+2000-07-28T18:24:47Z  www.ramsoft.bbk.org/emul/rspec-b6-pent.zip
+2004-11-12T00:49:13Z  www.ramsoft.bbk.org/emul/rspec-r14b-amd.zip
+2004-11-12T00:47:23Z  www.ramsoft.bbk.org/emul/rspec-r14b-i686.zip
+2004-11-12T00:58:57Z  www.ramsoft.bbk.org/emul/rspec-r14b-pent.zip
+2000-10-13T22:56:15Z  www.ramsoft.bbk.org/emul/rspec-roms.zip
+2000-08-20T22:11:42Z  www.ramsoft.bbk.org/emul/sockvxd.exe
+2001-03-04T23:24:53Z  www.ramsoft.bbk.org/emul/softcrack9.zip
+2005-11-26T18:19:04Z  www.ramsoft.bbk.org/emul/ymplay230.zip
+2000-07-28T18:32:12Z  www.ramsoft.bbk.org/emulthreat.html
+2002-04-26T23:13:31Z  www.ramsoft.bbk.org/floatingbus.html
+2001-02-20T22:28:46Z  www.ramsoft.bbk.org/funtop98.html
+2001-02-23T22:43:53Z  www.ramsoft.bbk.org/gallery.html
+2006-06-28T12:02:17Z  www.ramsoft.bbk.org/hdfform.html
+2000-07-28T18:25:25Z  www.ramsoft.bbk.org/images/128g2.jpg
+2000-07-28T18:25:35Z  www.ramsoft.bbk.org/images/3dnow.gif
+2000-07-28T18:25:35Z  www.ramsoft.bbk.org/images/9-9-99.gif
+2000-07-28T18:25:45Z  www.ramsoft.bbk.org/images/blamp.gif
+2000-07-28T18:25:34Z  www.ramsoft.bbk.org/images/bmgt.gif
+2000-07-28T18:25:32Z  www.ramsoft.bbk.org/images/bmtzx.gif
+2000-07-28T18:25:23Z  www.ramsoft.bbk.org/images/demosc2.jpg
+2000-07-28T18:25:36Z  www.ramsoft.bbk.org/images/digisynth.gif
+2000-07-28T18:25:24Z  www.ramsoft.bbk.org/images/disciple.gif
+2000-07-28T18:25:26Z  www.ramsoft.bbk.org/images/discpl2.jpg
+2000-07-28T18:25:36Z  www.ramsoft.bbk.org/images/diver.gif
+2000-07-28T18:25:36Z  www.ramsoft.bbk.org/images/doe-1.gif
+2000-07-28T18:25:37Z  www.ramsoft.bbk.org/images/doe-2.gif
+2000-07-28T18:25:37Z  www.ramsoft.bbk.org/images/echology.gif
+2000-07-28T18:25:38Z  www.ramsoft.bbk.org/images/fight.gif
+2000-07-28T18:25:38Z  www.ramsoft.bbk.org/images/hercules-1.gif
+2000-07-28T18:25:38Z  www.ramsoft.bbk.org/images/hercules-2.gif
+2000-07-28T18:25:27Z  www.ramsoft.bbk.org/images/keypad.jpg
+2000-07-28T18:25:32Z  www.ramsoft.bbk.org/images/ll.gif
+2000-07-28T18:25:39Z  www.ramsoft.bbk.org/images/lovekind.gif
+2000-07-28T18:25:32Z  www.ramsoft.bbk.org/images/lr.gif
+2000-07-28T18:25:39Z  www.ramsoft.bbk.org/images/mda-1.gif
+2000-07-28T18:25:40Z  www.ramsoft.bbk.org/images/mda-2.gif
+2000-07-28T18:25:28Z  www.ramsoft.bbk.org/images/minitv.jpg
+2000-07-28T18:25:30Z  www.ramsoft.bbk.org/images/mtzx2.gif
+2000-07-28T18:25:40Z  www.ramsoft.bbk.org/images/nmi2.gif
+2000-07-28T18:25:41Z  www.ramsoft.bbk.org/images/nmi3made.gif
+2000-07-28T18:25:41Z  www.ramsoft.bbk.org/images/overscan.gif
+2000-07-28T18:25:41Z  www.ramsoft.bbk.org/images/rage1.png
+2000-07-28T18:25:41Z  www.ramsoft.bbk.org/images/rage2.png
+2000-07-28T18:25:41Z  www.ramsoft.bbk.org/images/shock.gif
+2000-07-28T18:25:28Z  www.ramsoft.bbk.org/images/sinclogo.gif
+2000-07-28T18:25:33Z  www.ramsoft.bbk.org/images/tabout.gif
+2000-07-28T18:25:33Z  www.ramsoft.bbk.org/images/tdemos.gif
+2000-07-28T18:25:44Z  www.ramsoft.bbk.org/images/templogo2.jpg
+2000-07-28T18:25:33Z  www.ramsoft.bbk.org/images/tgallery.gif
+2000-07-28T18:25:42Z  www.ramsoft.bbk.org/images/there.gif
+2000-07-28T18:25:33Z  www.ramsoft.bbk.org/images/tlinks.gif
+2000-07-28T18:25:28Z  www.ramsoft.bbk.org/images/tlkwatch.jpg
+2000-07-28T18:25:33Z  www.ramsoft.bbk.org/images/tmtzx.gif
+2000-07-28T18:25:42Z  www.ramsoft.bbk.org/images/trspec.gif
+2000-07-28T18:25:33Z  www.ramsoft.bbk.org/images/ttech.gif
+2000-07-28T18:25:34Z  www.ramsoft.bbk.org/images/uflag.gif
+2000-07-28T18:25:32Z  www.ramsoft.bbk.org/images/ul.gif
+2000-07-28T18:25:32Z  www.ramsoft.bbk.org/images/ur.gif
+2003-04-09T18:19:07Z  www.ramsoft.bbk.org/images/varese2003.jpg
+2001-10-11T14:46:20Z  www.ramsoft.bbk.org/images/wingui.gif
+2007-04-07T20:50:56Z  www.ramsoft.bbk.org/index.html
+2003-12-30T02:24:55Z  www.ramsoft.bbk.org/italia.html
+2005-10-04T10:10:39Z  www.ramsoft.bbk.org/links.html
+2003-08-01T12:36:55Z  www.ramsoft.bbk.org/maketzx.html
+2000-07-28T18:32:11Z  www.ramsoft.bbk.org/mgtfiles.html
+2000-07-28T18:32:01Z  www.ramsoft.bbk.org/mtzx2.gif
+2003-08-01T12:18:46Z  www.ramsoft.bbk.org/mtzxman.htm
+2002-01-27T11:52:45Z  www.ramsoft.bbk.org/pdx99.html
+2006-08-23T12:11:04Z  www.ramsoft.bbk.org/realspec.html
+2005-05-16T11:02:21Z  www.ramsoft.bbk.org/rs32.txt
+2005-10-04T10:11:14Z  www.ramsoft.bbk.org/rspecman.html
+2000-12-24T15:30:15Z  www.ramsoft.bbk.org/rspecman_ita.html
+2003-10-29T23:46:26Z  www.ramsoft.bbk.org/rzx.html
+2003-10-29T23:46:28Z  www.ramsoft.bbk.org/rzxdiag.png
+2005-03-03T10:30:38Z  www.ramsoft.bbk.org/rzxform.html
+2000-07-28T17:59:13Z  www.ramsoft.bbk.org/software.html
+2000-07-28T18:30:39Z  www.ramsoft.bbk.org/software/ami-csw130.zip
+2001-07-04T16:24:29Z  www.ramsoft.bbk.org/software/ami-mtzx231.zip
+2000-07-28T18:29:41Z  www.ramsoft.bbk.org/software/csdpmi4b.zip
+2000-07-28T18:30:59Z  www.ramsoft.bbk.org/software/csw130.tgz
+2003-08-01T12:04:24Z  www.ramsoft.bbk.org/software/csw200.zip
+2000-07-28T18:30:34Z  www.ramsoft.bbk.org/software/gui012.zip
+2000-07-28T18:26:21Z  www.ramsoft.bbk.org/software/mtzx1021b.tgz
+2000-07-28T18:30:11Z  www.ramsoft.bbk.org/software/mtzx1021s.zip
+2000-07-28T18:31:21Z  www.ramsoft.bbk.org/software/mtzx230.tgz
+2001-07-02T22:51:44Z  www.ramsoft.bbk.org/software/mtzx231.tgz
+2003-08-01T12:17:31Z  www.ramsoft.bbk.org/software/mtzx233.zip
+2003-08-01T12:17:44Z  www.ramsoft.bbk.org/software/mtzx233w.zip
+2001-07-04T13:50:25Z  www.ramsoft.bbk.org/software/mtzxwgui050beta.zip
+2006-07-02T12:05:23Z  www.ramsoft.bbk.org/tech.html
+2001-02-23T22:44:22Z  www.ramsoft.bbk.org/tech/aylpt.txt
+2002-04-26T23:13:44Z  www.ramsoft.bbk.org/tech/floatspy.zip
+2004-01-30T19:32:02Z  www.ramsoft.bbk.org/tech/mgt_tech.txt
+2000-07-28T18:31:48Z  www.ramsoft.bbk.org/tech/romload.zip
+2001-03-16T23:11:24Z  www.ramsoft.bbk.org/tech/rs-hdf.txt
+2002-08-05T13:28:29Z  www.ramsoft.bbk.org/tech/rzx-sdk.zip
+2000-07-28T18:31:49Z  www.ramsoft.bbk.org/tech/spdlock.zip
+2000-07-28T18:31:51Z  www.ramsoft.bbk.org/tech/st11fmt.zip
+2000-07-28T18:31:58Z  www.ramsoft.bbk.org/tech/tr-info.zip
+2005-03-26T13:51:17Z  www.ramsoft.bbk.org/tzxform.html
+2003-09-21T12:24:14Z  www.ramsoft.bbk.org/wave.gif

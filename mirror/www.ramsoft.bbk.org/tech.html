@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="description" CONTENT="A ZX Spectrum demogroup">
+   <META NAME="keywords" CONTENT="Ramsoft,ZX Spectrum,Speccy,Sinclair,tech,disciple,plusd,document,hardware,aylpt,technical,programming,loaders,turbo,tzx,floating,bus">
+  <TITLE>WWR - Tech notebook</TITLE>
+  <basefont face="Verdana">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+&nbsp;
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#D0D0FF" >
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP><IMG SRC="images/ul.gif" BORDER=0 ></TD>
+
+<TD>
+<CENTER><B><FONT COLOR="#000000"><FONT SIZE=-1><A HREF="index.html">Home</A>
+| <A HREF="demos.html">Demoscene</A> | <A HREF="links.html">Links</A> |
+<A HREF="gallery.html">Gallery</A>
+| <A HREF="about.html">About us</A></FONT></FONT></B></CENTER>
+</TD>
+
+<TD ALIGN=RIGHT VALIGN=TOP><IMG SRC="images/ur.gif" BORDER=0 ></TD>
+</TR>
+</TABLE></CENTER>
+
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="100%" BGCOLOR="#3030A0" >
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP><IMG SRC="images/ul.gif" ></TD>
+
+<TD ALIGN=RIGHT VALIGN=TOP><IMG SRC="images/ur.gif" ></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER COLSPAN="2"><B><FONT FACE="Arial"><FONT COLOR="#FFFFFF"><FONT SIZE=+2>TECHNICAL
+NOTEBOOK</FONT></FONT></FONT></B></TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT VALIGN=BOTTOM><IMG SRC="images/ll.gif" ></TD>
+
+<TD ALIGN=RIGHT VALIGN=BOTTOM><IMG SRC="images/lr.gif" ></TD>
+</TR>
+</TABLE>
+
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#D0D0FF" >
+<TR>
+<TD ALIGN=LEFT VALIGN=BOTTOM><IMG SRC="images/ll.gif" BORDER=0 ></TD>
+
+<TD>
+<CENTER><B><FONT COLOR="#000000"><FONT SIZE=-1><A HREF="#RAMSOFT">Ramsoft
+documents</A> | <A HREF="#OTHERS">Other documents</A></FONT></FONT></B></CENTER>
+</TD>
+
+<TD ALIGN=RIGHT VALIGN=BOTTOM><IMG SRC="images/lr.gif" BORDER=0 ></TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER>
+<P><B>Last updated: July 1st, 2006</B><BR>
+<BR></CENTER>
+<BR>
+This is the RAMSOFT technical notebook, containing lots of low-level details
+about the Spectrum hardware, peripherals, file formats, cables, pinouts,
+routine addresses and so on. It is mainly intended as a way to collect
+the dispersed bits of our knowledge derived from nearly 10 years of programming
+with the Spectrum. Of course we also point the attention over other interesting
+documents available on the net. Happy programming!
+<P><B>NOTE:</B> Due to copyright issues, we cannot put some third-party
+documents on-line. A link to the official site is provided, instead.</p>
+
+<P><A NAME="RAMSOFT"></A>
+<TABLE WIDTH="100%" >
+<TR>
+<TD ALIGN=CENTER VALIGN=CENTER WIDTH="100%" BGCOLOR="#66FF99"><FONT FACE="Verdana,Helvetica"><FONT SIZE=+3>Ramsoft
+documents</FONT></FONT></TD>
+</TR>
+</TABLE>
+<br><br>
+
+
+
+<CENTER><TABLE>
+
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP><B><FONT SIZE=+1><A HREF="tech/mgt_tech.txt">The
+RAMSOFT<br>DISCiPLE / +D Technical Guide</A></FONT></B>
+<BR><B><FONT SIZE=+1><A HREF="tech/mgt_tech.txt">Revision 8b (30/1/04)</A></FONT></B></TD>
+
+<TD ALIGN=LEFT VALIGN=CENTER>
+<BLOCKQUOTE>The first exhaustive guide to all the secrets of the MGT drive
+interfaces, that we have always supported in our programs and conversions.
+It will help you to get the most from this wonderful disk system.</BLOCKQUOTE>
+</TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP>&nbsp;Covered topics are:
+<UL>
+<LI>
+Detailed description of all the I/O ports and hardware registers.</LI>
+
+<LI>
+VL1772 floppy disk controller (also mounted on Sam Coupe and Atari ST)
+registers info, with the list of all the FDC commands and response codes.</LI>
+
+<LI>
+Commented list of the DOS hook codes (including UNIDOS ones) for assembler
+programming with a machine code example to load a file.</LI>
+
+<LI>
+File system implementation, with a detailed analysis of all the file types
+structure including the snapshot registers layout. UNIDOS specific file
+types are also covered.</LI>
+</UL>
+</TD>
+
+<TD ALIGN=LEFT VALIGN=TOP>
+<UL>
+<LI>
+GDOS, G+DOS and UNIDOS syntax overview. All the DOS BASIC statements are
+commented, including printing and network commands.</LI>
+
+<LI>
+Connectors pinouts, memory mapping and more, including a procedure to connect common 5.25" (1.2 MB) PC disk drives to the DISCiPLE and +D.</LI>
+</UL>
+
+<DIV ALIGN=center><IMG SRC="images/disciple.gif" HEIGHT=122 WIDTH=197></DIV>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<HR WIDTH="100%">
+<CENTER><TABLE WIDTH="100%" >
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="25%"><B><FONT SIZE=+1><A HREF="tech/romload.zip">ROM
+TAPE LOADER TUTORIAL</A></FONT></B></TD>
+
+<TD WIDTH="75%">The ROM TAPE LOADER TUTORIAL explains the basics of tape
+loading through the detailed analysis of the ROM code. This is the first
+step to understand the secrets of the Speedlock turbo loader, maybe the
+most famous commercial protection system which has been used for many games.</TD>
+</TR>
+
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="25%"><B><FONT SIZE=+1><A HREF="tech/spdlock.zip">SPEEDLOCK
+LOADER TUTORIAL</A></FONT></B></TD>
+
+<TD WIDTH="75%">The SPEEDLOCK TUTORIAL will examine in detail the signal
+encoding (tone clicks, sync pulses and so on) with the commented disassembly
+of the loading routine. It will also examine the differences amongst the
+various versions (1 through 7) of the loader.</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="25%"><B><FONT SIZE=+1><A HREF="tech/st11fmt.zip">SOUNDTRACKER
+1.1 FILE FORMATS</A></FONT></B></TD>
+
+<TD WIDTH="75%">Want to write your own stable ST player? Fine, here are
+the implementation charts of the various ST file formats (songs, patterns,
+samples and ornaments) both in compiled and uncompiled form. Old stuff,
+but yet unreleased!</TD>
+</TR>
+
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="25%"><B><FONT SIZE=+1><A HREF="hdfform.html">HDF v1.1<br>FILE FORMAT</A></FONT></B></TD>
+
+<TD WIDTH="75%">HDF files have been introduced by RealSpectrum and other emulators to store hard-disk data images for the emulated IDE peripherals. This is the official documentation of the file structure.</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="25%"><B><FONT SIZE=+1><A HREF="rzx.html">RZX<br>DEVELOPMENT PAGE</A></FONT></B></TD>
+
+<TD WIDTH="75%">The RZX acronymn stands for ZX Recording and it is a new versatile input recording format designed with portability and security in mind. RZX is an open-source project and everybody can contribute to the final format definition process.</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="25%"><B><FONT SIZE=+1><a href="floatingbus.html">FLOATING BUS<br>EXPLAINED</a></FONT></B></TD>
+
+<TD WIDTH="75%">A complete description of the floating bus and the snow effect of the ULA, including a test program for experiments and auto-diagnostic.</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="25%"><B><FONT SIZE=+1><a href="csw.html">CSW FILE FORMAT<br>Revision 2.00</a></FONT></B></TD>
+
+<TD WIDTH="75%">The Compressed Square Wave format is an effective way to store computer tapes in a compact form. It faithfully preserves the original structure of the tape at the detail level of the individual pulses, combined with an efficient compression system which reduces the file size by several hundreds of times compared to a PCM WAV file.</TD>
+</TR>
+
+
+</TABLE></CENTER>
+</p>
+
+<P><A NAME="OTHERS"></A>
+<CENTER><TABLE WIDTH="100%" >
+<TR>
+<TD ALIGN=CENTER VALIGN=CENTER WIDTH="100%" BGCOLOR="#66FF99"><FONT FACE="Verdana,Helvetica"><FONT SIZE=+3>Other
+documents</FONT></FONT></TD>
+</TR>
+</TABLE></CENTER>
+<br><br>
+
+<CENTER><TABLE WIDTH="100%" >
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="20%"><B><FONT SIZE=+1><A HREF="tzxform.html">TZX
+FILE FORMAT Revision 1.13</A></FONT></B></TD>
+
+<TD WIDTH="75%">The most advanced tape format which allows exact reproduction
+of the behaviour of turbo and custom loading routines. Supported by the
+newest and coolest emulators!
+<BR>Check the software page for some utilities to convert your tapes to
+TZX format.</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="20%"><B><FONT SIZE=+1><A HREF="http://www.worldofspectrum.org/rusfaq/index.html">RUSSIAN
+SPECTRUM CLONES FAQ</A></FONT></B></TD>
+
+<TD WIDTH="75%">Everything you ever wanted to know about the russian Spectrums
+with extended hardware capabilities, such as the Pentagon 128 and the Scorpion
+256. Discussed topics are video timings, I/O ports, memory management and
+the TRDOS floppy disk system.
+<BR>The home is at <A HREF="http://www.chaosite.com">Concern
+Cha0S</A> page.</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="20%"><B><FONT SIZE=+1><A HREF="tech/tr-info.zip">TRDOS
+(BETADISK) SYSTEM INFO</A></FONT></B></TD>
+
+<TD WIDTH="75%">Another document about eastern Spectrum clones, with the
+description of TRDOS BASIC commands, machine code system calls and the
+TRDOS disk format (also .TRD image files).</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="20%"><B><FONT SIZE=+1><A HREF="http://www.sinclairfaq.com/cssfaq/index.html">THE
+OFFICIAL COMP.SYS.SINCLAIR FAQ</A></FONT></B></TD>
+
+<TD ALIGN=LEFT VALIGN=TOP WIDTH="75%">This is a real must have, the first
+place to start with! The latest version is always available at the
+<A HREF="http://www.sinclairfaq.com/cssfaq/index.html">CSSFAQ
+primary site</A> and <A HREF="http://www.worldofspectrum.org">World
+Of Spectrum</A>.</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<BR>Subjects covered are:
+<UL>
+<LI>
+Hardware info about Z80, ULA, video timings, AY-38912A, Interface I, connectors
+pinouts and a lot more.</LI>
+
+<LI>
+Description of many snapshot and tape file formats used by emulators.</LI>
+
+<LI>
+Answers to many common questions (well, it's a FAQ, isn't it? :-))</LI>
+
+<LI>
+Tons of site links and addresses.</LI>
+
+<LI>
+Reviews of the Spectrum emulators available for the various platforms.</LI>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="20%"><B><FONT SIZE=+1><A HREF="http://www.geocities.com/SiliconValley/Peaks/3938/z80_home.htm">Z80 FAMILY OFFICIAL SUPPORT PAGE</A></FONT></B></TD>
+
+<TD WIDTH="75%">An excellent site containing the most complete reference material about the Z80, including programming info, undocumented opcodes and flags, instruction timings, microcode breakdown and links to other resources related to the Z80. Unvaluable for emulator writers.</TD>
+</TR>
+
+
+
+<TR>
+<TD COLSPAN="2">
+<HR WIDTH="100%"></TD>
+</TR>
+
+
+
+<TR>
+<TD ALIGN=CENTER VALIGN=TOP WIDTH="20%"><B><FONT SIZE=+1><A HREF="tech/aylpt.txt">AY-LPT Circuit Diagram</A></FONT></B></TD>
+
+<TD WIDTH="75%">The AY-LPT interface is a simple device with a real AY-3-8912 sounchip, which can be connected to the standard PC parallel port. AY-LPT is supported by some emulators (including RealSpectrum) to provide the real sound of the Spectrum 128K.</TD>
+</TR>
+
+
+
+</TABLE></CENTER>
+</p>
+
+<HR WIDTH="100%">
+<font size="-2"><b>Copyright notice:</b> The material appearing in the "Ramsoft documents" section is &copy1997-2006 Ramsoft ZX Spectrum demogroup. If you want to keep copies of such documents on your website, please ask our written permission, first.</font>
+</BODY>
+</HTML>

@@ -1,0 +1,112 @@
+    CHAOS CONSTRUCTIONS'99 fast results. v.2
+(copied from official papers by CodeRipper /ROi)
+
+-+-------------------------------------------------
+
+
+PC/AMIGA
+========
+
+Multichannel Music [Alternative]:
+
+1. Stellar Vallex by Dark Force /Flash Inc.   76
+2. Killer Loop by GDM /LKR                    55
+3. Blade by EA /ATS                           54
+
+4-channel Music:
+
+1. Phunkynstein by Slam /Universal            97
+2. Deadly Motor by XPEH /LKR                  96
+3. How the night air smells by Manwe /Sands   82
+
+Multichannel Music [Traditional]:
+
+1. Orlando / Sound flood                      67
+2. Change of mood by LAV /Sands               60
+3. Woodtales by RU                            57
+
+PC 256b intro:
+
+1. Sirograph by Cooler                       108
+2. 3d Morph by Grax /RK                       85
+3. RGB by STHS Korovin                        58
+
+PC 512b intro:
+
+1. Benzoids by Serzhsoft                     176
+2. Fire mess by SubZero /Sands               118
+3. Plasma Sunman /PFC                         65
+
+PC/AMIGA (mixed) 4k intro:
+
+1. Exploder /XTM    Wish                     183
+2. Dazzle by Pyrodex /EI                     174
+3. DJ Drow ... 3054                           77
+
+PC 64k intro:
+
+1. Nerve by Proxium                          223
+2. Noname by PFC                             139
+
+PC Demo:
+
+1. Paradox Invitation intro by T-Rex         181
+2. CAUSAPRIMA by Sands                       141
+3. MAXIdemo by Storm Studios                  67
+
+ASCII/ANSI:
+
+1. Target by Crasher /Just-X                 129
+2. Lovely by Grax /RKB                       120
+3. Dostoevsky by Grax /RKB                    87
+
+Rendered Graphics:
+
+1. Dee'mon /Looker House - Forest            178
+2. Dee'mon /Looker House - Thet.             147
+3. Wormtemple of Zodiac /ZXM                  29
+
+Hand-drawn Graphics:
+
+1. No remorse, I wanna eat. by Terror /HRZ   150
+2. Hure in red by Demiurge of Ash            117
+3. BJork                                      55
+
+
+ZX SPECTRUM
+===========
+
+ZX Graphics:
+
+1. Dream by Fil /ATS                         127
+2. Lovekind by Diver /UB                     113
+3. HrumHrum by Hero Discovery                 53
+
+ZX Music:
+
+1. Together with me by EA /ATS                86
+2. Unreal2 by DJ.SERZH                        60
+3. Apocalypse by Mmem /Sage                   59
+
+ZX 512b intro:
+
+1. 0.5 by Vlab /Real Masters                 124
+2. Absent by XTM                             116
+3. Daingy by Cryss /Razzlers                 107
+
+ZX 4k intro:
+
+1. C2H5OH by SerzhSoft                       262
+2. Beyond by ?                                78
+3. Millenium by Constelation                  68
+
+ZX Demo:
+
+1. Anamnesia by Real Masters                 267
+2. Jam by DR                                 163
+3. 63 bits by Accept Corp.                   110
+
+-+-------------------------------------------------
+INFUSED BYTES OnLine: http://www.enlight.ru/ib/news
+
+

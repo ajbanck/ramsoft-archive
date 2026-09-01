@@ -1,0 +1,152 @@
+            *********************************************************
+            *  NOTES ABOUT THE WINDOWS BUILD OF REALSPECTRUM (RS32) *
+            *********************************************************
+
+                                   RELEASE 14
+                           (v0.97.31 - May 1st 2005)
+
+
+----=[ Introduction ]=---------------------------------------------------------------
+
+RS32 is not a new emulator; it's just the good old RealSpectrum recompiled to run
+under Windows natively, without the need of MSDOS. Therefore, it does not contain
+any significant changes respect to the classic RS. You will find the same features
+and, most importantly, the very same user interface and look-and-feel.
+
+For the complete documentation about RealSpectrum, please refer to the user manual
+of the DOS version. This file only contains some additional notes about the
+peculiarities of the Win32 adaptation.
+
+We made this special version of RealSpectrum as a temporary solution to the DOS
+compatibility problems on modern operating systems, namely Windows 2000 and XP.
+Since RS32 is now fully a Win32 program, it uses regular Windows functions for sound
+and graphics, eliminating all the well-known troubles arising with MSDOS programs.
+Another thing that will now work also on NT-based systems is the high-precision
+timer (TSC), the lack of which was the cause for speed violation errors during
+compo-mode input recordings and other synchronization problems.
+RS32 uses the Windows port of the Allegro library, which in turn relies on DirectX.
+
+In general, bear in mind that RS32 still behaves like a DOS-minded application, so
+don't expect any advanced interactions which are typical for Windows programs.
+
+SINCE IT'S JUST AN EXPERIMENT, DON'T EVEN EXPECT IT TO WORK ON YOUR SYSTEM AT ALL.
+However, if you experience troubles and bugs please report them to us and we'll try
+to release fixes and patches as needed.
+
+If you have no problems running RealSpectrum for DOS (e.g. you have Windows 98/ME),
+we recommend you to keep using it since it is probably more stable and tested.
+Unless you prefer RS32 because it runs windowed and it is more Windows-friendly,
+of course :)
+
+If you want a modern, full-blown emulator designed and optimized specifically for
+Windows and DirectX, wait for our next-generation emulator which will be in your
+hands soon. In the meantime, you can continue to use the old RealSpectrum also
+under Windows 2000/XP with RS32.
+
+
+----=[ Usage notes ]=----------------------------------------------------------------
+
+RS32 is currently a Win32 console application. It will open a command prompt box
+when you launch it, which you can later minimize but not close. This sligtly
+annoying effect might be removed in later releases, in the meantime the console box
+is used to report the usual status messages.
+
+You can start RS32 by double-clicking over its icon (or a link to it), or from
+the command prompt as in DOS. You can also drag snapshot and tape files over
+the icon, which will be loaded/inserted on startup. We haven't tried to associate
+the supported file types to RS32, but that could work too.
+When you drop a tape file over the RS32 icon, AutoLoading will be implicitly enabled
+for that tape, and so the program will be loaded automatically on startup; by the way
+remember that you can disable the welcome message box in the INI, if it hurts you :-) 
+
+Quit by clicking on the close button of the window, or by pressing the usual F10 key.
+
+If you are running several other applications at the same time, RS32 might slow down
+a bit. You can increase the priority assigned to RS32 by the operating system by
+rising the "ThreadPriority:" setting in the [GENERAL] section of the INI file.
+The higher the number, the higher the CPU time that will be dedicated to RS32 to the
+detriment of other applications. See the comment in the INI for more information.
+
+
+----=[ Video ]=----------------------------------------------------------------------
+
+RS32 can run both in a window and fullscreen. You can toggle between the two modes
+using the new option in the F11 menu. The INI file contains a new setting called
+"Fullscreen:" which determines the visualization mode used at startup; it can be
+overridden with the command-line switch "-fullscreen".
+Besides, the F11 menu contains an option to activate special blitter effects to
+render differently the Spectrum image to the PC screen; at the moment the available
+choices are "Standard 1x" (normal size display), "Pixel Scaler 2x" (2x zoomed display
+with simple pixel doubling) and "Vector Scaler 2x" (2x zoomed display with a special
+interpolation). The blitter effect can be selected in the INI file ("BlitterFX:")
+and with the command-line switch "-blitterfx N" (N=0-2).
+
+
+----=[ Sound ]=----------------------------------------------------------------------
+
+The default master volume is set to half-way in the INI (128) to prevent clipping,
+while it was set to max (255) in RSDOS. Just a precaution to accomodate certain
+sound drivers.
+Feel free to increase the volume if it sounds too low on your system.
+
+
+----=[ RealDisk ]=-------------------------------------------------------------------
+
+RS32 offers complete RealDisk support under Windows 2000/XP/2003/XP64 and above,
+with the ability to read, write and format both standard and copy-protected disks.
+In order to access RealDisk, you must first download and install the FDRAWCMD driver
+by Simon Owen, which is freely available from http://simonowen.com/fdrawcmd/
+Choose the appropriate version for your system (32 or 64-bit Windows) and run FdInstall
+to install or remove the driver.
+Please check that the type of your PC disk drive matches the one reported in the ALT-F6
+control panel (default: 3.5" 1.44MB). If it's different, move the cursor over the line
+labeled "Realdisk drive" and press SPACE repeatedly until the description matches your
+actual configuration.
+
+
+----=[ MP3, OGG and WAV support ]=---------------------------------------------------
+
+In addition to all the file types supported for tape loading by the DOS version,
+RS32 allows to load tape files compressed in MP3, OGG and generic ACM WAV format.
+From our tests, reliable loading of fast turbo loaders can be guaranteed by the
+following minimum bitrates: 64Kbps mono (or 80Kbps stereo) for MP3; 80Kbps mono
+(or 128 stereo) for OGG Vorbis. The Codemasters turbo (14000 baud!) loads back
+perfectly from an MP3 file compressed with LAME at 112Kbps stereo.
+Note: generic WAV files can contain data compressed with any codec, e.g. Windows
+Media Audio (WMA), AC3, MP3, etc. Of course you need to have proper ACM codec
+installed on your system to decoded them. Be aware that some codecs may be
+unsuitable to compress computer tapes; we have successfully tested MP3 and OGG,
+others untested.
+
+
+----=[ Input Recording ]=------------------------------------------------------------
+
+The Input Recording menu is now located in ALT-F8 instead of ALT-F4.
+
+RS32 supports the new RZX format instead of AIR. The RZX specifications are still
+being developed, so this feature must be considered experimental. If you don't know
+what RZX is (and you really should), check out our RZX development page at this URL:
+http://www.ramsoft.bbk.org/rzx.html
+
+
+----=[ Known limitations ]=----------------------------------------------------------
+
+The following functions have been temporarily disabled in this version, because they
+contain some DOS-specific code which cannot be recompiled under Windows without
+requiring some additional work:
+
+* RealTape
+* Networking
+
+They may be reintroduced in later releases, depending on how much time we can
+dedicate to RS32 instead of working on the new RealX :-)
+
+
+Have fun,
+
+Ramsoft staff         <ramsoft@bbk.org>
+---------------------------------------
+RAMSOFT - ZX Spectrum demogroup    ////
+   http://www.ramsoft.bbk.org     ////
+Home of RealSpectrum and MakeTZX ////
+------------------------------------

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+   <META NAME="keywords" CONTENT="RZX,Ramsoft,ZX Spectrum,Speccy,Sinclair,tech,air,input,recording,library">
+	<title>WWR - RZX technical specifications</title>
+	<basefont face="Verdana">
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#D0D0FF" >
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP><IMG SRC="images/ul.gif" BORDER=0 ></TD>
+
+<TD>
+<CENTER><B><FONT COLOR="#000000"><FONT SIZE=-1><A HREF="index.html">Home</A>
+| <A HREF="tech.html">Tech notebook</A> | <A HREF="realspec.html">RealSpectrum</A> |
+<A HREF="links.html">Links</A>
+| <A HREF="about.html">About us</A></FONT></FONT></B></CENTER>
+</TD>
+
+<TD ALIGN=RIGHT VALIGN=TOP><IMG SRC="images/ur.gif" BORDER=0 ></TD>
+</TR>
+</TABLE></CENTER>
+
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="100%" BGCOLOR="#3030A0" >
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP><IMG SRC="images/ul.gif" ></TD>
+<TD ALIGN=RIGHT VALIGN=TOP><IMG SRC="images/ur.gif" ></TD>
+</TR>
+<TR>
+<TD ALIGN=CENTER COLSPAN="2"><B><FONT FACE="Arial"><FONT COLOR="#FFFFFF"><FONT SIZE=+2>RZX official homepage</FONT></FONT></FONT></B></TD>
+</TR>
+<TR>
+<TD ALIGN=LEFT VALIGN=BOTTOM><IMG SRC="images/ll.gif" ></TD>
+<TD ALIGN=RIGHT VALIGN=BOTTOM><IMG SRC="images/lr.gif" ></TD>
+</TR>
+</TABLE>
+
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#D0D0FF" >
+<TR>
+<TD ALIGN=LEFT VALIGN=BOTTOM><IMG SRC="images/ll.gif" BORDER=0 ></TD>
+<TD>
+<CENTER><B><FONT COLOR="#000000" SIZE=-1><A HREF="#NEWS">News</A> | <A HREF="rzxform.html">RZX specifications</A> | <a href="tech/rzx-sdk.zip">The RZX SDK</a></FONT></B></CENTER>
+</TD>
+<TD ALIGN=RIGHT VALIGN=BOTTOM><IMG SRC="images/lr.gif" BORDER=0 ></TD>
+</TR>
+</TABLE></CENTER>
+<CENTER>
+<P><B>Last updated: August 10th, 2002</B><BR>
+<BR></CENTER>
+<br><br>
+
+<div align="center">
+<table width="100%" border=0 cellpadding=8>
+<tr>
+<td width="20%" valign="top">
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="100%" BGCOLOR="#d0d0ff" >
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP><IMG SRC="images/ul.gif" ></TD>
+<TD ALIGN=RIGHT VALIGN=TOP><IMG SRC="images/ur.gif" ></TD>
+</TR>
+<TR><td></td>
+<TD height="300" valign="top">
+<b>
+<a href="#NEWS">News</a><br><br>
+<a href="rzxform.html">RZX specs</a><br>
+<font size="1">RZX description and file format</font><br><br>
+<a href="tech/rzx-sdk.zip">RZX SDK 0.12</a><br>
+<font size="1">Latest version of the SDK with full source code</font><br><br>
+<hr>
+RZX FILES
+<hr>
+<br>
+<a href="rzx/starquake.zip">Starquake</a><br>
+<font size="1">RZX 0.12 with embedded snapshot, compressed</font><br><br>
+<a href="rzx/rtype.zip">R-Type</a><br>
+<font size="1">RZX 0.12 with embedded snapshot, compressed</font><br><br>
+<a href="rzx/myth.zip">Myth</a><br>
+<font size="1">Huge recording (792K), three levels played including tape loading. Embedded snapshot, compressed.</font><br><br>
+<br><br><br>
+<a href="mailto:ramsoft@bbk.org?subject=RZX">Email us</a>
+</b>
+</TD></TR><TR>
+<TD ALIGN=LEFT VALIGN=BOTTOM><IMG SRC="images/ll.gif" ></TD>
+<TD ALIGN=RIGHT VALIGN=BOTTOM><IMG SRC="images/lr.gif" ></TD>
+</TR>
+</TABLE>
+</td>
+<td valign="top">
+<a name="NEWS">
+<b><font color="#FF4040">The RZX project</font></b></a>
+<hr>
+Welcome to the RZX official homepage! RZX is an open-source input recording system for ZX Spectrum emulators which aims to become the accepted standard. Its design principles have been inspired mainly from our previous experience with a similar system used in RealSpectrum, in order to provide a better and more universal solution. This page is dedicated to emulator programmers who want to add RZX support to their programs; the project consists in the technical specifications of the format and a portable implementation of the RZX system distributed as an open-source C library (RZX SDK).
+<br><br>
+
+<b>August 10th 2002</b>
+<hr>
+First two RZX test files uploaded. R-Type, Starquake and Myth have been created with RS/RZX (DOS) and they play back correctly also on the brand new RealSpectrum/DirectX (which uses a totally different core). The files contain embedded snapshots and are compressed according to the v0.12 specs.
+<br><br>
+
+<b>August 4th 2002</b>
+<hr>
+SDK v0.12 updated: conforms to RZX 0.12 and solves some compiler issues under Visual C++. RZX files and another RZX revision coming in the next hours!
+<br><br>
+
+<b>July 30th 2002</b>
+<hr>
+Updated the specifications to v0.12 with more clarifications and a few changes. The RZX of Batman was broken, so we'll upload new RZX files soon. The SDK will be updated in the next hours as well.
+<br><br>
+
+<b>July 14th 2002</b>
+<hr>
+The Speccy Tour 2002 is a great opportunity to complete the RZX development, so that people can take part in the competition using other emulators and operating systems. The most important things that still need to be done are compression (SDK 0.11 offers a working test solution) and security. Work resumed, more news soon (including the RZX-enabled build of RealSpectrum).
+<br><br>
+
+<b>April 12th 2002</b>
+<hr>
+A major update to the RZX format, now at version 0.10. The input recording frame now stores all port reads rather than just the keyboard + joystick array, as suggested by many. This is definitely the best approach and it solves a whole lot of potential compatibility problems, including the floating bus. An almost identical method is used in the alternative solution adopted <a href="http://www.srcf.ucam.org/~pak21/spectrum/recording.html">here</a>, hopefully the two formats will merge at some point. Like with v0.02, a preliminar filtering on identical frames is performed to reduce the data size before the actual compression.<br>
+Version 0.11 is also ready, which features data compression. We're just evaluating the best choice between ZLIB and LIBBZ2 (please send in your suggestions), and we plan to update in a couple of days.
+<br><br>
+The SDK has been updated to the new format, download it from the box on the left; the package contains the full source code of the library and test program for a demostration of the API. With the SDK you will be able to add RZX support to your emulator with the minimum effort (it took less than 30 minutes for RealSpectrum). It has been tested under DOS/DJGPP, Linux and Visual C++.<br><br>
+An RZX-enabled test version of RealSpectrum B12 is also ready: it will be available for download from this page in a few days, along with over 50 RZX files converted from AIRs that we found on the net. In the meantime, the RZX file (v0.10) of the complete solution of Batman the Movie 128K is already available from the box on the left.<br><br>
+Of course, RealSpectrum/AIR will be continued too until the RZX format is finished. Please send us any AIR files you want to get converted to RZX!
+<br><br>
+
+</td>
+</tr>
+</table>
+</div>
+
+
+</body>
+</html>

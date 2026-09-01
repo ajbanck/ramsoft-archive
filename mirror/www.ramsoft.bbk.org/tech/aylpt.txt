@@ -1,0 +1,147 @@
+ LPT AY by Vitaly Mayatskih                   2:5002/11.4@fidonet
+         & Alexander Kulik [Wolf^eTc/Scene]   2:4635/8.18@fidonet
+------------------------------------------------------------------------------------------------ 
+
+     user's manual by Wolf^eTc/Scene
+ 
+ Contents:
+ 
+     0. Introduction;
+     1. How to connect AY to LPT port of PC ( scheme );
+     2. How to programm AY thru LPT port;
+     3. Software support ( plug-in for emulator by Shalaev );
+ 
+
+ 0. Introduction
+ 
+     Several days ago  in  the ZX.Spectrum FIDO area  appeared  messages about
+connection AY sound chip to LPT port of your PC. I was very interested by this
+scheme and even unsubscribed from area to have some time to finish our project
+and find my own way to  connect AY to LPT port of PC. Some time later I've re-
+ceived  message from Vitaly Mayatskih with ready to use scheme. After checking
+this scheme out I did some changes in "Select" signal realisation. In the very
+first version that  signal was attached to 13 pin of the port, but I connected
+it  to 17 pin  because old  "Select" ( pin 13 ) work in input  mode only. Also 
+were added two resistors and one capacitor instead of one resistor :).
+     In same day I built this little board, connected to PC and  wrote plug-in
+for Zx-Spectrum emulator by Shalaev.
+     Believe or not but most hardest thing in building  this board was finding
+one spare AY sound chip :)
+ 
+
+     1. AY to LPT scheme;
+ 
+        ZQ1                   +5v
+ +------|||------+             16    Ê555IE10/Ê1533IE10
+ | +---+   +---+ |        +----------+
+ |1|1  O2-3|1  O4+------2-/ C|    |4 |12---+
+ | +---+ | +---+ |   +--1-O R|    |  |     |
+ +--|||-----|||--+   |    |--|    |  |     |
+    R1      R2       |--3-|D0|    |  |     |
+                     |--4-|D1|    |  |     |
+    155LN1           |--5-|D2|    |  |     |
+                     |--6-|D3|    |  |     |
+                     |    |--|    |  |     |
+                     |--7-|V1|    |  |     |
+                     |--9-|V2|    |  |     |
+                     |    |--|    |  |     |
+                     |-10-OPE|    |  |     |
+                     |    +----------+     |
+                     |         8           |
+                   +5â        ---          |
+                                           |
+                                -Init(16)<+|
+                               +5v        ||
+                               40         ||
+                           +----------+   ||
+            Select(17)<-29-|B1|    |RSO-23+|   AY-8910
+                   +5v<-28-|B2|    |FC|-22-+
+                           |--|    |--|
+                |2------37-|D0|    |A8|-24-|
+              L |3------36-|D1|    |A9|-25->+5v        ---
+                |4------35-|D2|    |BD|-27->-Strobe(1)  |
+              P |5------34-|D3|    |  |    R3           | R7+  C1
+                |6------33-|D4|    |--|   +|||---------------||--> LEFT
+              T |7------32-|D5|    |A |4--+    | R5
+                |8------31-|D6|    |B |3-------|
+                |9------30-|D7|    |C |38-+    | R6         +  C2
+                           +----------+   +|||---------------||--> RIGHT
+                                1          R4           | R8
+                               ---                      |
+                                                       ---
+ 
+ZQ1 - 14MHz; R1,R2 - 470; R3,R4,R5,R6,R7,R8 - 2kOm; C1,C2 - 10mkf*5v
+ 
+     IC 555LN1 used to build 14MHz generator. 1533IE10 used to build frequency
+divider.
+ 
+     Here is a pin table  on case you want use AY-3-8912 instead of AY-3-8910:
+ 
+ +--------------------------+
+ |      |AY-3-8912|AY-3-8910|
+ |------+---------+---------|
+ |RES   |  16     |    23   |
+ |CLK   |  15     |    22   |
+ |D0-D7 |  28-21  |    37-30|
+ |BDIR  |  18     |    27   |
+ |BC1   |  20     |    29   |
+ |BC2   |  19     |    28   |
+ |CS1   |  17     |    25   |
+ |CS0   |  none   |    24   |
+ |A     |  5      |    4    |
+ |B     |  4      |    3    |
+ |C     |  1      |    38   |
+ |+E    |  3      |    40   |
+ +--------------------------+
+ 
+     2. How to programm AY thru LPT port;
+ 
+     The AY chip is accessable thru two ports - 0x0378 and 0x037A. The 0x0378 
+is data port and 0x037A is control port.
+ 
+     I believe not many words needed to describe programming:
+ 
+     Sound chip initialisation:
+ 
+    procedure resetAY;
+     begin
+           port[$37a]:=0;
+     end;
+ 
+     Sound chip registers programming:
+ 
+    procedure AY(reg,data:byte);
+     begin
+           port[$378]:=reg;
+           port[$37a]:=12;
+           port[$378]:=data;
+           port[$37a]:=4;
+ 
+     end;
+ 
+     reg - AY internal register number (0-13);
+     data - internal register value;
+ 
+     In this example is shown how to select AY  sound chip internal  register:
+ 
+     port[$378]:=reg; port[$37a]:=12;
+ 
+     In this  example is shown  how to  load necessary  value to AY sound chip
+internal register ( register number should be set with previous example ):
+ 
+     port[$378]:=data; port[$37a]:=4;
+ 
+     3. Software support ( plug-in for emulator by Shalaev )
+ 
+     As mentioned above I've written plug-in  for Zx-Spectrum emulator made by
+Shalaev. Currently  this is the 1.0 version, but in case you want something to
+add or you even found a bug please feel free to mail me to my FIDO address:
+2:4635/8.18 To Wolf^eTc/Scene.
+     For a current moment I am going to do the mosr boring thing - write an
+WinAmp plug-in to support this scheme and write good player for DOS. This
+player will support any file formats and will have ability to use different
+kind of plug-in modules.
+ 
+ \/\
+ 
+                                                Wolf of eTc/Scene

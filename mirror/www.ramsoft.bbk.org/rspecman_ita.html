@@ -1,0 +1,2478 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Manuale di RealSpectrum
+</title>
+</head>
+<body bgcolor="#ffffff">
+<font face="Verdana">
+<center><table BORDER=0 WIDTH="75%" BGCOLOR="#4040FF" >
+<tr>
+<td ALIGN=CENTER><font face="Impact"><font color="#00FFFF"><font size=+4>Ramsoft's</font></font></font>
+<br><font face="Impact"><font color="#FFFF00"><font size=+4>RealSpectrum</font></font></font></td>
+</tr>
+</table></center>
+
+<center>
+<p><b><font size=+1>BETA release 9</font></b>
+<p><i>Versione 0.75.20 (24 Dicembre 2000)</i>
+<br>&nbsp;
+<br>&nbsp;
+<p><font size=+2>Sommario:</center>
+
+<p><br>
+<center><table WIDTH="50%" >
+<tr>
+<td ALIGN=LEFT>
+<ol>
+<li>
+<b><a href="#INTRODUCTION">Introduzione</a></b></li>
+
+<li>
+<b><a href="#FEATURES">Caratteristiche</a></b></li>
+
+<li>
+<b><a href="#REQUIRES">Requisiti</a></b></li>
+
+<li>
+<b><a href="#KEYS">Utilizzo in generale (tastiera, selezione dei files,
+etc)</a></b></li>
+
+<li>
+<b><a href="#SNAPSHOTS">Snapshots</a></b></li>
+
+<li>
+<b><a href="#TAPES">Tapes</a></b></li>
+
+<li>
+<b><a href="#DISKS">Dischi e Cartridges</a></b></li>
+
+<li>
+<b><a href="#VIDEO">Video</a></b></li>
+
+<li>
+<b><a href="#AUDIO">Audio</a></b></li>
+
+<li>
+<b><a href="#POKES">Pokes (cheats) e opzioni di memoria</a></b></li>
+
+<li>
+<b><a href="#NETWORK">Internet Networking (TCP/IP)</a></b></li>
+
+<li>
+<b><a href="#DEMOMODE">DemoMode</a></b></li>
+
+<li>
+<b><a href="#FAQ">Domande frequenti (FAQ)</a></b></li>
+
+<li>
+<b><a href="#LICENSE">Licenza, crediti e contatti</a></b></li>
+
+<li>
+<b><a href="#HISTORY">Storia delle modifiche</a></b></li>
+</ol>
+</td>
+</tr>
+</table></center>
+
+<p><a NAME="INTRODUCTION"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>1.</font></font></b></td>
+
+<td><font size=+2>Introduzione</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>Benvenuti a RealSpectrum, un emulatore di ZX Spectrum ad alta fedelt&agrave;
+che non scende a compromessi. Esso riproduce l'hardware dello Spectrum
+con un accuratezza mai vista prima ed &egrave; stato progettato per supportare
+le pi&ugrave; avanzate caratteristiche per la pi&ugrave; realistica esperienza
+audiovisiva.
+<br>E' il primo emulatore al mondo ad offrire la riproduzione esatta al
+100% di tutti gli effetti multicolor che si vedono comunemente nelle demo
+ed in alcuni giochi, non solo sulla parte centrale dello schermo ma anche
+nel bordo. Emula fedelmente l'AY38912/YM2149 per un'ottima qualit&agrave;
+sonora, con effetti stereo e surround. Carica istantaneamente (flashload)
+molti formati turbo (inclusi i giochi commerciali) grazie ad una nuova
+tecnica di caricamento, trattando i file TZX come snapshot o immagini di
+disco. Pu&ograve; caricare e salvare su cassette e dischi Spectrum reali,
+rispettivamente utilizzando la scheda audio e il lettore di floppy del
+PC. Emula la Sinclair Network su Internet e fornisce un sistema di chat
+per facilitare le comunicazioni. Inoltre, offre molte altre interessanti
+caratteristiche che fanno di RealSpectrum l'emulatore ideale per scrivere
+demo.</td>
+</tr>
+</table>
+<a NAME="FEATURES"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>2.</font></font></b></td>
+
+<td><font size=+2>Caratteristiche</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>Questa &egrave; la lista delle caratteristiche attualmente implementate,
+ma molte altre seguiranno.
+<ul>
+<li>
+<b>Il primo al mondo con una riproduzione esatta al 100% degli effetti
+multicolor!</b> Abbiamo tirato fuori all'ULA tutti i suoi segreti (pant!)
+e siamo ora in grado di mostrare tutti gli stupefacenti effetti raster
+come sullo Spectrum vero!</li>
+
+<li>
+<b>MCR super preciso. </b>Il multicolor renderer &egrave; preciso al clock
+e riproduce quindi esattamente tutti gli effetti raster orizzontali (per
+esempio, vedi il bordo su DOE e MDA).</li>
+
+<li>
+<b>Risoluzione selezionabile.</b> RealSpectrum pu&ograve; girare su qualsiasi
+risoluzione (S)VGA e supporta tutti i modi VESA1/2/3 e tweaked X. A seconda
+della dimensione dello schermo, l'ampiezza superiore/inferiore e laterale
+del bordo viene automaticamente adattata.</li>
+
+<li>
+<b>Videoregistratore.</b> E' possibile registrare l'output dello Spectrum in un filmato AVI compresso. La finestra del videoregistratore permette di settare diversi parametri.
+
+<li>
+<b>Linee di scansione.</b> Alle risoluzioni pi&ugrave; elevate vengono
+mostrate le linee di scansione per rendere l'immagine pi&ugrave; simile
+allo schermo TV.</li>
+
+<li>
+<b>Intefaccia grafica.</b> Tutta l'interazione con l'utente avviene attraverso
+un sistema grafico a finestre che &egrave; tuttora in corso di sviluppo.</li>
+</ul>
+Abbiamo posto particolare attenzione alla qualit&agrave; dell'audio:
+<ul>
+<li>
+<b>Missaggio digitale dell'AY38912 ed emulazione dell'YM2149.</b> Molto
+simile all'originale! Buona riproduzione degli inviluppi. Tutti i modplayers
+digitali (come DigiSynth, Morpheus, Soundtracker 2 e cos&igrave; via) funzionano
+bene.</li>
+
+<li>
+<b>Uscita sonora Mono/Stereo e 8/16-bit.</b> Se si ha una scheda sonora
+che supporta la riproduzione stereo, RealSPECTRUM pu&ograve; funzionare
+in modalit&agrave; stereo e offrire alcuni stupefacenti effetti.</li>
+
+<li>
+<b>Panning stereo da 256-steps.</b> Ogni canale pu&ograve; essere spostato
+indipendentemente su 256 posizioni a partire dall'estrema sinistra fino
+all'estrema destra. Ci sono tre impostazioni predefinite: NONE (centrato),
+ABC e ACB stereo, ed inoltre &egrave; possibile definire la propria impostazione
+personalizzata.</li>
+
+<li>
+<b>Effetto surround!</b> L'effetto surround migliora sensibilmente la profondit&agrave;
+del suono, anche quando tutti i canali sono centrati! Il surround &egrave;
+ovviamente disponibile solo sulle schede audio stereo.</li>
+
+<li>
+<b>Bilanciamento relativo del volume del Beeper e dell'AY.</b> Si pu&ograve;
+scegliere il volume relativo dell'AY rispetto a quello del beeper (256
+steps), pompando cos&igrave; al massimo il tuo brano AY preferito! :-)</li>
+
+<li>
+<b>Registratore sonoro.</b> E' possibile registrare l'audio su file WAV,
+AZX o YM per creare il tuo CD con le musiche dello Speccy. :-)</li>
+
+<li>
+<b>Supporto per AY-LPT.</b> Con pochi chips e resistori si pu&ograve; collegare
+un AY-38912/10 vero a qualunque porta LPT del PC ottenendo cos&igrave;
+la perfetta qualit&agrave; sonora dell'originale! (Da fare: migliorare
+la qualit&agrave; del parlato a 4-bit).</li>
+</ul>
+L'emulazione della CPU &egrave; molto accurata, ogni aspetto del microprocessore
+Z80 &egrave; stato fedelmente riprodotto:
+<ul>
+<li>
+<b>Caratteristiche non documentate.</b> Non solo sono state emulate tutte
+le istruzioni non ufficiali, ma abbiamo anche riprodotto il comportamento
+non documentato del registro dei flags in ogni circostanza.</li>
+
+<li>
+<b>Emulazione precisa al clock.</b> Ogni cosa avviene nel momento esatto
+in cui avviene nello Z80 reale (almeno si spera :-)); accesso al bus, rilevazione
+dell'interrupt e sua gestione, trasferimento dei dati e cos&igrave; via
+sono perfettamente calibrati e distribuiti nei vari stati macchina.</li>
+</ul>
+Questa &egrave; la lista dell'hardware attualmente emulato:
+<ul>
+<li>
+<b>Modelli di ZX Spectrum: </b>16K, 48K, 128K, +2, +2A, +3, Pentagon 128K
+e Scorpion 256K.</li>
+
+<li>
+<b>Multiface 128:</b> avendo la rom, si pu&ograve; caricare automaticamente
+Genie.</li>
+
+<li>
+<b>DISCiPLE/+D:</b> implementazione completa delle interfacce disco della
+MGT, con supporto del GDOS, G+DOS e UNIDOS per entrambe. RealSpectrum pu&ograve;
+leggere e scrivere i floppy MGT reali inseriti nel lettore del PC.</li>
+
+<li>
+<b>Beta 128:</b> l'interfaccia disco standard dei cloni russi come il Pentagon,
+e relativo sistema operativo TRDOS. Pu&ograve; essere abilitata anche nel
+normale 128K.</li>
+
+<li><b>MB-02+:</b> an incredibly powerful disk interface, featuring 512K SRAM, Z80 DMA chip, real time clock processor and many more.
+
+<li>
+<b>ZX Interface I:</b> l'interfaccia per memoria di massa pi&ugrave; popolare
+per lo Spectrum, con supporto fino a 8 microdrives.</li>
+
+<li>
+<b>Kempston mouse:</b> da usare con le utility russe e quelle classiche
+come Art Studio.</li>
+
+<li>
+<b>Interfacce sonore:</b> Covox, Stereo Covox, Soundrive e Music Machine
+(solo uscita digitale).</li>
+</ul>
+RealSpectrum supporta i seguenti formati di file:
+<ul>
+<li>
+<b>Tapes: </b>TZX, TAP, WAV, CSW e vere cassette usando un registratore
+collegato alla scheda audio, sia in lettura che in scrittura. TZX e TAP
+sono supportati sia nel modo standard che attraverso il grande Ramsoft
+FlashLoad che permette di caricare instantaneamente perfino i giochi commerciali
+registrati a velocit&agrave; turbo! RealSpectrum permette anche di salvare
+cassette turbo.</li>
+
+<li>
+<b>Snapshots: </b>Z80 e SNA, tutte le versioni sia in lettura che in scrittura.
+Il formato Z80 supporta le estensioni per il +2A/+3 e per lo Scorpion.</li>
+
+<li>
+<b>Dischi: </b>MGT e IMG per DISCiPLE/+D, TRD e SCL per TRDOS, DSK per
++3, MBD per MB-02+. Supporto per floppy disk reali per MGT e TRDOS.</li>
+
+<li>
+<b>Cartridges: </b>MDR per Microdrive.</li>
+
+<li>
+<b>Altri: </b>WAV, AZX e YM per registrazione audio. AY per riproduzione.
+POK per pokes e trucchi vari. AVI per la registrazione di filmati. BMP, SCR, PCX e TGA per salvataggio di immagini.</li>
+</ul>
+Altre caratteristiche:
+<ul>
+<li>
+<b>FlashLoading: </b>RealSpectrum pu&ograve; caricare <i>istantaneamente</i>
+(tempo zero) non solo i vecchi file TAP, ma anche molti TZX turbo, inclusi
+tutti i pi&ugrave; popolari schemi di caricamento utilizzati nei giochi
+commerciali.</li>
+
+<li>
+<b>Supporto per cassette reali: </b>Salvataggio e caricamento molto affidabile
+su registratore a cassette collegato alla scheda audio.</li>
+
+<li>
+<b>Emulazione Network via TCP/IP: </b>la Sinclair Network (presente nell'Interface
+I e nella DISCiPLE) &egrave; pienamente emulata attraverso Internet. Altre
+chicche sono il sistema di chat integrato e il servizio di scambio di file.</li>
+
+<li>
+<b>DemoMode: </b>una modalit&agrave; di visualizzazione speciale che sostituisce
+lo schermo dello Spectrum con una serie di effetti grafici a scelta che
+variano al ritmo della musica di sottofondo. Include inoltre un riproduttore
+musicale per file .AY.</li>
+
+<li>
+<b>Supporto per dischi reali: </b>RealSpectrum pu&ograve; leggere e scrivere
+veri floppy DISCiPLE/+D e TRDOS inseriti nel lettore del PC.</li>
+
+<li>
+<b>Emulazione della porta parallela:</b> La porta Centronics di DISCiPLE,
++D, +2A/+3 e Scorpion pu&ograve; essere rediretta verso la porta stampante
+del PC oppure verso un file.</li>
+<li><b>Emulazione della porta seriale:</b> Oltre che per le porte seriali "standard" dello Spectrum 128K e della Interface-1, l'emulatore pu&ograve essere facilmente configurato per intercettare qualsiasi routine personalizzata per il pilotaggio della RS-232. E' possibile sfruttare le quattro porte di comunicazione del PC (da COM1 a COM4) oppure la ridirezione su file.
+
+</ul>
+</td>
+</tr>
+</table>
+<a NAME="REQUIRES"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>3.</font></font></b></td>
+
+<td><font size=+2>Requisiti</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>
+<h4>
+Sistema</h4>
+L'emulazione di alta precisione offerta da RealSpectrum richiede un notevole
+lavoro di calcolo e di accessi alla memoria, per cui &egrave; consigliato
+almeno un Pentium 200 MHz (o un K6) per farlo girare bene ad ogni risoluzione
+con tutte le caratteristiche attivate. Si, lo sappiamo che &egrave; un
+po' lento per essere un emulatore Spectrum ma questo &egrave; il prezzo
+da pagare per la migliore qualit&agrave; possibile. E' consigliata una
+memoria RAM di almeno 8MB.
+<br>Per farlo girare sotto DOS puro (cio&egrave; non sotto una DOS box
+di Windows95) c'&egrave; bisogno del DPMI extender CWSDPMI.EXE.
+<br>Per migliorare le prestazioni del disco quando si fa girare RealSpectrum
+sotto DOS puro, consigliamo caldamente di attivare un programma di cache
+come SMARTDRIVE (particolarmente quando &egrave; attiva la scrittura di
+file WAV).
+<h4>
+Video</h4>
+RealSpectrum gira su qualsiasi VGA, ma una compatibile con le modalit&agrave;
+VESA2 &egrave; altamente consigliata. A seconda della modalit&agrave; video
+selezionata, RealSpectrum sceglier&agrave; il miglior driver tra quelli
+standard VGA, X-Mode e VESA1/2/3. Le risoluzioni VESA2/3 migliorano drammaticamente
+le prestazioni. La velocit&agrave; video &egrave; veramente determinante
+per l'efficienza complessiva. Se il BIOS della scheda video non supporta
+le modalit&agrave; VESA2 a bassa risoluzione (320x240, etc), &egrave; necessario
+scaricare uno degli extenders disponibili come il Display Doctor della
+Scitech Software (oppure GX00VBE.EXE per la scheda Matrox G200/G400).
+<h4>
+Schede audio</h4>
+La libreria sonora usata da RealSpectrum supporta tutti i modelli di Soundblaster,
+ESS1688 e il Windows Sound System (tutte schede basate sul chipset AD1848/CS4231).
+Se si vuole il suono sotto DOS puro, probabilmente &egrave; necessaria
+una scheda audio ISA, in quanto le PCI come la SB Live! o la SB PCI64/128
+in genere hanno problemi a girare in MSODS puro; non dipende da noi. Se
+si ha una scheda PCI allora &egrave; meglio far girare RealSpectrum in
+una DOS box di Windows 95 aperta a tutto schermo.
+<h4>
+ROM files</h4>
+Le rom liberamente distribuibili sono disponibili in un file separato che
+pu&ograve; essere scaricato dal nostro sito. Il pacchetto contiene i seguenti
+files:&nbsp;
+<p>
+<center><table BORDER CELLSPACING=2 CELLPADDING=2 WIDTH="75%" >
+<tr>
+<td ALIGN=CENTER BGCOLOR="#FFFFD0"><b>Computer/Periferica</b></td>
+
+<td ALIGN=CENTER BGCOLOR="#FFFFD0"><b>ROM nomefile</b></td>
+
+<td ALIGN=CENTER BGCOLOR="#FFFFD0"><b>ROM dimensione</b></td>
+
+<td ALIGN=CENTER BGCOLOR="#FFFFD0"><b>Note</b></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>Spectrum 16/48K</td>
+
+<td ALIGN=CENTER>48.rom</td>
+
+<td ALIGN=CENTER>16384</td>
+
+<td ALIGN=CENTER>Standard 48K ROM</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>Spectrum 128K</td>
+
+<td ALIGN=CENTER>128.rom</td>
+
+<td ALIGN=CENTER>32768</td>
+
+<td ALIGN=CENTER>Standard 128K ROM</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>Spectrum +2</td>
+
+<td ALIGN=CENTER>plus2.rom</td>
+
+<td ALIGN=CENTER>32768</td>
+
+<td ALIGN=CENTER>Standard +2 ROM</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>Spectrum +2A/+3</td>
+
+<td ALIGN=CENTER>plus3.rom</td>
+
+<td ALIGN=CENTER>65536</td>
+
+<td ALIGN=CENTER>+2A/+3 ROM v4.0</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER ROWSPAN="2">Pentagon 128K</td>
+
+<td ALIGN=CENTER>pentagon.rom</td>
+
+<td ALIGN=CENTER>32768</td>
+
+<td ALIGN=CENTER>Standard ROM</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>trdos.rom</td>
+
+<td ALIGN=CENTER>16384</td>
+
+<td ALIGN=CENTER>TRDOS v6.04</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>ZS Scorpion 256K</td>
+
+<td ALIGN=CENTER>scorpion.rom</td>
+
+<td ALIGN=CENTER>65536</td>
+
+<td ALIGN=CENTER>Standard ROM</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>ZX Interface I</td>
+
+<td ALIGN=CENTER>if1.rom</td>
+
+<td ALIGN=CENTER>8192</td>
+
+<td ALIGN=CENTER>Standard ROM v2</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>MGT DISCiPLE</td>
+
+<td ALIGN=CENTER>gdos.rom</td>
+
+<td ALIGN=CENTER>16384</td>
+
+<td ALIGN=CENTER>GDOS3 + System 3b</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>MGT +D</td>
+
+<td ALIGN=CENTER>gdos-pd.rom</td>
+
+<td ALIGN=CENTER>16384</td>
+
+<td ALIGN=CENTER>G+DOS + System 2a</td>
+</tr>
+</table></center>
+<p>
+RealSpectrum gira perfettamente anche con differenti versioni delle ROM,
+basta specificarne il nomefile nell'INI o selezionarlo direttamente tramite
+il menu F3. Per esempio, si potrebbe voler utilizzare la ROM v4.1 per il
++2A/+3, una vecchia ROM v1 per l'Interface I, una versione particolare
+del Pentagon/Scorpion, e cos&igrave; via.
+<p>Per poter utilizzare l'UNIDOS (per le interfacce disco della MGT) e
+la Multiface 128, ci si devono procurare le appropriate ROM che *NON* sono
+incluse nel pacchetto:
+<p>
+<center><table BORDER CELLSPACING=2 CELLPADDING=2 WIDTH="85%" >
+<tr>
+<td ALIGN=CENTER BGCOLOR="#FFFFD0"><b>Periferica</b></td>
+
+<td ALIGN=CENTER BGCOLOR="#FFFFD0"><b>ROM nomefile</b></td>
+
+<td ALIGN=CENTER BGCOLOR="#FFFFD0"><b>ROM dimensione</b></td>
+
+<td ALIGN=CENTER BGCOLOR="#FFFFD0"><b>Note</b></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>UNIDOS DISCiPLE</td>
+
+<td ALIGN=CENTER>uni-disc.rom</td>
+
+<td ALIGN=CENTER>8192 or 16384</td>
+
+<td ALIGN=CENTER>UNIDOS v2 per DISCiPLE</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER>UNIDOS +D</td>
+
+<td ALIGN=CENTER>uni-pd.rom</td>
+
+<td ALIGN=CENTER>8192 or 16384</td>
+
+<td ALIGN=CENTER>UNIDOS per +D</td>
+</tr>
+<tr>
+    <td align="center">Multiface One</td>
+    <td align="center">mf1.rom</td>
+    <td align="center">8192</td>
+    <td align="center">ROM per Multiface v2.1</td>
+</tr>
+<tr>
+    <td rowspan="3" align="center">Multiface 128</td>
+    <td align="center">mf128v35.rom</td>
+    <td align="center">8192</td>
+    <td align="center">ROM v87.1 per Multiface v3.5</td>
+</tr>
+<tr>
+    <td align="center">mf128.rom</td>
+    <td align="center">8192</td>
+    <td align="center">ROM v87.2 per Multiface v3.6-DIS</td>
+</tr>
+<tr>
+    <td align="center">genie.rom</td>
+    <td align="center">16384</td>
+    <td align="center">MF128.ROM con Genie precaricato</td>
+</tr>
+<tr>
+    <td align="center">Multiface 3</td>
+    <td align="center">mf3.rom</td>
+    <td align="center">8192</td>
+    <td align="center">ROM per Multiface v5.0</td>
+</tr>
+<tr>
+    <td align="center">MB-02+</td>
+    <td align="center">mb02.rom</td>
+    <td align="center">2048 or 32768</td>
+    <td align="center">Boot ROM o BSROM + BSDOS</td>
+</tr>
+
+</table></center>
+<p>
+I normali files del BIOS per DISCiPLE/+D (sia GDOS che UNIDOS) sono lunghi
+8K, ma la versione fornita potrebbe essere lunga 16K; in questo caso il
+sistema operativo &egrave; precaricato e non c'&egrave; quindi bisogno
+di fare il boot.
+<p><b>Importante:</b> Non chiedeteci di inviarvi nessuna di queste ROM
+- non possiamo, davvero.
+<h4>
+Networking</h4>
+Leggere attentamente il capitolo <a href="#NETWORK">"Internet Networking"</a>.</td>
+</tr>
+</table>
+<a NAME="KEYS"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>4.</font></font></b></td>
+
+<td><font size=+2>Utilizzo in generale (tastiera, selezione dei files,
+etc)</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>RealSpectrum dovrebbe essere molto semplice da utilizzare in quanto
+ogni operazione &egrave; fatta attraverso una serie di menu grafici. Le
+impostazioni iniziali sono lette dal file di configurazione REALSPEC.INI,
+un file di puro testo che pu&ograve; essere modificato a seconda delle
+proprie esigenze; ogni riga del file &egrave; commentata in modo tale da
+essere facilmente comprensibile una volta letto questo manuale.
+<br>RealSpectrum riconosce anche dei parametri sulla linea di comando.
+La lista degli switch disponibili pu&ograve; essere ottenuta scrivendo
+"REALSPEC -?" (o -h); i parametri specificati nella linea di comando hanno
+la priorit&agrave; sulle impostazioni del file INI.
+<p>Una volta lanciato, RealSpectrum pu&ograve; essere controllato attraverso
+i seguenti tasti, che danno accesso ai vari menu grafici per cambiare impostazioni
+e parametri.&nbsp;
+<p>
+<center><table BORDER CELLPADDING=4 WIDTH="70%" >
+<tr>
+<td ALIGN=CENTER><b>F1</b></td>
+
+<td>Mostra la schermata di help</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F1</b></td>
+
+<td><a href="#KEYB">Tokenizer</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F2</b></td>
+
+<td>Genera un NMI (Multiface, DISCiPLE/+D senza Multiface, etc.)</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>SHIFT-F2</b></td>
+
+<td>Genera un NMI (per DISCiPLE/+D assieme alla Multiface)</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F2</b></td>
+
+<td>Reset dello Spectrum</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F3</b></td>
+
+<td><a href="#PNLHW">Menu di configurazione hardware</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F3</b></td>
+
+<td><a href="#PNLJOY">Menu di configurazione del Joystick e del mouse</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>CTRL-F3</b></td>
+
+<td><a href="#PNLCOMM">Menu delle porte di comunicazione</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F5</b></td>
+
+<td><a href="#SNAPSHOTS">Carica uno snapshot</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F5</b></td>
+
+<td><a href="#SNAPSHOTS">Salva uno snapshot</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F6</b></td>
+
+<td><a href="#DISKS">Carica un file da disco o da cartuccia</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F6</b></td>
+
+<td><a href="#DISKS">Crea un disco o una cartuccia vuoti</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F7</b></td>
+
+<td><a href="#TAPES">Apre un tape file</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F7</b></td>
+
+<td><a href="#TAPEOPT">Menu delle opzioni per i tape file</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>CTRL-F7</b></td>
+
+<td>Avvia/ferma il tape file</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>SHIFT-F7</b></td>
+
+<td>Tape browser</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F8</b></td>
+
+<td><a href="#DEMOMODE">DemoMode</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F8</b></td>
+
+<td><a href="#NETWORK">Opzioni Network</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>CTRL-F8</b></td>
+
+<td><a href="#NETCHAT">Invia un messaggio di chat</a> (network)</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>SHIFT-F8</b></td>
+
+<td><a href="#NETFILES">Invia un file</a> (network)</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F9</b></td>
+
+<td><a href="#POKES">Menu di selezione per le pokes</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F9</b></td>
+
+<td><a href="#MEMOPT">Operazioni su blocchi di memoria (carica/salva blocchi)</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F10</b></td>
+
+<td>Esce da RealSpectrum</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F10</b></td>
+
+<td>Esce immediatamente</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F11</b></td>
+
+<td><a href="#VIDEO">Menu delle risoluzioni video</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F11</b></td>
+
+<td><a href="#VIDEOXTRA">Menu delle opzioni video extra</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>F12</b></td>
+
+<td><a href="#AUDIO">Menu delle opzioni per il suono</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ALT-F12</b></td>
+
+<td><a href="#AUDIOXTRA">Menu delle opzioni extra per il suono</a></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER><b>ESC</b></td>
+
+<td>Entra/esce dal debugger</td>
+</tr>
+</table></center>
+<a NAME="KEYB"></a>
+<h4>
+La tastiera dello Spectrum, il Tokenizer e la nazionalizzazione</h4>
+Alcuni tasti speciali che richiedono pressioni multiple sullo Spectrum
+sono stati implementati direttamente sulla tastiera del PC: gli operatori
+aritmetici sul tastierino numerico, la ',' e il '.'. Inoltre l'emulatore
+ha le seguenti assegnazioni: CTRL = Symbol Shift, CAPS = Caps Lock, BACKSPACE
+= Delete, TAB = Extend Mode.
+<p>Il Tokenizer &egrave; una caratteristica speciale che permette di inserire
+comandi BASIC e righe di programma molto comodamente. E' possibile digitare
+i comandi carattere per carattere anche nell'editor BASIC del 48K, senza
+che sia pi&ugrave; necessario ricordare a memoria la posizione dei numerosi
+token della tastiera dello Spectrum. Il Tokenizer si attiva premendo ALT-F1
+e mostra un editor multilinea dove si pu&ograve; scrivere qualsiasi sequenza
+di comandi BASIC o righe di programma. Per fornire ulteriore aiuto, l'editor
+evidenzia la sintassi del BASIC stampando i vari elementi con colori differenti:
+bianco per i comandi validi e i segni di punteggiatura, verde per i numeri
+di linea, celeste per le stringhe di caratteri, porpora per i numeri e
+giallo per i nomi di variabili e altri elementi. Una volta finito di digitare,
+l'editor si chiude premendo ENTER e l'emulatore automaticamente genera
+l'appropriata sequenza di tasti da passare all'editor del BASIC: si vedranno
+i comandi digitati automaticamente alla velocit&agrave; della luce!
+<br>Per esempio, andiamo in modalit&agrave; 48K con il K lampeggiante,
+premiamo ALT-F1 e digitiamo qualche comando BASIC come '10 BORDER 0: PAPER
+0: INK 7: CLS: PRINT "Hello Tokenizer"' usando la normale tastiera del
+PC. Notare gli spazi, i vari token devono essere separati l'uno dall'altro
+(osservare i colori dell'evidenziazione sintattica per capire se si stanno
+digitando i comandi in modo corretto). Per finire, premiamo RETURN e godiamoci
+lo spettacolo! :-) Comunque, in questo esempio &egrave; necessario premere
+nuovamente ENTER per aggiungere la linea al programma.
+<p>Per un uso confortevole, &egrave; necessario impostare il tipo di tastiera
+posseduto (nazionalit&agrave;). Per fare questo, attivare la riga "Keyboard:
+IT" nel file di configurazione di RealSpectrum (realspec.ini), dove "IT"
+sta per il codice internazionale del paese desiderato (nell'esempio Italia).
+Sono riconosciuti i seguenti codici: BE, BR, CH, CZ, DE, DK, DVORAK, ES,
+FI, FR, IT, NO, PT, RU, SE, SK, UK e US. Per default (in assenza della
+riga "Keyboard:"), RealSpectrum usa la tastiera US.
+<h4>
+La selezione dei files</h4>
+Alcuni dei menu di cui sopra mostrano una finestra per la selezione dei
+file attraverso la quale si pu&ograve; scegliere quale file caricare o
+salvare.
+<br>La parte superiore mostra una lista delle directory e dei files, ordinati
+per nome; l'elemento corrente &egrave; evidenziato con una barra rossa,
+che pu&ograve; essere spostata in su o in gi&ugrave; usando i tasti freccia
+della tastiera del PC. Vengono mostrati solo i files adeguati alla funzione
+scelta (per esempio SNA e Z80 in caso di snaphots, and cos&igrave; via).
+Si possono anche utilizzare i tasti PGUP/PGDN per muoversi pi&ugrave; velocemente
+e HOME/END per andare, rispettivamente, sul primo e sull'ultimo elemento.
+<br>In basso c'&egrave; una riga sulla quale si possono scrivere i primi
+caratteri del nome file che si sta cercando e questo consente una selezione
+pi&ugrave; veloce. Ogni volta che viene premuto un tasto alfanumerico,
+la barra di selezione si sposta automaticamente sul nome di file pi&ugrave;
+simile alla stringa che si va formando nella riga in basso. Si possono
+anche cancellare i caratteri digitati usando il normale tasto BACKSPACE.
+<br>Si pu&ograve; cambiare directory o drive corrente selezionando la directory
+desiderata o la lettera del drive e premendo quindi ENTER.
+<br>Una volta che si &egrave; evidenziato il file desiderato, si deve premere
+ENTER per confermare la selezione e concludere l'operazione.
+<br>Quando la finestra di selezione &egrave; aperta per il salvataggio,
+mostra solo directory e drive in modo tale che si possa selezionare il
+percorso dove salvare il file, il cui nome va digitato e apparir&agrave;
+nel campo presente in basso nella schermata. In alcuni casi si pu&ograve;
+anche scegliere il formato del file utilizzando i tasti freccia sinistra
+e freccia destra; il formato corrente &egrave; mostrato nella linea che
+riporta "Save as". Se scrivendo sulla tastiera non compaiono i caratteri digitati, 
+premere il tasto TAB per riportare il cursore nella riga del nome di file.
+<br>Nel caso in cui RealSpectrum venga eseguito in ambiente Windows 95 o versioni
+pi&ugrave recenti, sar&agrave possibile inserire nomi di file lunghi fino a 256
+caratteri.
+
+<a NAME="PNLHW"></a>
+<h4>Supporto per archivi</h4>
+RealSpectrum &egrave in grado di gestire l'estrazione automatica di files 
+contenuti in un archivio. Gli archivi in formato ZIP, RAR, ARJ e ACE verranno 
+elencati con accanto la dicitura "ARC" subito dopo i normali files. 
+Quando si apre un archivio, il suo contenuto verr&agrave visualizzato come se
+fosse una normale directory; si potr&agrave poi utilizzare la directory ".." per 
+chiuderlo. Se si decide di aprire un file che si trova all'interno di un archivio, 
+RealSpectrum provveder&agrave a lanciare il programma di decompressione
+appropriato e lo estrarr&agrave in una directory temporanea. 
+I decompressori predefiniti sono <i>pkunzip.exe</i> per i file ZIP, <i>rar.exe</i> 
+per i file RAR, <i>arj.exe</i> per i file ARJ e <i>ace.exe</i> per i file ACE; 
+naturalmente la directory che contiene questi programmi deve essere inclusa nel 
+path predefinito per il DOS. E' possibile inoltre personalizzare i nomi delle utility 
+di decompressione nella sezione [Archives] del file REALSPEC.INI; ad esempio si pu&ograve 
+utilizzare <i>ace32.exe</i>, <i>unzip32.exe</i>, <i>unrar.exe</i> e <i>unarj.exe</i> - 
+&egrave sottinteso che si devono specificare anche i vari switch. Per disabilitare del tutto 
+il supporto per gli archivi &egrave sufficiente togliere il commento alla riga "ListArchives: 0" 
+nel file INI. Se la directory temporanea non pu&ograve essere creata all'interno della directory 
+di partenza di RealSpectrum, sar&agrave visualizzato un messaggio di errore ed il supporto per 
+gli archivi verr&agrave disabilitato automaticamente; il nome della directory temporanea &egrave 
+"RSPECTMP" ed essa sar&agrave rimossa al momento dell'uscita dall'emulatore.<br>
+<b>Attenzione: </b>qui di seguito vi ricordiamo un paio di cose importanti: 
+1) Le utilit&agrave di gestione degli archivi per DOS in genere non supportano i nomi di file 
+lunghi (ARJ v2.60+ rappresenta un'eccezione); se un archivio dovesse contenere file di questo 
+tipo, potrebbero verificarsi degli errori in fase di estrazione; vi consigliamo quindi di 
+utilizzare programmi in grado di gestire i nomi di files lunghi (come ace32.exe per i file ACE). 
+2) L'invocazione da un programma a 32-bit (come RealSpectrum) di programmi DOS a 16-bit con 
+interfaccia utente testuale potrebbe causare dei problemi; in alcune occasioni il sistema potrebbe diventare 
+instabile, nel qual caso consigliamo di riavviare il sistema. Siamo spiacenti, ma non ci &egrave 
+possibile intervenire su questo inconveniente. Se dovessero verificarsi dei problemi consistenti vi 
+suggeriamo di disabilitare nel file INI il supporto per i file compressi (vedere sopra).
+
+<h4>
+Il menu di configurazione hardware (F3)</h4>
+Da questo pannello &egrave; possibile selezionare i vari modelli di Spectrum
+e le varie interfacce. Usare il tasto TAB per spostare il focus tra i vari
+elementi. Se si preme di nuovo F3 apparir&agrave un altro pannello con delle
+informazioni supplementari sul modello selezionato, tra cui il tipo di chip 
+sonoro, espansioni di memoria, file ROM, ecc.; le propriet&agrave potranno 
+essere modificate come al solito con i tasti freccia sinistra/freccia destra 
+o premendo ENTER. Se il modello selezionato viene confermato con SHIFT+ENTER, 
+il computer non sar&agrave reinizializzato.
+<br>Premendo la barra spaziatrice, &egrave; possibile scegliere e caricare
+un file di ROM personalizzato per il modello di Spectrum selezionato o
+per l'interfaccia; usare la finestra di selezione per scegliere la ROM
+desiderata che verr&agrave; utilizzata, da questo momento in poi, per il
+modello specificato. Alternativamente, la stessa cosa si pu&ograve fare 
+premendo ENTER alla riga "ROM file" nel pannello delle propriet&agrave.
+Quando si cambia modello di Spectrum e la Multiface e' abilitata, RealSpectrum
+cambia automaticamente il tipo di Multiface collegata al fine di evitare 
+problemi di compatibilit&agrave, avvisandovi con un messaggio in sovraimpressione 
+non appena l'emulazione sar&agrave ripartita.
+
+<a NAME="PNLJOY"></a>
+<h4>
+Il menu di configurazione del Joystick e del Mouse (ALT-F3)</h4>
+RealSpectrum supporta fino a 4 joystick e i tasti cursore; ognuno di essi
+pu&ograve; essere impostato come uno dei joystick supportati dallo Spectrum
+come il Kempston, il Sinclair 1 e il Sinclair 2. Il numero di joystick
+connessi alla porta giochi del PC &egrave; riportato sull'ultima linea
+del menu. Usando i tasti freccia si possono selezionare i vari tipi di
+joystick ed impostare le relative assegnazioni. Bisogna tenere presente
+che i tasti cursore del PC possono essere assegnati ad un joystick dello
+Spectrum oppure ai tasti cursore dello Spectrum stesso ma non le due opzioni
+contemporaneamente; questo significa che essi corrisponderanno ai tasti
+cursore dello Spectrum solamente quando nessuno dei joystick elencati in
+ALT-F3 sono assegnati ai "Cursor keys".
+<br>Utilizzando l'opzione Mouse Type &egrave; possibile attivare o disattivare
+l'emulazione del mouse Kempston, supportato in moltissimi programmi per
+il Pentagon e per lo Scorpion (utility, giochi, caricatori, etc) ed in
+alcuni programmi classici come Art Studio.<a NAME="PNLCOMM"></a>
+<h4>
+Il menu delle porte di comunicazione (CTRL-F3)</h4>
+Questo pannello di controllo permette di configurare l'emulazione
+delle porte di comunicazione. La porta parallela e' emulata per DISCiPLE, +D, +2A/+3 e Scorpion. Le impostazioni
+disponibili sono "OFF", "LPT1" (la porta parallela del PC all'indirizzo
+0x378), "LPT2" (la porta parallela del PC all'indirizzo 0x278) oppure un
+file (in questo caso viene visualizzato il nome del file). Per cambiarne
+il nome premere ENTER mentre compare il nome vecchio ed usare poi normalmente
+la finestra di selezione.
+
+<h4>Porte seriali</h4>
+RealSpectrum supporta la trasmissione dati seriale bi-direzionale attraverso le porte RS-232 del vostro PC (COM1-COM4) 
+oppure utilizzando la ridirezione su file. Sullo Spectrum, le porte della Interface-1 e quella integrata del 128K/+2 sono 
+automaticamente connesse alla linea seriale; nel caso in cui vengano selezionate entrambi, la Interface-1 ha la precedenza 
+su quella del 128K. Nel tentativo di fornire un supporto molto flessibile, abbiamo adottato un sistema particolare di 
+intercettazione che consente di far funzionare su RealSpectrum routines di comunicazione personalizzate (ad esempio 
+programmi di comunicazione per modem o simili) anche su interfacce diverse da quelle standard della Interface-1 o dello
+Spectrum 128K. In poche parole, RealSpectrum &egrave in grado di fa funzionare qualsiasi routine di I/O che rispetti una
+banale convenzione di chiamata. Ecco i dettagli del pannello di configurazione:
+<ul>
+<li>RS-232: consente di scegliere la porta da usare(COM1-COM4), oppure "OFF" per disabilitare completamente l'emulazione della porta seriale. 
+Allo stesso modo dell'emulazione della porta parallela, si pu&ograve scegliere di ridirezionare su file l'uscita della RS-232 
+(premere ENTER quando &egrave visualizzato il nome del file per selezionarne uno nuovo).
+<li>Baud rate: permette di impostare la velocit&agrave della porta seriale del PC, da un minimo di 150 ad un massimo di 115200 baud. 
+La baud rate deve essere uguale alla velocit&agrave del dispositivo DCE connesso alla porta serale. Il valore inserito viene ignorato se 
+si usa la ridirezione su file. 
+<li>Routines: seleziona il tipo di routine di I/O utilizzate. Se si usano le routine standard della ROM, verr&agrave visualizzata la dicitura 
+"Interface-1" o "Spectrum 128K" alternativamente. Per utilizzare routines personalizzate, premere il tasto freccia sinistra ed inserire due 
+indirizzi a 4 cifre esadecimali (separati da uno spazio) uno per la routine di input e uno per quella di output (ad esempio: "8000 8100"). 
+RealSpectrum segue le convenzioni standard Sinclair (per le routines della Interface-1 e del 128K):
+<ul>
+<li>Byte-Input routine: il byte ricevuto dalla porta seriale viene restituito nel registro A della CPU. Il flag di carry &egrave posto a 1 se non 
+vi &egrave stato alcun errore, altrimenti sar&agrave C=0 e Z=1.</li> 
+<li>Byte-Output routine: la routine viene chiamata con il byte da trasmettere contenuto nel registro A. Anche in questo caso il flag di carry &egrave 
+posto a 1 se non vi &egrave stato nessun errore.</li> 
+</ul>
+</ul>
+Per il protocollo RS-232 RealSpectrum utilizza 8 bit di dati, 1 bit di stop, nessuna parit&agrave e nessun controllo di flusso. Questa &egrave la 
+configurazione pi&ugrave comune per le trasmissioni di dati via seriale ed allo stesso tempo l'impostazione predefinita delle routines della ROM standard.<br>
+E' da sottolineare che la baud rate deve essere impostata compatibilmente con la velocit&agrave di comunicazione del dipositivo "remoto", non quella delle 
+routines "locali" che girano sull'emulatore. Le routines di comunicazione seriale vengono virtualizzate e quindi le loro impostazioni sono del tutto 
+ininfluenti. Ecco alcuni semplici esempi:
+<ul>
+<li>Connessione diretta di uno Spectrum con un cavo null-modem: se sullo Spectrum si imposta la velocit&agrave di trasmissione a 9600 baud, si dovr&agrave 
+selezionare 9600 anche nell'emulatore. Per impostare la baud rate sullo Spectrum 128K si utilizza il comando <i>FORMAT "p";9600</i> (o qualsiasi altro valore valido), 
+mentre sulla Interface-1 si deve specificare il canale "b" o "t" invece di "p". Per maggiori dettagli sulla comunicazione seriale, vi invitiamo a consultare il manuale 
+della Interface-1.
+<li>Pilotaggio di un modem: se volete usare un modem 56K, scegliete 115200 baud; per dispositivi pi&ugrave lenti, usate la massima velocit&agrave DTE-DCE consentita 
+dalla periferica utilizzata.
+<li>Connessione di due PC con RealSpectrum: in questo caso non c'&egrave motivo per selezionare la velocit&agrave al di sotto di 115200 (sempre che entrambi i PC 
+dispongano di UART veloci), poich&eacute ambedue le unit&agravi sono virtualizzate.
+</ul>
+Quindi adesso avete la possibilit&agrave di navigare in Internet a 56K anche con lo Spectrum! Vedremo forse un dialer PPP ed un web browser tra qualche tempo? :-)
+</td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+</table>
+<a NAME="SNAPSHOTS"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>5.</font></font></b></td>
+
+<td><font size=+2>Snapshots</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>RealSpectrum supporta i tipi pi&ugrave; comuni di snapshot, i formati
+Z80 e SNA che da soli rappresentano la quasi totalit&agrave; degli snapshot
+disponibili a livello mondiale. Esistono diverse versioni sia di Z80 che
+di SNA ma RealSpectrum &egrave; in grado di gestire ognuno di essi in modo
+trasparente.
+<p>Utilizzare gli snapshots &egrave; molto semplice, possono essere caricati
+in qualsiasi momento premendo F5. Nel file di configurazione si pu&ograve;
+specificare una directory di default contenente la propria collezione di
+snapshots. Per scelta progettuale, RealSpectrum non cambia automaticamente
+il modello di hardware quando viene caricato uno snapshot salvato per una
+macchina diversa. Per esempio, si pu&ograve; caricare uno snapshot 128K
+mentre si sta utilizzando uno Spectrum 48K, ma il risultato sar&agrave;
+molto probabilmente un crash; si deve selezionare manualmente un modello
+con 128K utilizzando l'opzione F3 prima di caricare lo snapshot.
+<br>Ovviamente &egrave; anche possibile salvare uno snapshot premendo ALT-F5
+e digitando il nome del file da creare. Oltre ai vari tasti descritti per
+le varie finestre di selezione, con i tasti freccia sinistra e destra si
+pu&ograve; scegliere il formato dello snapshot (SNA o Z80). In generale,
+il formato Z80 &egrave; preferibile in quanto comprime i dati riducendo
+l'occupazione di spazio sul disco, ma lo SNA &egrave; pi&ugrave; compatibile
+con altri emulatori. RealSpectrum salva nelle pi&ugrave; recenti versioni
+di Z80 (v3.xx).
+<p>Gli snapshots sono molto comodi in quanto caricano e salvano istantaneamente,
+ma hanno lo svantaggio di essere comunemente considerati "brutti". Essi
+lanciano il programma a met&agrave;, non dall'inizio, e qualcosa dell'originale
+&egrave; perso; inoltre, non sono in grado di memorizzare i livelli di
+un gioco multiload e quindi risultano, in molti casi, incompleti. Di conseguenza,
+gli snapshots non dovrebbero essere utilizzati per la propria collezione
+di giochi, ma solo temporaneamente per un pi&ugrave; rapido uso. I tapes,
+ed in particolare il formato TZX, rappresentano la scelta migliore per
+l'archiviazione.&nbsp;</td>
+</tr>
+</table>
+<a NAME="TAPES"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>6.</font></font></b></td>
+
+<td><font size=+2>Tapes</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>RealSpectrum supporta diversi tipi di tapes, inclusa la connessione
+diretta di un registratore a cassette alla scheda audio del PC - sia per
+il caricamento che per il salvataggio. Ogni formato ha speciali peculiarit&agrave;
+nel modo in cui pu&ograve; essere gestito dall'emulatore.
+<ul>
+<li>
+<b>WAV</b> - sono campionamenti audio presi direttamente dalle cassette
+e possono essere ottenuti da qualunque programma di registrazione sonora;
+generalmente occupano molto spazio sul disco e non sono molto versatili.
+Caricare un programma da un file WAV &egrave; come caricarlo da cassetta
+- un'attesa infinita... :) RealSpectrum supporta solo WAV ad 8-bit, mono,
+non compressi.</li>
+
+<li>
+<b>CSW</b> - prodotti dall'utility CSW.EXE della Ramsoft, sono un formato
+di dati audio compresso ed elaborato digitalmente che occupa molto meno
+spazio.</li>
+
+<li>
+<b>TAP</b> - sono un sistema molto comune per memorizzare files Spectrum
+a velocit&agrave; normale, come programmi e informazioni create dalle normali
+routine della ROM (comandi LOAD/SAVE). Vengono caricati istantaneamente
+dai vari emulatori e il contenuto pu&ograve; essere esaminato per saltare
+direttamente ad un blocco specifico. Lo svantaggio principale &egrave;
+che i programmi che utilizzano routine di caricamento personalizzate come
+i turbo non possono essere memorizzati in un TAP.</li>
+
+<li>
+<b>TZX</b> - rappresentano il sistema pi&ugrave; avanzato per memorizzare
+nastri Spectrum su PC. Grazie ad una struttura sofisticata, essi possono
+riprodurre in maniera digitale ogni tipo di dati dai programmi a velocit&agrave;
+normale fino ai pi&ugrave; recenti giochi commerciali turbo. Essi possono
+contenere anche informazioni extra come istruzioni, record, immagini, pokes
+e cos&igrave; via. Teoricamente, i TZX dovrebbero sostituire completamente
+ogni altro tipo di tape file. Come i TAP, essi possono essere trattati
+in modo intelligente dagli emulatori. I TZX possono essere ottenuti utilizzando
+programmi come <a href="http://www.retroplay.com/Mecenate/ramsoft">MakeTZX</a>
+e Taper. RealSpectrum attualmente non supporta la tecnica Direct Recording
+Blocks nei file TZX.</li>
+
+<li>
+<b>Real Tape</b> - &egrave; decisamente il modo pi&ugrave; semplice per
+caricare le normali cassette per lo Spectrum nell'emulatore. Tutto quello
+che si deve fare &egrave; connettere il registratore alla scheda audio
+e selezionare "Physical-Device" nella finestra di selezione relativa ai
+tape. Il caricamento da cassetta risulta estremamente affidabile, e quindi
+non c'&egrave; da temere ad utilizzarlo. Il solo requisito &egrave; che
+la CPU sia veloce abbastanza per far girare RealSpectrum a piena velocit&agrave;
+(vedere il capitolo sui requisiti di sistema).</li>
+</ul>
+In RealSpectrum si pu&ograve; caricare un tape file con la finestra di
+selezione che viene mostrata premendo F7. Come con gli snapshots, c'&egrave;
+un'impostazione nel file INI per dire a RealSpectrum quale directory utilizzare
+per default quando si caricano i tape files. Dopo aver aperto un file,
+si pu&ograve; avviare o fermare il nastro premendo CTRL-F7; questo si applica
+anche alle operazioni con real tape. Il led "Scroll Lock" sulla tastiera
+indica quando il nastro sta girando. Si pu&ograve; esaminare il contenuto
+del nastro con SHIFT-F7 (solo TAP e TZX); per saltare ad un blocco specifico,
+selezionarlo tramite i tasti freccia e premere ENTER.
+<h4>
+Note riguardo il supporto real tape</h4>
+Se si vuole caricare da cassetta probabilmente si avr&agrave; di una vecchia
+scheda audio ISA, in quanto la maggior parte delle moderne PCI (inclusa
+la SB Live!) non riescono a campionare se pilotate in emulazione di vecchie
+schede (ad esempio utilizzando i classici comandi DSP della SoundBlaster).
+Spiacenti ma questo &egrave; l'MSDOS... :-(
+<br>Con l'attuale versione della libreria audio usata da RealSpectrum,
+caricando da cassetta (campionando) si interrompe il suono in uscita. Questa
+non &egrave; una limitazione di RealSpectrum. Quando gli autori della libreria
+abiliteranno il supporto full-duplex nei loro drivers audio, RealSpectrum
+ne beneficer&agrave; automaticamente.
+<br>All'apertura del "Physical-Device" con F7, il nastro si avvia automaticamente.
+E' comunque possibile utilizzare CTRL-F7 per avviare o fermare il campionamento
+quando si vuole.
+<br>Ovviamente, il caricamento o salvataggio in tempo reale richiede un
+computer abbastanza veloce da far girare RealSpectrum a piena velocit&agrave;
+(50 fps, attualmente ottenuti con una CPU da 166/200 MHz), altrimenti alcuni
+dati saranno persi e ci&ograve; causer&agrave; un errore di caricamento.
+Notare che il supporto real tape &egrave; totalmente indipendente dall'emulazione
+sonora in generale e quindi, se si ha una CPU lenta, &egrave; possibile
+disattivare il suono per ottenere maggiore velocit&agrave;.<a NAME="TAPEOPT"></a>
+<h4>
+Opzioni per i tape files</h4>
+Premendo ALT-F7 si apre il pannello di controllo relativo ai tape file
+dove si possono modificare alcune impostazioni.
+<ul>
+<li>
+La sezione riguardante il FlashLoading e il salvataggio sar&agrave; descritta
+in dettaglio nel prossimo paragrafo.</li>
+
+<li>
+Tape Loading Noise determina se si deve sentire o meno il suono del nastro
+durante il caricamento (come nello Spectrum reale).</li>
+
+<li>
+AutoRewind controlla cosa succede alla fine del nastro. Se abilitato, il
+nastro viene riavvolto automaticamente e il caricamento riprende dall'inizio;
+altrimenti, il nastro si ferma. AutoRewind &egrave; abilitato per default
+per i file di tipo TAP.</li>
+</ul>
+
+<h4>
+FlashLoading</h4>
+FlashLoading rappresenta la capacit&agrave; di caricare tape file <i>istantaneamente</i>,
+senza alcuna attesa come succede sullo Spectrum reale. Questa &egrave;
+una caratteristica normale per i file di tipo TAP, ma noi l'abbiamo resa
+migliore: RealSpectrum &egrave; il primo emulatore in grado di caricare
+istantaneamente anche i file di tipo TZX! Questo significa essere ora in
+grado di caricare i giochi (compresi i livelli!) dai nastri originali come
+fossero snapshot o su disco! Si prega notare la differenza rispetto agli
+altri tipi di cosiddetti "flashloading": noi non abbiamo solo velocizzato
+l'emulatore mentre carica, bens&igrave; rilevato in modo automatico le
+routine di caricamento e caricato i dati direttamente nella memoria dello
+Spectrum come richiesto. In questo modo, il caricamento completo di un
+gioco 128K avviene in tempo zero! Le uniche pause che si vedranno sono
+quelle dovute ai vari decrypters/decrunchers comunemente utilizzati nei
+giochi ma che non fanno parte del caricamento vero e proprio. Tutto questo
+&egrave; stato possibile grazie alla tecnologia di <a href="http://www.retroplay.com/Mecenate/ramsoft">MakeTZX</a>
+presente all'interno di RealSpectrum.
+<ul>
+<li>
+FlashLoading attualmente funziona con i seguenti turbo loaders: Alkatraz,
+tutti gli Speedlocks (1-7), BleepLoad, Paul Owens e Digital Integration.
+Questi da soli coprono la stragrande maggioranze dei giochi prodotti; altri
+saranno comunque aggiunti nelle prossime versioni. Non c'&egrave; bisogno
+di identificare esplicitamente il tipo di loader, RealSpectrum lo fa automaticamente.</li>
+
+<li>
+FlashLoading funziona anche con i livelli. In questo modo, &egrave; proprio
+come se il gioco fosse su disco - non si deve attendere nulla tra un livello
+e l'altro!</li>
+
+<li>
+Ovviamente, FlashLoading richiede le versioni originali dei programmi e
+dei loro caricatori. Vesioni rimaneggiate che usano caricatori diversi
+non vengono riconosciute.</li>
+</ul>
+Per abilitare FlashLoading, attivare la corrispondente opzione nel pannello
+di controllo ALT-F7. FlashLoading &egrave; abilitato automaticamente per
+i file di tipo TAP e disabilitato&nbsp; per i CSW e gli WAV; se si volesse
+caricare i TAP alla vecchia "lenta" maniera, disabilitare l'opzione appena
+aperto il tape file (e ricordarsi di avviare il nastro con CTRL-F7). Con
+l'opzione "FlashLoad Levels" si pu&ograve; scegliere di caricare istantaneamente
+anche i livelli.
+<p>L'impostazione "Screen Pause" serve a mettere una piccola pausa appena
+dopo il caricamento dello screen iniziale in modo tale da permettere di
+vederlo (altrimenti esso scomparir&agrave; immediatamente nella maggior
+parte dei casi); questo torna particolarmente utile nei giochi dotati di
+caricatore Alkatraz, che generalmente hanno schermate di caricamento molto
+stravaganti, e quindi abbiamo pensato che fosse simpatico poter rivedere
+esattamente lo screen originale. Scegliendo "NONE" si disabilita completamente
+la pausa e quindi l'animazione, mentre le altre tre impostazioni ("Slow",
+"Medium" e "Fast") ne influenzano la velocit&agrave;. Questo &egrave; comunque
+solo un rallentamento artificiale in quanto lo screen internamente &egrave;
+caricato in modo istantaneo :-)
+<p>FlashLoading &egrave; utile anche al di fuori delle situazioni previste.
+Quando &egrave; abilitato, RealSpectrum carica i blocchi a velocit&agrave;
+normale contenuti nei file TZX allo stesso modo dei file TAP, e pertanto
+pu&ograve; essere utilizzato per caricare i blocchi standard anche nell'ambito
+di sistemi di caricamento non supportati. Se il sistema si ferma di fronte
+ad un blocco turbo non standard perch&eacute; non supportato direttamente
+da RealSpectrum, tutto quello che si deve fare &egrave; semplicemente premere
+CTRL-F7 e il caricamento continuer&agrave; normalmente nella modalit&agrave;
+vecchio stile; in questo caso, FlashLoading sar&agrave; automaticamente
+disabilitato fino all'apertura del prossimo tape file. In generale, &egrave;
+possibile passare da FlashLoading a caricamento normale in qualunque momento
+con il menu ALT-F7.
+<br>In conclusione, con il FlashLoading di RealSpectrum non c'&egrave;
+alcuna ragione per preferire i TAP ai TZX.
+<h4>
+Salvataggio dei tape files</h4>
+RealSpectrum pu&ograve; salvare tape files in tutti i formati supportati,
+quindi si pu&ograve; scegliere tra TZX, TAP, WAV e CSW. Questa &egrave;
+una caratteristica molto utile in quanto offre la piena libert&agrave;
+di manipolare qualsiasi tipo di dato in scrittura, inclusi i caricatori
+turbo e custom.
+<br>Per salvare un tape file, andare al menu Tape Options premendo ALT-F7,
+spostare il cursore su "Tape Saving" e scegliere la voce "Open tape for
+saving" premendo RETURN. Si aprir&agrave; la solita finestra di selezione
+da dove si pu&ograve; scegliere la directory di destinazione e il nome
+del file da salvare. Utilizzando le frecce sinistra e destra si pu&ograve;
+scegliere il formato desiderato. Alla fine premere ancora RETURN per avviare
+il salvataggio. Cosa succede esattamente dopo dipende dal formato scelto:
+<ul>
+<li>
+<b>TZX, TAP:</b> RealSpectrum intercetta le chiamate alle normali routine
+di SAVE in ROM e scrive i vari blocchi. Questo sistema va bene per i normali
+comandi BASIC come SAVE e anche per i blocchi senza header, ma non &egrave;
+adatto per salvare i blocchi turbo. Bench&eacute; il formato TZX sia in
+grado di contenere blocchi non standard, al momento il salvataggio di file
+TZX &egrave; supportato solo a livello di compatibilit&agrave; con i TAP
+(blocchi 0x10). Comunque, nella prossima release RealSpectrum sar&agrave;
+in grado di salvare anche file TZX turbo in quanto includer&agrave; il
+motore di decodifica di MakeTZX.</li>
+
+<li>
+<b>WAV, CSW:</b> RealSpectrum avvia la registrazione dei dati sul file;
+l'operazione inizia non appena viene aperto il tape file per la scrittura
+e si ferma alla sua chiusura; la frequenza di campionamento &egrave; impostata
+per default a 44100 Hz. Questo sistema permette di registrare ogni tipo
+di dati turbo e caricatori custom ed &egrave; perci&ograve; estremamente
+versatile. Generalmente, a questo punto si vuole convertire il file WAV
+o CSW nel formato TZX utilizzando un TZX decoder come <a href="http://www.retroplay.com/Mecenate/ramsoft/maketzx.html">MakeTZX</a>.
+I file CSW hanno il vantaggio di essere almeno 8-10 volte pi&ugrave; piccoli
+dei corrispondenti WAV.</li>
+
+<li>
+<b>Real Tape:</b> In questo caso il beeper &egrave; disabilitato e il suono
+si sente nel registratore (qualsiasi velocit&agrave; e qualsiasi routine
+custom). Si pu&ograve; collegare alla scheda audio un registratore a cassette&nbsp;
+o addirittura direttamente la presa EAR dello Spectrum. Il livello del
+segnale di uscita si pu&ograve; regolare attraverso l'impostazione "Device
+Balance" nel pannello dedicato al suono.</li>
+</ul>
+Una volta che il salvataggio &egrave; completato, si deve chiudere il file
+con l'opzione "Close <i>tapefile</i>" nel menu Tape Options (ALT-F7).</td>
+</tr>
+</table>
+<a NAME="DISKS"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>7.</font></font></b></td>
+
+<td><font size=+2>Dischi e cartridges</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>Attualmente RealSpectrum implementa cinque interfacce disco: DISCiPLE,
++D, Beta 128, +3 e MB-02+. Inoltre, sono anche emulati i microdrives dell'Interface
+I, fino a 8 cartridges. La DISCiPLE e la +D sono molto simili e compatibili,
+e per questo vengono spesso chiamate interfacce MGT (dal nome della ditta
+produttrice, la Miles Gordon Technology). Il Beta 128 (conosciuto anche
+come TRDOS) &egrave; il sistema di default per i cloni russi come il Pentagon
+e lo Scorpion; &egrave; basato sull'interfaccia della Technology Research.
+Il sistema +3 &egrave; ovviamente quello dell'ultimo modello dello Spectrum
+prodotto dalla Amstrad. The MB-02+ is an extremely advanced disk interface and RealSpectrum is the world's first emulator capable of emulating this beast; see below for more details about it. I Microdrives, connessi all'Interface I, sono stati
+la pi&ugrave; popolare memoria di massa prodotta dalla Sinclair stessa.
+<br>Dal menu F3 si pu&ograve; abilitare una di queste interfacce per ognuno
+dei modelli di Spectrum. La MGT e la TRDOS sono mutuamente esclusive a
+causa di alcune porte in coflitto; La TRDOS &egrave; abilitata automaticamente
+quando viene selezionato il Pentagon, ma &egrave; possibile cambiare l'interfaccia
+disco come si vuole.
+<h4>
+Opzioni disco</h4>
+Premendo F6 si accede alla configurazione dei dischi. Per ogni drive disponibile
+RealSpectrum mostra l'immagine disco attualmente caricata e lo stato di
+write protect del disco. Per inserire un nuovo disco, si deve selezionare
+il drive desiderato, premere ENTER e scegliere il file disco da caricare.
+Per espellere un disco si deve semplicemente selezionarlo e premere il
+tasto DEL. Per cambiare lo stato di write protect si devono utilizzare
+i tasti freccia sinistra e destra. La directory di default per i file disco
+pu&ograve; essere specificata nel file INI.
+<br>Con ALT-F6 si pu&ograve; invece creare un'immagine disco o cartridge
+vuota. Il tipo di file da creare &egrave; determinato automaticamente in
+base all'interfaccia disco attualmente in uso. Le nuove cartridge per l'Interface
+I (MDR) e i nuovi dischi per il +3 (DSK) devono essere formattate prima
+dell'uso.
+<h4>
+Supporto per dischi reali</h4>
+Oltre ai file immagine, RealSpectrum gestisce anche i floppy disk reali
+inseriti nel disk drive del PC. Per abilitare questa modalit&agrave; &egrave;
+sufficiente aprire lo speciale file chiamato "Physical-Device" mostrato
+alla fine della lista nella finestra di selezione dei file.
+<br>Bisogna tenere presente che RealSpectrum usa le routine del BIOS per
+accedere ai disk drive. Questo significa che alcuni BIOS vecchi potrebbero
+non essere in grado di leggere dischi non-MSDOS come quelli Spectrum. Su
+di una Asus P5A, RealSpectrum legge i miei dischi DISCiPLE alla stessa
+velocit&agrave; di uno Spectrum vero! Nel caso si abbia un BIOS sfortunato,
+prima di rinunciare si pu&ograve; provare a chiedere la directory di un
+disco MSDOS da 720K prima di lanciare RealSpectrum, oppure ad usare un
+programma per correggere il BIOS come FDREAD.EXE. Si raccomanda di utilizzare
+i dischi reali in MSDOS puro in quanto sotto Windows potrebbero manifestarsi
+dei problemi.
+<br>Un'altra possibilit&agrave; &egrave; che il drive del PC abbia la testina
+allineata diversamente rispetto a quello dello Spectrum.
+<h4>
+DISCiPLE e +D</h4>
+Le interfacce MGT supportano fino a due dischi a doppia densit&agrave;
+e doppia faccia (MGT1 e MGT2), generalmente a 80 tracce, 10 settori per
+traccia e 512 bytes per settore (per un totale di 800K). Per poterle utilizzare
+sono necessari i file GDOS.ROM per la DISCiPLE e GDOS-PD.ROM per la +D
+che devono essere copiati nella directory di RealSpectrum. Si ha inoltre
+bisogno di un disco contenente il DOS (un file chiamato "sys*" oppure "+sys*",
+rispettivamente). Per sapere tutto ci&ograve; che occorre per sfruttare
+al meglio queste due magnifiche interfacce leggere la nostra guida <a href="http://www.ramsoft.bbk.org/tech.html">DISCiPLE/+D
+Guide</a>. I due dispositivi sono equipaggiati con un magic button (NMI)
+che congela il programma attualmente in esecuzione e permette di salvarne
+uno snapshot sul disco, stampare la schermata e molte altre cose.
+<br>RealSpectrum supporta anche l'UNIDOS, un potente sistema operativo
+sia per DISCiPLE che per +D, disponibile come una EPROM da installare al
+posto di quella originale; &egrave; necessario quindi procurarsi il file
+UNI-DISC.ROM per la DISCiPLE e UNI-PD.ROM per la +D. Si pu&ograve; scegliere
+tra GDOS e UNIDOS dal menu F3 in ogni momento. Se il file ROM per la DISCiPLE/+D
+(quello di default o quello specificato manualmente in realspec.ini) &egrave;
+lungo 16384 invece di 8192, RealSpectrum assume che esso contenga il sistema
+operativo precaricato e quindi non c'&egrave; necessit&agrave; del boot
+iniziale con il comando "RUN".
+<h4>
+Beta 128 (TRDOS)</h4>
+L'interfaccia Beta 128 permette di controllare fino a quattro disk drive
+(TRD1-TRD4), generalmente da 80 tracce, 16 settori per traccia di 256 bytes
+ognuno per un totale di 640K. I formati supportati sono il TRD e l'SCL
+(presto anche l'FDI).
+<h4>
+Dischi +3</h4>
+Selezionando il modello +3 si hanno a disposizione due disk drive (DSK1
+and DSK2) nei quali possono essere inseriti file immagine di tipo .DSK.
+I floppy +3 sono generalmente da 3", 40 tracce, 9 settori per traccia,
+singola faccia.
+<h4>
+Cartridges per microdrive</h4>
+Abilitando la ZX Interface I con il menu F3, viene mostrato il pannello
+di controllo per i Microdrives al posto di quello per i dischi. RealSpectrum
+supporta 8 microdrives nei quali si possono inserire file immagine di cartridges
+(file .MDR). Questo pannello funziona quasi esattamente come quello dei
+dischi, con la sola differenza che lo stato di Write Protect &egrave; indicato
+come 'R' (Read only); lo stato di write protect si cambia anche qui con
+le frecce sinistra e destra. Tutti gli altri tasti funzionano allo stesso
+modo dei dischi.
+<h4>MB-02+</h4>
+Questa &egrave un'interfaccia disco molto potente, probabilmente la pi&ugrave avanzata mai costruita per lo 
+ZX Spectrum; il solo fatto che il software di gestione sia stato progettato da Busy Soft la dice lunga. 
+Oltre a svariate "delizie" techniche, integra un ottimo DOS (BSDOS) e sostituisce la ROM standard dello Spectrum 
+con una versione migliorata. RealSpectrum emula completamente la MB-02+ e supporta 512KB di SRAM, 
+il chip Z80 DMA per trasferire dati senza l'utilizzo della CPU, il chip dell'orologio di sistema (RTC) e 4 
+drives per dischetti HD/DD. Il formato utilizzato ha estensione .MBD (una semplice immagine di un floppy 
+per MB-02, molto simile alle immagini .MGT), e rappresenta di solito un disco ad alta densit&agrave con 
+82 tracce x 11 secttori di 1024 bytes ciascuno. Per ulteriori informazioni sulla MB-02+, visitate il sito della 
+<a href="http://www.8bc.com/SINCLAIR/index.htm">8-Bit Company</a>.
+</td></tr></table>
+<a NAME="VIDEO"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>8.</font></font></b></td>
+
+<td><font size=+2>Video</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>RealSpectrum pu&ograve; girare a diverse risoluzioni video, che possono
+essere cambiate al volo dal menu Video Options (F11) selezionando la modalit&agrave;
+desiderata e premendo RETURN. Si pu&ograve; anche digitare manualmente
+la risoluzione nell'apposito campo , ad esempio "320 200". Se la modalit&agrave;
+scelta &egrave; disponibile, RealSpectrum la cambia immediatamente, altrimenti
+mantiene quella precedente. L'emulatore usa automaticamente ogni singolo
+pixel disponibile per ottenere la visualizzazione pi&ugrave; ampia possibile.
+Questo significa che a 320x200 si vedranno 4 linee di bordo superiore ed
+inferiore, mentre a 376x308 e superiori verr&agrave; mostrata la videata
+completa (generalmente al di fuori delle possibilit&agrave; di un normale
+TV).
+<p>Le modalit&agrave; video elencate nel pannello F11 &egrave; solo un
+piccolissimo esempio di tutte quelle disponibili. RealSpectrum prevede
+le seguenti:&nbsp;
+<center><table BORDER >
+<tr>
+<td>320x200</td>
+
+<td>320x240</td>
+
+<td>256x200</td>
+
+<td>256x224</td>
+
+<td>256x240</td>
+
+<td>256x256</td>
+</tr>
+
+<tr>
+<td>320x100</td>
+
+<td>320x350</td>
+
+<td>320x400</td>
+
+<td>320x480</td>
+
+<td>320x600</td>
+
+<td>360x200</td>
+</tr>
+
+<tr>
+<td>360x240</td>
+
+<td>360x270</td>
+
+<td>360x360</td>
+
+<td>360x400</td>
+
+<td>360x480</td>
+
+<td>360x600</td>
+</tr>
+
+<tr>
+<td>376x282</td>
+
+<td>376x308</td>
+
+<td>376x564</td>
+
+<td>400x150</td>
+
+<td>400x300</td>
+
+<td>400x600</td>
+</tr>
+</table></center>
+Indicando una di queste risoluzioni, RealSpectrum per prima cosa controlla
+se il BIOS la supporta come VESA2 altrimenti utilizza l'X-Mode.
+<p>Oltre a queste modalit&agrave;, RealSpectrum supporta tutte quelle VESA
+1/2/3 supportate dal BIOS della scheda video. Per avere la lista completa
+delle modalit&agrave; VESA supportate dalla propria scheda video si deve
+utilizzare qualche programma apposito. Tipicamente i modi VESA2 sono 640x480
+e 640x400 ma molti BIOS implementano anche alcune delle modalit&agrave;
+a bassa risoluzione riportate nella tabella precedente.
+<br>La modalit&agrave; 376x282 ha una frequenza di refresh verticale di
+50.3 Hz che &egrave; molto vicina a quella della PAL dello Spectrum. Questo
+significa che scrollers e animazioni saranno perfettamente fluidi anche
+sul monitor del PC, un risultato altrimenti impossibile da ottenere a causa
+della diversa frequenza di refresh della VGA. Notare che alcuni vecchi
+monitor possono non essere in grado di gestire una frequenza cos&igrave;
+bassa.
+<br>La risoluzione 376x308 (X-Mode) &egrave; anch'essa particolarmente
+interessante in quanto le linee di scansione che si ottengono rendono l'immagine
+sul monitor molto simile al classico schermo TV. La frequenza di refresh
+in questo caso &egrave; circa 86 Hz, valore che potrebbe eccedere le capacit&agrave;
+di alcuni monitor.
+<p><b>Importante:</b> raccomandiamo fortemente di utilizzare sempre, quando
+possibile, le modalit&agrave; VESA2 o VESA3 in quanto queste migliorano
+drammaticamente la velocit&agrave; di emulazione. L'ultima riga del pannello
+di controllo F11 riporta la modalit&agrave; video attualmente attiva; si
+dovrebbe provare ad utilizzare le risoluzioni indicate come "VESA2" o "VESA3".
+<p>Se le modalit&agrave; a bassa risoluzione quali la 320x240 non fossero
+disponibili come VESA ma solamente come X-Mode, raccomandiamo di provare
+il programma Display Doctor della Scitech. Se RealSpectrum non riesce a
+girare a piena velocit&agrave; neanche in modalit&agrave; VESA2, allora
+non resta altro che utilizzare la buona vecchia 320x200. Controllare che
+il driver video utilizzato sia "Standard VGA" (indicato anche come modalit&agrave;
+13H). Si pu&ograve; sempre forzare la modalit&agrave; VGA 13H indicando
+una risoluzione non esistente nel file INI (ad esempio "VideoMode: 333
+333").<a NAME="#VIDEOXTRA"></a>
+<h4>
+Altre opzioni video</h4>
+Nel menu ALT-F11 sono disponibili alcune opzioni aggiuntive.
+<ul>
+<li>
+<b>Vsync: </b>questo parametro controlla il sincronismo verticale. Se abilitato,
+RealSpectrum tenta di sincronizzare l'aggiornamento del video con la scansione
+della VGA, ottenendo animazioni pi&ugrave; fluide e immagini prive di sfarfallamento.
+Questo per&ograve; pu&ograve;, in alcuni casi, rallentare eccessivamente
+l'emulatore; se si sentono interruzioni o ripetizioni nell'audio si pu&ograve;
+provare a disabilitare l'opzione vsync. Bisogna anche tenere presente che
+sotto Windows 9x &egrave; praticamente impossibile ottenere la sincronizzazione
+perfetta al 100% e quindi qualche sfarfallamento ogni tanto si vedr&agrave;
+nonostante vsync sia abilitato.</li>
+
+<li>
+<b>Gamma:</b> questa impostazione determina il constrasto tra colori chiari
+e scuri della palette dello Spectrum. Aumentare il valore significa rendere
+pi&ugrave; luminosi i colori scuri e viceversa.</li>
+
+<li>
+<b>Salvataggio immagini:</b> apre la finestra di selezione dei file e permette
+di salvare la schermata corrente; i fomati disponibili sono BMP, SCR, PCX
+e TGA.</li>
+
+<li>
+<b>O.S.D:</b> rappresenta il massimo numero di linee di testo simultaneamente
+visualizzate dall'On-Screen Display (OSD).</li>
+<li><b>Video Recorder start/stop:</b> selezionare questa opzione per controllare 
+il Video Recorder. Se la riga indica "Start video recorder" verr&agrave mostrato 
+il pannello Video Recording Options descritto di seguito. Se invece la registrazione &egrave gi&agrave 
+attiva, troverete la scritta "Stop recorder" seguita dalla lunghezza del filmato espressa in minuti 
+e secondi.
+</ul>
+Nel file di configurazione realspec.ini si pu&ograve; alterare il valore
+di frameskip. RealSpectrum invia una videata alla VGA solo una volta ogni
+<i>frameskip</i>
+scansioni complete; questo pu&ograve; essere utile in presenza di schede
+video lente ma il valore di default &egrave; comunque zero (nessun frame
+saltato).
+<h4>Opzioni di Registrazione Video</h4>
+Quando si seleziona "Start video recording" dal menu Extra Video Preferences, si apre un piccolo pannello 
+di controllo per consentire la personalizzazione delle propriet&agrave del filmato da registrare.<br>
+Le opzioni disponibili sono:
+<ul>
+<li>Frame rate: rappresenta la frequenza di cattura video, ed &egrave impostata a 50 fps (frames per secondo) 
+per registrare ogni singola immagine generata dallo Spectrum (per avere l'animazione pi&ugrave fluida possibile). 
+Abbassando questo valore (fino ad 1 fps) si ridurr&agrave lo spazio su disco necessario per il filmato e di 
+conseguenza la fluidit&agrave di quest'ultimo.
+<li>Video size: specifica le dimensioni dell'area di cattura video, che pu&ograve essere sia il quadro video 
+completo dello Spectrum (schermo + bordo) o soltanto l'area pixel (256x192). L'esatta risoluzione delle immagini 
+viene indicata tra parentesi.
+<li>Record OSD: specifica se le informazioni OSD generate dall'emulatore (messaggi di testo, icone, ecc.) 
+dovvranno essere registrate nel filmato.
+<li>Compressor: regola l'efficienza del compressore AVI; una compressione migliore ridurr&agrave lo spazio occupato 
+dal filmato. L'impostazione predefinita (e consigliata) &egrave <i>best</i>, la quale offre un'ottimo rapporto di compressione. 
+Selezionando <i>normal</i>, il processo di registrazione risulter&agrave pi&ugrave veloce, ma il file AVI 
+occuper&agrave pi&u spazio; nella maggior parte dei casi non &egrave si utilizza questa impostazione 
+a meno che non sia necessario avere una emulazione fluida anche durante la registrazione su CPU particolarmente lente.
+<li>AV streams: permette di scegliere se registrare sia audio che video o soltanto video.
+</ul>
+Dopo aver regolato i vari parametri, premendo ENTER si aprir&agrave il fileselector per specificare il nome del file 
+e la directory di destinazione per il filmato. La registrazione video inizia non appena si chiude il fileselector.<br>
+Nota: non &egrave possibile cambiare risoluzione durante la registrazione.
+<p>
+RealSpectrum salva i filmati nel formato AVI e sfrutta un sistema di compressione senza perdita di definizione (MRLE). 
+I file AVI sono piuttosto comuni e sono supportati dalla maggior parte dei sistemi operativi. Facciamo notare che la 
+registrazione comporta frequenti trasferimenti di dati su disco; in alcuni casi potrebbero quindi verificarsi dei 
+rallentamenti nell'emulazione. Se si utilizza RealSpectrum in ambiente MSDOS puro (non all'interno di un DOS box in Windows), 
+consigliamo di caricare un programma di cache per disco quale 'smartdrive'.
+<p>
+Attenzione: anche solo pochi secondi di registrazione alla massima qualit&agrave possono generare un filmato di grosse 
+dimensioni, quindi accertatevi di avere spazio su disco a sufficienza :-)
+<p>
+Una volta ottenuto il vostro AVI, potrete convertirlo in qualsiasi altro formato a seconda delle vostre esigenze. 
+Utilizzando i tool disponibili su Internet, si potranno ricomprimere i dati con un codec diverso come MPEG 1/2/4, 
+Div-X, Cinepak, Indeo ecc.; in ogni caso, ricordate che i compressori di tipo "lossy" potrebbero ridurre la qualit&agrave 
+del filmato. L'algoritmo di compressione usato da RealSpectrum &egrave ottimizzato per grafica a palette di colori 
+(come le immagini a 16 colori dello ZX Spectrum) ed offre un'ottima compressione pur mantenendo inalterata la qualit&agrave dell'immagine.</td>
+</tr>
+</table>
+<a NAME="AUDIO"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>9.</font></font></b></td>
+
+<td><font size=+2>Audio</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>RealSpectrum ha un ricco insieme di caratteristiche riguardanti la
+musica e il suono, in quanto la qualit&agrave; audio &egrave; uno dei nostri
+principali obiettivi di progetto. Abbiamo gi&agrave; visto le possibilit&agrave;
+dal punto di vista dell'emulazione. Questo capitolo spiega invece come
+avviene l'interazione dell'utente con il sistema sonoro. RealSpectrum pu&ograve;
+generare suono in molte configurazioni: 8 o 16 bit, mono o stereo e ad
+ogni frequenza di campionamento supportata dalla scheda audio disponibile.
+L'impostazione raccomandata &egrave; 8-bit stereo a 44100 Hz (normalmente
+non &egrave; necessario impostare i 16 bit).
+<h4>
+Opzioni per il suono</h4>
+Premendo F12 si entra nel pannello delle opzioni per il suono dove troviamo
+disponibili i seguenti comandi:
+<ul>
+<li>
+<b>Master volume:</b> &egrave; il volume generale del suono che esce dagli
+altoparlanti. Alcune considerazioni di tipo matematico riguardanti la qualit&agrave;
+del suono ci dicono che normalmente &egrave; preferibile tenere questa
+impostazione al massimo utilizzando invece i comandi degli altoparlanti
+stessi per regolare il volume.</li>
+
+<li>
+<b>AY stereo panning:</b> &egrave; possibile impostare la posizione stereo
+di ognuno dei tre canali del chip sonoro dello Spectrum (AY) in 256 passi
+che vanno dall'estrema sinistra all'estrema destra. Questa caratteristica
+permette di ottenere risultati veramente gradevoli. Molte demo musicali
+sono state composte per suonare meglio in determinate configurazioni stereo
+(vedere pi&ugrave; avanti).</li>
+
+<li>
+<b>Device balancement:</b> controlla la potenza relativa dei canali digitali
+(il beeper e altri dispositivi come Covox/Soundrive) rispetto al chip AY.
+Nello Spectrum 128K originale il beeper da solo suona forte come i tre
+canali AY messi insieme e questo risulta fastidioso per molti utenti. L'impostazione
+di default di RealSpectrum &egrave; tale che il beeper ha la stessa potenza
+di un singolo canale AY (cosicch&eacute; ogni canale ha un quarto della
+potenza totale). Quando il cursore &egrave; all'estrema sinistra si sente
+solo l'AY mentre il beeper &egrave; al minimo; quanto il cursore &egrave;
+all'estrema destra &egrave; l'AY ad essere al minimo mentre il beeper &egrave;
+al massimo. Il comportamento dello Spectrum 128K originale si ottiene quando
+il cursore &egrave; posto a met&agrave; corsa.</li>
+
+<li>
+<b>Stereo mode:</b> permette di utilizzare alcune configurazioni preimpostate
+per il panning dell'AY; la configurazione "ABC" (canale A a sinistra, B
+al centro e C a destra) &egrave; utilizzata dal Pentagon e da molti altri
+cloni e schede dell'est; "ACB" veniva usata in molte demo cecoslovacche
+(Busy Soft); "NONE" rende il suono monofonico (tutti i canali al centro)
+e "USER" permette di definire le proprie posizioni stereo.</li>
+
+<li>
+<b>Surround FX:</b> questa favolosa caratteristica migliora la spazialit&agrave;
+del suono. Generalmente gli altoparlanti danno risultati migliori delle
+cuffie. Provando diverse disposizioni degli altoparlanti si riesce ad ottenere
+il massimo effetto.</li>
+
+<li>
+<b>Sound state:</b> attiva o disattiva il suono.</li>
+</ul>
+L'ultima riga del pannello mostra l'impostazione corrente: risoluzione,
+stereo e frequenza di campionamento; questi parametri non possono essere
+modificati durante l'esecuzione ma devono essere impostati nel file di
+configurazione (realspec.ini).<a NAME="AUDIOXTRA"></a>
+<h4>
+Altre impostazioni audio</h4>
+Con ALT-F12 sono disponibili altre caratteristiche audio:
+<ul>
+<li>
+<b>Sound recorder:</b> RealSpectrum pu&ograve; registrare il suono dello
+Spectrum (AY e beeper) su file WAV, AZX oppure YM. In questo modo si pu&ograve;
+fare una raccolta delle musiche e degli effetti sonori preferiti e risentirli
+in seguito con il proprio programma di riproduzione oppure realizzarne
+un bel CD. Il registratore pu&ograve; essere avviato o fermato in qualsiasi
+momento premendo ENTER mentre &egrave; selezionata la voce corrispondente;
+la finestra mostrer&agrave; "Start" o "Stop sound recorder" a seconda dello
+stato attuale. Iniziando una nuova registrazione, si deve utilizzare la
+finestra di selezione dei file nel solito modo per scegliere il formato
+(WAV/AZX/YM) e il nome del file con il percorso.</li>
+
+<br>Una nota a proposito del formato YM: RealSpectrum salva file YM non
+compressi di tipo 5; volendo, si possono comprimere in seguito utilizzando
+LHA.EXE (con l'opzione "-h0", esempio "lha -h0 a compresso.lzh noncompresso.ym")
+e il risultante archivio .LZH pu&ograve; eventualmente essere rinominato
+in .YM senza altre modifiche.
+<li>
+<b>Circuito AY-LPT:</b> &egrave; un piccolo dispositivo che permette di
+collegare un chip sonoro AY-38910/12 reale alla porta parallela del PC.
+RealSpectrum &egrave; in grado di riprodurre brani AY attraverso tale dispositivo
+consentendo quindi di ascoltare il suono originale oltre all'emulazione
+digitale ottenuta grazie alla scheda audio. Per abilitare il dispositivo
+AY-LPT, digitare l'indirizzo esadecimale della porta LPT alla quale &egrave;
+connesso (generalmente &egrave; la 378 per LPT1 e la 278 per LPT2). Per
+disabilitarlo inserire il valore 0 oppure premere ESC.</li>
+
+<li>
+<b>Digital device:</b> &egrave; possibile attivare un'interfaccia digitale
+per la riproduzione. Quelle supportate sono la Covox (porta $FB sul Pentagon
+e $DD sullo Scorpion), Stereo Covox (porte $0F e $4F), Soundrive e Music
+Machine. Il suono digitale &egrave; riprodotto attraverso i canali del
+beeper e quindi non &egrave; possibile sentire gli effetti sonori 48K mentre
+&egrave; abilitata una di queste interfacce (ma la musica AY &egrave; ancora
+perfettamente funzionante). Questo significa anche che &egrave; possibile
+regolare il volume del canale digitale utilizzando l'impostazione Device
+Balance nel menu principale dei controlli audio (F12); per esempio, per
+ascoltare al meglio la musica digitale (volume al massimo) si deve portare
+il regolatore tutto a destra (AY al minimo).</li>
+</ul>
+<b>Note riguardo le schede audio PCI:</b> come tutti i programmi DOS, la
+versione MSDOS di RealSpectrum potrebbe non funzionare correttamente con
+una scheda audio PCI. Questa non &egrave; una limitazione di RealSpectrum
+ma una restrizione imposta dal DOS. Le schede audio PCI sono quasi tutte
+inutilizzabili da DOS a causa di problemi hardware. Vedere le FAQ pi&ugrave;
+sotto.</td>
+</tr>
+</table>
+<a NAME="POKES"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>10.</font></font></b></td>
+
+<td><font size=+2>Pokes (cheats) e opzioni di memoria</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>Ai vecchi tempi, si trovavano trucchi e modalit&agrave; di allenamento
+per molti giochi, tipicamente riportate come POKES nelle riviste. Con RealSpectrum
+esistono due metodi per inserire le pokes: si pu&ograve; abilitare la Multiface
+128 ed utilizzare il suo menu, oppure si pu&ograve; utilizzare il pannello
+al quale si accede tramite il tasto F9.
+<p>Al caricamento di un tape file o di uno snapshot, RealSpectrum cerca
+automaticamente se esiste un file con lo stesso nome ma estensione .POK.
+I file POK sono prodotti dalla famosa utility SGD (Spectrum Games Database)
+di Martijn van der Heide e contengono i vari trucchi. Se viene trovato
+il file POK, il pannello F9 mostra la lista dei trucchi in esso disponibili
+per il gioco in esecuzione; ogni trucco pu&ograve; essere attivato o disabilitato
+con i cursori sinistro e destro. In alcuni casi &egrave; possibile specificare
+un numero come parametro di un trucco, ad esempio il numero di vite; tale
+numero pu&ograve; essere modificato in corrispondenza del trucco selezionato
+premendo i tasti + e - del tastierino numerico.
+<p>Se il file POK non &egrave; disponibile, si possono sempre inserire
+le pokes manualmente digitandone il valore nell'apposito campo. Ad esempio,
+per inserire POKE 32654,201 si deve scrivere "32654 201" o "32654,201"
+(l'indirizzo e il valore vanno separati con uno spazio o una virgola).
+<p>Se si vuole, si possono mettere tutti i file POK assieme in un'unica
+directory indicata dalla voce "PokesDir: " del file di configurazione REALSPEC.INI.
+<p><a NAME="MEMOPT"></a>
+<h4>
+Opzioni di memoria</h4>
+Il pannello Memory Options si attiva con ALT-F9 e contiene alcune funzioni
+per caricare e salvare blocchi di memoria. Le prime tre righe permettono
+di specificare l'indirizzo di inizio del blocco, la lunghezza e la pagina
+di RAM; sulla riga desiderata, premere il tasto freccia destra e digitare
+il valore in decimale, premendo poi RETURN per confermare; si possono anche
+inserire valori esadecimali utilizzando il prefisso "%", il suffisso "H"
+o perfino la notazione stile C. Esempi di numeri validi sono "%100", "100H"
+or "0x100".
+<br>Una volta specificati i parametri del blocco, selezionare "Load Memory
+Block" o "Save Memory Block" ed utilizzare il fileselector per indicare
+il file da caricare o specificare il nome del file da salvare. I blocchi
+di memoria vengono salvati con l'estensione .BIN.</td>
+</tr>
+</table>
+<a NAME="NETWORK"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>11.</font></font></b></td>
+
+<td><font size=+2>Internet Networking (TCP/IP)</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>Forse uno dei pi&ugrave; innovativi aspetti di questo emulatore &egrave;
+rappresentato dalla possibilit&agrave; di utilizzare Internet in vari modi.
+Prima di utilizzare queste possibilit&agrave; &egrave; necessario, comunque,
+avere una certa familiarit&agrave; con Internet, con la Sinclair Network
+dell'Interface-1/DISCiPLE e con le funzioni di rete offerte da RealSpectrum;
+leggere, pertanto, attentamente questo capitolo (incluso il paragrafo "note
+speciali") e il resto della documentazione per acquisire la conoscenza
+necessaria.
+<h4>
+Requisiti di sistema per il networking</h4>
+I seguenti requisiti sono necessari solo se si vogliono utilizzare le funzioni
+Internet di RealSpectrum:
+<ul>
+<li>
+<b>Windows 3.1 o superiori.</b> Le caratteristiche di networking usano
+lo stack TCP/IP di Windows 3.1 o Windows 95/98 e pertanto l'emulatore deve
+essere lanciato da una DOS box di Windoze. Non funziona sotto Windows NT
+e MSDOS puro (cio&egrave; usando "Riavvia il sistema in modalit&agrave;
+MS-DOS" o, ancora peggio, dal vecchio DOS 6.x).</li>
+
+<li>
+<b>SOCKVXD.EXE:</b> Sotto Windows 95/98, si deve installare questo modulo
+addizionale che si pu&ograve; scaricare dal sito di RealSpectrum; &egrave;
+un virtual device driver sviluppato per il progetto CODA che permette ad
+un'applicazione DOS come RealSpectrum di comunicare con le funzioni di
+networking di Win32. Per installare il modulo, clickare due volte sull'eseguibile
+e scegliere "Dynamic Loading" come tipo di installazione; questo si deve
+fare solo la prima volta che si installa RealSpectrum. In seguito si potr&agrave;
+tranquillamente disinstallare il modulo dal pannello di controllo.</li>
+
+<br>Questo modulo si pu&ograve; scaricare liberamente dalla pagina ufficiale
+di RealSpectrum. L'ultima versione disponibile si trova alla homepage di
+CODA:
+<br><a href="ftp://www.coda.cs.cmu.edu/pub/tools/95/windows-socket-extension.exe">ftp://www.coda.cs.cmu.edu/pub/tools/95/windows-socket-extension.exe</a>
+<li>
+<b>Connessione TCP/IP.</b> Pu&ograve; essere il normale accesso ad Internet
+oppure una rete locale come la Ethernet.</li>
+</ul>
+
+<h4>
+Il menu Network Options (come fare una connessione)</h4>
+Prima di tutto si deve predisporre la propria macchina per la comunicazione.
+Questo pu&ograve; essere fatto attraverso le Networking Options, che si
+trovano nel menu ALT-F8.
+<br>Prima di abilitare la connessione si deve inserire il proprio nickname
+premendo la freccia a destra quando il cursore si trova sulla riga con
+scritto "Nick-Name" e confermare con ENTER. Il nickname &egrave; solo un
+identificativo che viene visualizzato sullo schermo degli altri amici in
+connessione quando si esegue qualche operazione. Naturalmente si pu&ograve;
+lasciare il nickname di default se non si vuole impostarne uno proprio.
+Inoltre si pu&ograve; specificare il nickname anche nel file INI in corrispondenza
+della riga "NickName: your-nick".
+<p>Poi si deve inserire l'indirizzo IP del computer remoto. Un indirizzo
+IP &egrave; composto da quattro numeri separati da punti, ad esempio "192.168.0.1".
+Logicamente si deve prima trovare il modo di conoscere l'indirizzo IP dell'amico
+in connessione e questo si deve probabilmente fare al di fuori di RealSpectrum,
+ad esempio su IRC o ICQ, con una telefonata e cos&igrave; via.
+<br>Se non si conosce l'indirizzo IP del corrispondente, si pu&ograve;
+inserire "0.0.0.0" come IP remoto (&egrave; la scelta di default); in questo
+modo, RealSpectrum attender&agrave; una chiamata e determiner&agrave; automaticamente
+l'IP remoto. Cos&igrave; facendo, per&ograve;, &egrave; necessario che
+il corrispondente inserisca il proprio IP address nel suo pannello di controllo
+relativo alla rete. La regola &egrave; che un IP remoto deve essere specificato
+almeno da una parte.
+<p>Quando si &egrave; pronti, abilitare il Networking ed uscire dal menu
+premendo ENTER o ESC. Se c'&egrave; gi&agrave; una connessione attiva,
+i due computers proveranno a contattarsi. Durante questa fase, RealSpectrum
+visualizza "Connecting to..." oppure "Waiting for a call". Si pu&ograve;
+interrompere l'operazione di connessione premendo ESC. Se non c'&egrave;
+alcuna connessione attiva, RealSpectrum pu&ograve; accettarne anche durante
+la normale emulazione (a patto che siano abilitate entrambe le voci Networking
+e NetMonitor in ALT-F8).
+<p>Una volta che la connessione &egrave; attiva, si vedr&agrave; sullo
+schermo un messaggio simile a "Sanchez connected from 192.168.0.1" e si
+potr&agrave; iniziare. L'ultima riga del pannello Network Option mostra
+il proprio indirizzo IP solo dopo che una connessione &egrave; stata attivata
+con successo. A causa di limitazioni tecniche riguardanti SOCKVXD, RealSpectrum
+non ha modo di conoscere quell'informazione prima.
+<p>Lo stato della connessione &egrave; mostrato sulla penultima riga del
+pannello ALT-F8 dove viene riportato se qualcuno &egrave; connesso, se
+&egrave; in ascolto per i messaggi chat e per l'invio di files. Le funzioni
+di network operano indipendentemente dallo stato della connessione remota
+per cui si possono inviare messaggi anche se il corrispondente risulta
+"not in chat", ma probabilmente non li ricever&agrave;.
+<h4>
+Sinclair Network (Interface-1 e DISCiPLE)</h4>
+E' la network standard che si trova sull'Interface-1 e sulla DISCiPLE,
+che risultano cos&igrave; reciprocamente compatibili a livello di rete
+locale. Con la rete reale &egrave; consentito connettere fino a 63 Spectrum
+utilizzando un normale cavo audio dotato di spinotti jack mono. Il software
+in ROM estende il BASIC Sinclair con una serie di nuovi comandi dedicati
+all'interscambio di dati e programmi via network. Ad ogni Spectrum collegato
+in rete si deve assegnare un numero di stazione univoco compreso tra 1
+a 63; ad esempio, se si volesse essere la stazione numero 10 si dovrebbe
+digitare <i>FORMAT "n";10</i> sull'Interface-1 oppure <i>FORMAT n10</i>
+sulla DISCiPLE. A questo punto si possono inviare dati utilizzando i normali
+comandi LOAD e SAVE con tutte le loro varianti. Se si &egrave; la stazione
+10 e si vuole inviare una schermata alla stazione 11 si deve digitare <i>SAVE
+*"n";11 SCREEN$</i> (o <i>SAVE n11 SCREEN$</i> sulla DISCiPLE), mentre
+il corrispondente deve mettersi prima in ascolto con <i>LOAD *"n";10 SCREEN$</i>
+(oppure <i>LOAD n10 SCREEN$</i> sulla DISCiPLE). Il numero di stazione
+0 &egrave; riservato per la modalit&agrave; broadcast, con la quale si
+pu&ograve; inviare o ricevere dati da qualunque stazione (ad esempio, con
+LOAD n0 SCREEN$ si ricever&agrave; una schermata da chiunque abbia dato
+il comando SAVE n0 SCREEN$). La Sinclair Network &egrave; molto potente
+e ci sono diverse cose da sapere per poterla utilizzare correttamente.
+Una descrizione completa dei comandi si trova sul manuale dell'Interface-1
+o sulla nostra DISCiPLE technical guide che si trova nelle pagine tecniche
+del nostro sito.
+<p>Ora, con RealSpectrum &egrave; possibile connettere due Spectrum virtuali
+dovunque essi si trovino nel mondo, grazie ad Internet. Quando l'impostazione
+globale "Networking" &egrave; abilitata nel menu Network Options, il funzionamento
+sar&agrave; esattamente come se il RealSpectrum remoto fosse connesso tramite
+la Sinclair network. Naturalmente Internet &egrave; molto pi&ugrave; lenta
+della Sinclair Network originale ed anche molto caotica, e quindi le prestazioni
+dipenderanno fortemente dalle momentanee condizioni di traffico. Il paragrafo
+"Note speciali" contiene alcune importanti informazioni al riguardo.
+<h4>
+NetMonitor</h4>
+NetMonitor &egrave; una funzione speciale che abilita alcuni servizi di
+rete addizionali come il sistema di chat e la condivisione di file. La
+chat consente di chiacchierare in tempo reale con i vostri amici mentre
+girano normalmente i vostri programmi Spectrum. La condivisione dei file
+&egrave; utilizzata per scambiare file attraverso la rete. Vedere pi&ugrave;
+sotto per una descrizione dettagliata di queste caratteristiche.
+<br>NetMonitor pu&ograve; essere abilitato solo se lo &egrave; anche l'impostazione
+globale Networking. In generale si dovrebbe tenere NetMonitor sempre abilitato
+per tutto ci&ograve; che offre. Comunque, abbiamo dato la possibilit&agrave;
+di disabilitarlo nel caso si stia guardando la propria demo preferita e
+non si vogliano interruzioni dall'esterno :-)
+<br>Se entrambi gli utenti hanno NetMonitor abilitato, RealSpectrum terr&agrave;
+traccia dello stato della connessione e cio&egrave; sar&agrave; in grado
+di rilevare se il corrispondente &egrave; in linea, se &egrave; in ascolto
+sulla chat e cos&igrave; via.<a NAME="NETCHAT"></a>
+<h4>
+Internet Chat</h4>
+Mentre si utilizza la rete, &egrave; molto utile parlare con i propri amici.
+Ad esempio, uno potrebbe voler dire: "Sono la stazione numero 10, mandami
+una schermata", "Ok Sono la stazione 11, eccotela", "Riavviamo la connessione",
+"Sono pronto a ricevere" e via dicendo.
+<br>Per questa ragione, RealSpectrum offre un semplice ma efficace sistema
+di chat. Per utilizzarlo si deve abilitare la voce "NetMonitor" nel menu
+Network Options ed essere sicuri di essere gi&agrave; connessi con il proprio
+corrispondente (vedere sopra). Quando si vuole dire qualcosa basta premere
+CTRL-F8, scrivere il messaggio e premere ENTER per inviarlo. I messaggi
+in arrivo ed in partenza appariranno in sovraimpressione sullo schermo
+dello Spectrum per pochi secondi (utilizzando l'OSD multiriga di RealSpectrum),
+mentre il programma continua a girare normalmente. Se non si vede il proprio
+messaggio sullo schermo significa che c'&egrave; qualche problema di comunicazione
+verso la rete: controllare la configurazione in ALT-F8 e la connessione
+Internet.&nbsp;<a NAME="NETFILES"></a>
+<h4>
+Invio di file</h4>
+Con RealSpectrum &egrave; anche possibile inviare e ricevere file. Se si
+vuole inviare un file si deve premere SHIFT-F8 ed utilizzare la finestra
+di selezione per sceglierne uno sul proprio sistema. La funzione NetMonitor
+deve essere abilitata per poter vedere i file in arrivo (ma non &egrave;
+necessario per poterli inviare). Se il NetMonitor di RealSpectrum rileva
+che qualcuno sta inviando un file, verr&agrave; visualizzato un box informativo
+sullo schermo dello Spectrum che riporta il nome e la dimensione del file
+e chiede se si vuole accettare o rifiutare la trasmissione. Se si decide
+di accettare, la finestra di selezione viene aperta in modalit&agrave;
+di salvataggio per permettere di specificare la directory di destinazione
+e magari un nome diverso per il file in arrivo; viene comunque proposto
+il nome di default e quindi, se non lo si vuole cambiare, basta premere
+ENTER per confermare. Per default, RealSpectrum salva i files nella directory
+da dove &egrave; stato lanciato oppure in quella specificata nella voce
+"DownloadFolder:" del file INI (se presente).
+<br>Con l'opzione "Get Files" del menu ALT-F8 si pu&ograve; personalizzare
+il comportamento di default riguardante i file in arrivo: "Never" rifiuta
+automaticamente tutti i file, "Ask me" permette di scegliere di volta in
+volta con il box descritto sopra e "Always" accetta automaticamente qualunque
+file.
+<br>Durante il trasferimento, lo stato di avanzamento &egrave; constantemente
+visualizzato sullo schermo come una progress bar. Sia chi invia che chi
+riceve pu&ograve; interrompere la trasmissione in qualunque momento premendo
+ESC.
+<h4>
+Note speciali e risoluzione dei problemi</h4>
+Il protocollo di rete dello Spectrum originale &egrave; stato progettato
+per un tranquillo e veloce collegamento fisico mentre Internet &egrave;,
+al contrario, molto caotica, lenta e imprevedibile. Il protocollo stesso
+gestisce ogni errore di trasmissione (pacchetti persi o corrotti), garantendo
+quindi una connessione affidabile anche in presenza di disturbi.
+<br>L'emulazione della rete Sinclair di RealSpectrum &egrave; completamente
+trasparente e quindi le routine originali (in ROM) di gestione degli errori
+continuano a funzionare regolarmente fornendo una comunicazione controllata
+anche attraverso Internet; non &egrave; una simpatica modernizzazione?
+;-) La sola differenza &egrave; che il protocollo dell'IF-1 rileva gli
+errori di trasmissione con un timeout di pochi millisecondi, che &egrave;
+un valore ragionevole per una connessione via cavo come quella della rete
+Sinclair ma certamente non per Internet che &egrave; tipicamente molto
+pi&ugrave; lenta e complessa e pertanto abbiamo aumentato artificialmente
+il timeout a 8 secondi.
+<br>Stiamo descrivendo tutto questo in quanto pu&ograve; accadere che un
+pacchetto venga perso nella rete e che il comando LOAD o SAVE si blocchi.
+In questo caso basta attendere circa 8 secondi e la trasmissione riprender&agrave;
+automaticamente! Si rende necessario interrompere con BREAK (SHIFT+SPACE)
+il comando LOAD o SAVE solo se il trasferimento rimane bloccato a lungo,
+diciamo per 20-30 seconds o pi&ugrave;. Si deve tenere presente che tali
+blocchi avvengono anche con l'Interface-1 reale (o la DISCiPLE) ma che
+non si notano grazie al timeout molto breve.
+<p>Bisogna anche considerare che RealSpectrum &egrave; un programma DOS
+e pertanto deve veramente fare magie per accedere ad Internet utilizzando
+Windows. Ci sono alcune limitazioni tecniche che non possono essere superate
+da un programma DOS, ad esempio, un'intensa attivit&agrave; di rete da
+parte dell'IF-1 potrebbe rallentare l'emulazione (si sentono suoni ripetuti
+nell'audio); &egrave; normale ed &egrave; il piccolo prezzo da pagare per
+una funzionalit&agrave; cos&igrave; entusiasmante.
+<p>Se la connessione sembra definitivamente interrotta, cio&egrave; non
+arrivano i messaggi di chat e la rete dell'IF-1 non funziona, si pu&ograve;
+sempre chiudere la connessione disabilitando la voce "Networking" e riprovare
+a connettersi riabilitandola. E' importante ricordare che, in qualsiasi
+momento, si pu&ograve; avere un'idea dello stato della connessione guardando
+l'ultima riga del pannello Networking dove viene detto se il corrispondente
+&egrave; connesso ed in ascolto per quanto riguarda i messaggi chat.
+<p>Se avete problemi non esitate a contattarci: inviateci una email con
+una descrizione dettagliata del problema e le condizioni nelle quali si
+manifesta.</td>
+</tr>
+</table>
+<a NAME="DEMOMODE"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>12.</font></font></b></td>
+
+<td><font size=+2>DemoMode</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>La DemoMode &egrave; una speciale modalit&agrave; di visualizzazione
+che trasforma RealSpectrum in un riproduttore musicale. Quando si entra
+nella DemoMode, il video dello Spectrum viene sostituito da una schermata
+grafica che mostra animazioni ed altri effetti ispirati dalla musica di
+sottofondo. E' una specie di plug-in di visualizzazione che gira sopra
+l'emulazione Spectrum e che pu&ograve; essere utilizzato ogni volta che
+si vuole per vedere oscilloscopi, vu-meters e altri effetti mentre lo Spectrum
+sta suonando.
+<br>Quando si &egrave; nella DemoMode, l'emulazione Spectrum continua a
+girare normalmente in background. Si pu&ograve; tornare alla videata dello
+Spectrum in qualunque momento premendo ESC.
+<br>Gli effetti mostrati possono essere cambiati ciclicamente premendo
+F1; al momento sono implementati solo un paio di effetti (oscilloscopio
+e analizzatore di spettro), oltre all'effetto nullo, ma aspettatevi a breve
+qualcosa di entusiasmante :-)
+<h4>
+AY Player (F5)</h4>
+Nella DemoMode, RealSpectrum pu&ograve; anche riprodurre i popolari file
+musicali .AY. Il formato .AY &egrave; l'equivalente Spectrum dei famosi
+.SID del C64, cio&egrave; raccolte di brani musicali da computer. Le pi&ugrave;
+popolari musiche dello Speccy sono state estratte dai giochi e dalle demo
+e convertite nel formato AY. Potete trovarne una vasta collezione nel sito
+<a href="http://www.void.jump.org/projectay/">Project
+AY</a>.
+<p>Per suonare i file AY in RealSpectrum, premere F5 in DemoMode e selezionare
+il file utilizzando la consueta finestra di selezione. I file AY possono
+contenere diversi brani che &egrave; possibile scegliere utilizzando i
+tasti freccia sinistra e destra; la freccia in gi&ugrave; ripete il brano
+corrente. Notare che all'uscita della DemoMode, dopo aver suonato un file
+AY, lo Spectrum viene automaticamente resettato.
+<p>Dato che &egrave; possibile avviare il registratore musicale prima di
+entrare nella DemoMode, RealSpectrum pu&ograve;, in questo modo, fungere
+da convertitore da .AY a WAV/YM/AZX.
+<h4>
+Lavori in corso!</h4>
+Non abbiamo avuto abbastanza tempo per questa release, ma nella prossima
+ci saranno veri effetti "demo" (un water scope &egrave; gi&agrave; pronto)
+e skins caricabili cosicch&eacute; ci si potr&agrave; disegnare le proprie
+videate grafiche per la DemoMode. Inoltre, abbiamo in programma di implementare
+un ripper automatico di .AY che consentir&agrave; di crearsi facilmente
+i propri file .AY.</td>
+</tr>
+</table>
+<a NAME="FAQ"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>13.</font></font></b></td>
+
+<td><font size=+2>Domande Frequenti</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>
+<ol>
+<li>
+<b>RealSpectrum si blocca all'avvio con lo schermo nero.</b></li>
+
+<br>Il pi&ugrave; delle volte questo dipende da un problema di inizializzazione
+della scheda audio, specialmente se si possiede una scheda PCI (vedere
+la prossima FAQ). Ritornare al DOS premendo CTRL-ALT-DEL, poi riavviare
+RealSpectrum con il comando "realspec -nosound" oppure impostare "NoSound:
+1" in REALSPEC.INI.
+<br>&nbsp;
+<li>
+<b>RealSpectrum non funziona con la mia scheda audio PCI.</b></li>
+
+<br>Sfortunatamente non possiamo farci niente. Le schede audio PCI generalmente
+non sono utilizzabili da programmi DOS a causa di problemi hardware. La
+maggior parte dei produttori forniscono una emulazione di base della SoundBlaster
+(legacy device) che &egrave; spesso bacata e che deve essere opportunamente
+configurata. Si raccomanda di utilizzare le versioni pi&ugrave; recenti
+dei drivers disponibili per la propria scheda e di far girare l'emulatore
+in una DOS box di Windows 9x. Solo pochissime schede sono in grado di lavorare
+sotto DOS puro (ad esempio la Terratec Canyon 3D). RealSpectrum funziona
+con la SB Live! solo in una DOS box. Raccomandiamo inoltre di impostare
+il legacy device nella classica configurazione SB: I/O 220H, IRQ 5 o 7
+e DMA 1 e 5.
+<br>&nbsp;
+<li>
+<b>Si, ma io voglio comunque sentire il suono!</b></li>
+
+<br>Ok, ci sono un paio di cose da controllare prima di arrendersi definitivamente
+all'incompatibilit&agrave; della scheda audio.
+<br>Se la scheda offre qualche tipo di emulazione SoundBlaster, controllare
+che la variabile d'ambiente BLASTER sia correttamente definita. Digitando
+"set" dalla linea di comando, si dovrebbe vedere qualcosa simile a questo:
+BLASTER=A220 I7 D1 H5 T6 etc; A220 &egrave; l'indirizzo di I/O della scheda
+(220H), I7 &egrave; la IRQ (7), D1 &egrave; il canale DMA a 8-bit (1),
+H5 &egrave; il canale DMA a 16-bit (5) e T6 &egrave; il tipo di scheda
+(6 significa SB16, 4 SBPro e cos&igrave; via). Assicurarsi che i valori
+presenti nella stringa BLASTER corrispondano esattamente alle impostazioni
+hardware della scheda. Se la variabile BLASTER non &egrave; presente, si
+deve definirla manualmente.
+<br>Se ancora si hanno problemi, si pu&ograve; provare a forzare RealSpectrum
+affinch&eacute; utilizzi uno specifico driver audio. Per far ci&ograve;,
+aggiungere la seguente linea alla fine della sezione [sound] nel file ALLEGRO.CFG:
+"digi_card = SB20", dove "SB20" sta per SB 2.0 driver; i drivers disponibili
+sono "SB16" (SoundBlaster 16), "SBP" (SoundBlaster Pro), "SB20" (SoundBlaster
+2.0), "SB15" (SoundBlaster 1.5) e "SB10" (SoundBlaster 1.0). Forse la scheda
+non funziona come una SB16 ma come una semplice SB 2.0; bisogna tenere
+presente che i vari modelli di SB hanno differenti capacit&agrave; in termini
+di massima frequenza di campionamento supportata, riproduzione stereo e
+qualit&agrave; di riproduzione 8/16 bit.
+<br>&nbsp;
+<li>
+<b>Come posso migliorare la velocit&agrave; di emulazione?</b></li>
+
+<br>L'altissima accuratezza di RealSpectrum richiede CPU molto veloci rispetto
+ad altri emulatori. Prima di tutto assicurarsi di utilizzare una modalit&agrave;
+video VESA2. Provare a disabilitare VSYNC dal pannello ALT-F11 (o nel file
+INI), specialmente se si avvertono salti o ripetizioni nell'audio e si
+ha un processore lento. Utilizzare una risoluzione inferiore; 320x200 &egrave;
+la pi&ugrave; veloce. Se &egrave; ancora lento, disabilitare il suono.
+Provare ad aumentare il valore di frameskip nel file INI. Si pu&ograve;
+guadagnare velocit&agrave; extra anche disabilitando l'emulazione della
+memoria contesa con l'impostazione "ContendedMemory: 0" nell'INI, al prezzo
+di una riproduzione meno accurata degli effetti multicolor (questo non
+influenza i modelli russi che non hanno memoria contesa).</ol>
+</td>
+</tr>
+</table>
+<a NAME="LICENSE"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>14.</font></font></b></td>
+
+<td><font size=+2>Licenza, crediti e contatti</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+
+<td>RealSpectrum &egrave; freeware. Pu&ograve; essere liberamente utilizzato
+e distribuito a patto che non ci si guadagni sopra e che il pacchetto originale,
+programma e documentazione, non venga alterato in alcun modo. Prima di
+includere RealSpectrum in un prodotto commerciale (ad esempio una rivista
+su CDROM), prego contattarci. Non &egrave; permesso distribuire questo
+programma assieme a software commerciale per Spectrum (snapshot di giochi,
+etc) in nessuna forma.
+<p>RealSpectrum non offre alcun tipo di garanzia, implicita o esplicita.
+Utilizzando questo programma, si accetta il fatto che gli autori non sono
+responsabili degli eventuali danni o perdita di dati causati, direttamente
+o indirettamente, al proprio sistema dall'emulatore. Si usa a proprio rischio
+e pericolo.
+<p>L'ultima versione di RealSpectrum pu&ograve; sempre essere scaricata
+dal sito ufficiale della Ramsoft:
+<ul>
+<li>
+<a href="http://www.ramsoft.bbk.org">http://www.ramsoft.bbk.org</a></li>
+</ul>
+Se si vogliono inviare le proprie impressioni, suggerimenti o, ancora meglio,
+segnalare bugs, prego scrivere a:
+<ul>
+<li>
+<a href="mailto:ramsoft@bbk.org?subject=RealSpectrum">ramsoft@bbk.org</a></li>
+</ul>
+Prima di chiedere qualcosa, assicurarsi che le risposte non siano gi&agrave;
+presenti in questo manuale. Quando si segnalano bugs, prego descrivere
+accuratamente i problemi incontrati e le operazioni da eseguire per riprodurli;
+non dimenticare di includere una descrizione del proprio sistema (sistema
+operativo, scheda audio, scheda video, CPU, memoria, etc). Questo ci far&agrave;
+risparmiare molto tempo, grazie.
+<h4>
+Ringraziamenti</h4>
+Vorremmo ringraziare le seguenti persone che hanno contribuito con utili
+suggerimenti e segnalazioni di bugs:
+<br>&nbsp;
+<center><table BORDER=0 WIDTH="75%" >
+<tr>
+<td>Francesco Piccardo, Davide Barlotti, Rodolfo Edison Guerra,
+<br>Miodrag Stancevic, Henk van Leeuwen, Pepa Kokes, Mac Buster,
+<br>Raul Gomez Sanchez, Simone Voltolini, Carl Murray, Enrico Maria Giordano,<br>
+UnBEL!EVER^x7m.</td>
+</tr>
+</table></center>
+<p>
+La versione italiana del manuale e' stata tradotta da Enrico Maria Giordano.
+
+<h4>
+Riconoscimenti</h4>
+Le ROM della Sinclair e della Amstrad sono distribuite con il permesso
+della Amstrad plc
+<br>Le ROM della DISCiPLE e della +D sono distribuite con il permesso esplicito
+della <a href="http://www.datel.co.uk">Datel</a>
+<p>Il seguente materiale tecnico &egrave; stato consultato durante la creazione
+di RealSpectrum, i riconoscimenti vanno ai rispettivi autori e gestori:
+<ul>
+<li>
+<a href="http://www.geocities.com/SiliconValley/Peaks/3938/z80_home.htm">Z80
+CPU Official Support Page</a> di Thomas Scherrer</li>
+
+<li>
+<a href="http://www.kendalls.demon.co.uk/cssfaq/index.html">Official ZX
+Spectrum FAQ</a> di Philip Kendall</li>
+
+<li>
+<a href="http://www.void.demon.nl/TZXformat.html">TZX Specifications</a>
+v1.13 di Tomaz Kac</li>
+
+<li>
+<a href="http://www.void.demon.nl/rusfaq/index.html">Russian Spectrum Machines
+FAQ</a> di Random/CC</li>
+
+<li>
+TECHINFO.DOC di Gerton Lunter (parte dell'emulatore Z80 v4.x)</li>
+
+<li>
+<a href="http://members.tripod.com/~piters/zx.htm">ZX Spectrum Hardware
+DIY</a> di Pera Putnik</li>
+</ul>
+Un ringraziamento particolare a Shawn Hargreaves per la stupenda libreria
+<a href="http://www.talula.demon.co.uk/allegro/">Allegro</a>.</td>
+</tr>
+</table>
+<a NAME="HISTORY"></a>
+<table BORDER=0 CELLSPACING=12 CELLPADDING=0 WIDTH="100%" bbgcolor="#ffff90" >
+<tr>
+<td ALIGN=CENTER WIDTH="10%" BGCOLOR="#FF7848"><b><font color="#FFFFFF"><font size=+2>15.</font></font></b></td>
+
+<td><font size=+2>Storia delle modifiche</font></td>
+</tr>
+</table>
+
+<table BORDER=0 WIDTH="100%" >
+<tr>
+<td WIDTH="10%"></td>
+<td>
+<b>Novita' nella v0.75.20 (24 Dicembre 2000)</b>
+<ul>
+<li>Emulazione MB-02+: e' probabilmente l'interfaccia piu' potente mai prodotta per lo Spectrum! Una periferica da favola con 512K di SRAM integrata, supporto per 4 floppy disk HD e un chip Z80-DMA per trasferimenti indipendenti dalla CPU. RealSpectrum emula sia il DMA che l'orologio interno (RTC). I dischi MB02 sono supportati come immagini .MBD che sono copie dirette dei floppy (come gli MGT).
+<li>Videoregistratore: con la nuova funzione VTR in ALT-F11 e' ora possibile videoregistrare i vostri giochi e demo preferiti in filmati AVI. E' possibile registrare sia l'audio che le immagini, oppure solamente il video; la nuova finestra VTR permette di settare diversi parametri, come la frame rate, la dimensione dell'area di schermo da catturare, e altro ancora.
+<li>Nuovo pannello delle proprieta' dell'hardware: questa nuova finestra presenta delle informazioni addizionali specifiche per ciascun modello di Spectrum. La schermata si richiama premendo due volte F3 e contiene il filename della ROM, il tipo di chip sonoro e cosi' via.
+<li>Emulazione Multiface I e III: con queste completiamo la gamma di interfacce Multiface emulate. Il modello adatto viene scelto automaticamente dall'emulatore a seconda dello Spectrum selezionato.
+<li>Pentagon 512K: l'espansione di memoria puo' essere gestita dal nuovo pannello per le proprieta' dei modelli.
+<li>Porte seriali: RealSpectrum supporta comunicazioni RS232 bidirezionali attraverso le 4 porte COM del PC e la ridirezione su file. Oltre alle seriali standard del 128K e dell'Interface-I, e' possibile impostare dei trap personalizzati per usare routines di I/O esterne, permettendo in questo modo a molti programmi non standard di funzionare ugualmente. Si raccomanda di leggere attentamente la nuova sezione del manuale (CTRL-F3).
+<li>Emulazione FDC765 migliorata e supporto per il formato DSK esteso.
+<li>Supporto per files compressi: RealSpectrum gestisce automaticamente gli archivi in formato ZIP, ARJ, RAR e ACE. Questi files vengono mostrati nel fileselector come directory speciali di tipo "ARC" e come tali possono essere trattati. Date un'occhiata al paragrafo nel capitolo 4 per alcune avvertenze importanti.
+<li>I soliti bugfix: emulazione WD1793 (scrittura e formattazione TRDOS), schermata nera alla partenza senza scheda sonora e molti altri.
+</ul>
+<b>Novit&agrave; nella versione 0.70.19 (21 Ottobre 2000)</b>
+<ul>
+<li>
+Supporto Real-tape: caricamento e salvataggio affidabile di cassette Spectrum
+reali direttamente attraverso la scheda audio. Per abilitarlo, selezionare
+"Physical-Device" nell'apposita finestra di selezione dei file. Leggere
+la nuova sezione riguardante questo argomento nel capitolo Tapes.</li>
+
+<li>
+Emulazione Covox, Stereo Covox, Soundrive e Music Machine: aggiunto un
+canale digitale per il DAC a 4 x 8-bit stereo con interpolazione lineare
+che fornisce musica ed effetti di alta qualit&agrave;. Quando viene abilitato
+(ALT-F12), il dispositivo audio digitale sostituisce il canale del beeper
+(in questo modo &egrave; soggetto all'impostazione "Device Balance" del
+pannello principale dedicato al suono che si attiva con F12).</li>
+
+<li>
+Creazione di immagini di disco vuole: con ALT-F6 si possono creare file
+vuoti nei formati IMG, MGT, TRD, DSK e MDR. Nota: i dischi DSK e le cartucce
+MDR devono essere formattate prima dell'uso.</li>
+
+<li>
+Emulazione della porta parallela per DISCiPLE, +D, +2A, +3 e Scorpion.
+I dati possono essere inviati alla LPT1, LPT2 oppure ad un file. Vedere
+il menu Communication Ports (CTRL-F3).</li>
+
+<li>
+Possibilit&agrave; di cambiare le ROM anche per le varie periferiche in
+F3 (DISCiPLE, +D, TRDOS, IF-1, Multiface).</li>
+
+<li>
+Migliorata l'emulazione dello Scorpion: temporizzazione esatta degli effetti
+multicolor, abilitato lo Shadow Monitor (NMI) e sistemata la modalit&agrave;
+"128 TRDOS". Prossimamente: emulazione velocit&agrave; turbo.</li>
+
+<li>
+Migliore supporto ai dischi reali: migliorata la compatibilit&agrave; con
+il BIOS; ora funziona anche con i dischi TRDOS.</li>
+
+<li>
+Emulazione joystick anche attraverso i tasti cursore del PC (selezionare
+"Cursor Keys" come joystick in ALT-F3).</li>
+
+<li>
+Aggiornate le pagine di help (F1).</li>
+
+<li>
+Aggiunto lo switch "AY-48K:" nel file INI per abilitare/disabilitare il
+chip sonoro AY per i modelli 16K e 48K; le impostazioni disponibili sono:
+0=OFF (48K originale), 1=AY38912 e 2=YM2149; il default &egrave; 1 (AY
+abilitato).</li>
+
+<li>
+Supporto per gli snapshot .Z80 da 256K in modalit&agrave; Scorpion (sia
+in lettura che in scrittura). Migliorata la gestione degli snapshot Z80/SNA
+con i modelli +2A/+3 e Scorpion.</li>
+
+<li>
+Molti bugs corretti (temporizzazioni +2A/+3, caricamento ROM custom, DemoMode,
+riproduttore .AY, Z80, FlashLoading, etc).</li>
+</ul>
+<b>Novit&agrave; nella versione 0.60.42 (24 Agosto 2000)</b>
+<ul>
+<li>
+Emulazione dell'Interface con 8 microdrive (MDR files). La ROM dell'IF-1
+&egrave; ora inclusa nel pacchetto standard delle ROM.</li>
+
+<li>
+Emulazione della rete dell'Interface I e della DISCiPLE attraverso Internet
+(TCP/IP)! Si possono connettere due Spectrum virtuali ovunque essi siano
+nel mondo utilizzando le caratteristiche di rete standard della DISCiPLE
+o dell'Interface I (ad esempio, i comandi BASIC relativi al canale "n",
+ma non solo)! Richiede Windows 3.1 o 95/98 (raccomandato) e funziona su
+ogni connessione TCP/IP che sia Internet o una LAN. Le opzioni di rete
+sono nel menu ALT-F8. Leggere molto attentamente il capitolo <a href="#NETWORK">"Internet
+Networking"</a>!</li>
+
+<li>
+Sistema di chat integrato per Internet/LAN (TCP/IP): si pu&ograve; parlare
+con altri appassionati Spectrum mentre gira il proprio gioco/demo preferito
+(CTRL-F8). I messaggi appaiono direttamente sullo schermo dello Spectrum
+grazie al nuovo on-screen display (OSD) multiriga.</li>
+
+<li>
+Scambio di file attraverso Internet/LAN (TCP/IP): si pu&ograve; inviare
+e ricevere qualsiasi file da RealSpectrum (SHIFT-F8).</li>
+
+<li>
+DemoMode (F8) con effetti speciali grafici per la riproduzione della musica.
+Riproduttore di file .AY integrato. Ancora in via di sviluppo.</li>
+
+<li>
+48K BASIC Tokenizer: anche in modo 48K, si possono digitare comandi BASIC
+o intere linee di programma carattere per carattere nel Tokenizer editor
+(ALT-F1) con syntax highlighting, e questo traduce tutto nella corretta
+sequenza di tasti che vengono automaticamente passati all'editor 48K alla
+velocit&agrave; della luce. E' molto simpatico, provatelo! :-)</li>
+
+<li>
+Nazionalizzazione della tastiera: si pu&ograve; impostare la tastiera al
+proprio standard nazionale (riga "Keyboard:" in realspec.ini).</li>
+
+<li>
+OSD (On-Screen Display) multiriga che pu&ograve; visualizzare icone grafiche
+e messaggi di testo. Il massimo numero di righe di testo visualizzate simultaneamente
+pu&ograve; essere modificato nel menu ALT-F11. L'OSD attualmente &egrave;
+utilizzato solo dal sottosistema di rete ma sar&agrave; utilizzato in seguito
+per un completo indicatore grafico&nbsp; dello stato dell'emulazione (led
+dei dischi/tape, eventi speciali, etc.).</li>
+
+<li>
+Caricamento e salvataggio di blocchi di memoria (ALT-F9).</li>
+
+<li>
+Selezione in esecuzione di ROM custom per i vari modelli (premere SPACE
+in F3 sul modello selezionato).</li>
+
+<li>
+Molti bugs corretti (pannello delle pokes, caricamento dei file rom 48K,
+file disco a sola lettura, +D BetaDos, decodifica degli indirizzi nel +2A/+3,
+etc).</li>
+</ul>
+<b>Novit&agrave; nella versione 0.50.23 (14 Maggio 2000)</b>
+<ul>
+<li>
+Nuovi modelli di Spectrum: 16K, +2A, +3 e Scorpion 256. Nota: &egrave;
+stato aggiornato il pacchetto delle ROM!</li>
+
+<li>
+Supporto Kempston mouse per Pentagon e Scorpion (ALT-F3).</li>
+
+<li>
+Notevole miglioramento nella velocit&agrave;, pi&ugrave; del 30% in termini
+di FPS!</li>
+
+<li>
+Pesanti modifiche all'emulazione Z80.</li>
+
+<li>
+Inserita la temporizzazione multicolor per il 48K (basata sull'issue 4S).</li>
+
+<li>
+Possibilit&agrave; di disabilitare l'emulazione della memoria contesa per
+ottenere un miglioramento extra in velocit&agrave; al prezzo di un degrado
+della qualit&agrave; visiva. La memoria contesa &egrave; necessaria per
+ottenere effetti multicolor perfetti al 100%. Questo non influisce sul
+Pentagon e sullo Scorpion in quanto essi non hanno memoria contesa.</li>
+
+<li>
+I files rom della DISCiPLE/+D possono essere specificati nel file INI;
+supporto per rom pre-booted (ROM+SYS, 16384 bytes instead of 8192).</li>
+
+<li>
+Personalizzazione delle directory di default nel file INI per snapshot,
+tapes e dischi.</li>
+
+<li>
+Salvataggio immagini in formato BMP, SCR, PCX e TGA (ALT-F11).</li>
+
+<li>
+Registrazione musicale di files AZX e YM e nuova finestra di dialogo per
+il registratore di suoni (ALT-F12)</li>
+
+<li>
+Switch per saltare il messaggio introduttivo ("-nopause" dalla linea di
+comando e "WelcomeMessage" nell'INI).</li>
+
+<li>
+Tonnellate di bugs corretti (caricatore di snapshot Z80, salvataggio con
+l'UNIDOS, emulatore Z80, etc.).</li>
+</ul>
+<b>Novit&agrave; nella versione 0.41.06 (13 Marzo 2000)</b>
+<ul>
+<li>
+Supporto per joystick Kempston/Sinclair (ALT-F3)</li>
+
+<li>
+Aggiunto il caricatore Digital Integration al FlashLoading</li>
+
+<li>
+Corretti errori nell'emulazione Z80 (Melange, Kolobok2 e Digital Integration)</li>
+
+<li>
+Altri errori corretti</li>
+</ul>
+<b>Novit&agrave; nella versione 0.40.26 (5 Marzo 2000)</b>
+<ul>
+<li>
+TZX FlashLoading (giochi turbo, livelli inclusi)</li>
+
+<li>
+Salvataggio tape files in formato TZX, TAP, CSW e WAV</li>
+
+<li>
+Pannello di controllo opzioni per tape files (ALT-F7)</li>
+
+<li>
+Supporto SCL per dischi TRDOS</li>
+
+<li>
+Corretti errori nell'emulazione Z80 (Dizzy V)</li>
+
+<li>
+Supporto automatico per files POK</li>
+
+<li>
+Switches per la linea di comando</li>
+
+<li>
+Selezione automatica del TRDOS in modalit&agrave; Pentagon</li>
+
+<li>
+Menu di help (F1)</li>
+</ul>
+<b>Novit&agrave; nella versione 0.34.21 (21 Gennaio 2000)</b>
+<ul>
+<li>
+Abilitato supporto UNIDOS (sia DISCiPLE che +D)</li>
+
+<li>
+Supporto di base per TRDOS (non ancora completamente testato)</li>
+
+<li>
+Importante miglioramento nella velocit&agrave; (+50%!)</li>
+
+<li>
+Corretti errori ed effettuate modifiche nell'emulazione Z80</li>
+</ul>
+<b>Novit&agrave; nella versione 0.32.20 (3 Gennaio 2000)</b>
+<ul>
+<li>
+Emulazione +D abilitata, scrittura su disco enabled</li>
+
+<li>
+Pannello di controllo per la selezione dei dischi</li>
+
+<li>
+Velocizzazione e correzione di bugs</li>
+</ul>
+<b>31 Dicembre 1999: Millennium Release (versione 0.31.999)</b></td>
+</tr>
+</table>
+
+<hr>
+<center><font face="Verdana"><font size=-2>RealSpectrum e questo manuale
+sono &copy; 1999-2001 Ramsoft ZX Spectrum demogroup</font></font></center>
+</font>
+</body>
+</html>
