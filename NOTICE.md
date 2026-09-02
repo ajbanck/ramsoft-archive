@@ -12,10 +12,36 @@ correct and intentional.
 
 ## Who made this material
 
-**RAMSOFT** — also styled *World Wide Ramsoft* / *WWR* — an Italian ZX Spectrum
-demogroup active roughly 1998–2010, whose site `www.ramsoft.bbk.org` went
-offline and whose domain now resolves to an unrelated parking page. The group
-is defunct and the contact addresses in these documents are dead.
+**RAMSOFT** — also styled *World Wide Ramsoft* / *WWR* — a ZX Spectrum
+demogroup. `index.html` introduces the site, verbatim including its own
+spelling, as:
+
+> This is World Wide Ramsoft, the official web site of the italian ZX Spectrum
+> demogroup funded in 1987.
+
+Nothing in this archive corroborates the 1987 date independently; it is the
+site's own claim. What the archive can evidence is narrower:
+
+| | |
+|---|---|
+| Earliest Internet Archive capture of the site | 1998-12-07 |
+| Copyright footer, as last edited | © 1996–2007 |
+| Last change to any mirrored file | 2007-04-07 |
+| Latest capture used in this mirror | 2008-10-28 |
+
+The 2007-04-07 date is the origin `Last-Modified` for `index.html`, whose own "Latest
+update" line reads `07.04.2007`. That edit and the one before it (2007-02-22)
+added and then withdrew a notice about a broken e-mail address; on the version
+preceding them that same line read `02.11.2004`. Captures continuing into 2008 show only
+that the server still answered, not that anyone changed anything: `index.html`
+is identical across all 22 captures from 2007-05-05 to 2008-10-17.
+
+The CDX index in `.provenance/` holds no capture of the site between 2008-10-17
+and 2023-09-05, by which date the domain was serving different content, so what
+became of the site in that interval is not recorded here.
+`www.ramsoft.bbk.org` now serves a parked-domain placeholder (checked
+2026-09-02). Whether the group disbanded, and whether the addresses in these
+documents still reach anyone, is not something this archive can establish.
 
 ## MakeTZX
 
